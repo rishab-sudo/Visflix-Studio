@@ -1,0 +1,576 @@
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.hero-section {
+  width: 100%;
+  min-height: 100vh;
+
+  position: relative;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   BLACK OVERLAY
+===================================================== */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.78) 32%,
+    rgba(0, 0, 0, 0.40) 65%,
+    rgba(0, 0, 0, 0.12) 100%
+  );
+}
+
+
+/* =====================================================
+   SINGLE CONTENT WRAPPER
+===================================================== */
+
+.hero-content-wrapper {
+  width: 100%;
+  max-width: 900px;
+
+  min-height: 100vh;
+
+  position: relative;
+
+  z-index: 2;
+
+  padding: 50px 5% 60px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.hero-logo {
+  width: 100%;
+
+  margin-bottom: 38px;
+}
+
+.hero-logo img {
+  width: 500px;
+  max-width: 90%;
+
+  height: auto;
+
+  display: block;
+}
+
+
+/* =====================================================
+   HORIZONTAL DIVIDER
+===================================================== */
+
+.hero-divider {
+  width: 600px;
+  max-width: 100%;
+
+  height: 3px;
+
+  margin-bottom: 34px;
+
+  background: linear-gradient(
+    to right,
+    #f58220 0%,
+    #f58220 10%,
+    #ffffff 10%,
+    #ffffff 100%
+  );
+}
+
+
+/* =====================================================
+   HEADING + DESCRIPTION
+===================================================== */
+
+.hero-text-content {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+text-align: left;
+  gap: 18px;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.hero-heading {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(24px, 2vw, 32px);
+
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  letter-spacing: -0.4px;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.hero-description {
+  margin: 0;
+
+  max-width: 700px;
+
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(18px, 1.4vw, 23px);
+
+  line-height: 1.35;
+
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   DEMO
+===================================================== */
+
+.hero-demo {
+  display: flex;
+  align-items: stretch;
+text-align: left;
+  margin-top: 25%;
+}
+
+
+/* =====================================================
+   DEMO ORANGE LINE
+===================================================== */
+
+.demo-line {
+  width: 3px;
+
+  background: #f58220;
+
+  margin-right: 17px;
+
+  flex-shrink: 0;
+}
+
+
+/* =====================================================
+   DEMO CONTENT
+===================================================== */
+
+.demo-content {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* =====================================================
+   DEMO HEADING
+===================================================== */
+
+.demo-content h2 {
+  margin: 0 0 8px;
+
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(30px, 2.2vw, 40px);
+
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   DEMO LINKS
+===================================================== */
+
+.demo-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(15px, 1.2vw, 21px);
+
+  line-height: 1.5;
+
+  font-weight: 500;
+}
+
+.demo-separator {
+  opacity: 0.9;
+}
+
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (max-width: 1400px) {
+
+  .hero-content-wrapper {
+    max-width: 800px;
+
+    padding-left: 4.5%;
+    padding-right: 4.5%;
+  }
+
+  .hero-logo {
+    margin-bottom: 32px;
+  }
+
+  .hero-logo img {
+    width: 450px;
+  }
+
+  .hero-divider {
+    width: 550px;
+
+    margin-bottom: 28px;
+  }
+
+  .hero-text-content {
+    gap: 16px;
+  }
+
+  .hero-heading {
+    font-size: 27px;
+  }
+
+  .hero-description {
+    font-size: 21px;
+  }
+
+  .hero-demo {
+    margin-top: 85px;
+  }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+
+  .hero-section {
+    background-position: center center;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.94) 0%,
+      rgba(0, 0, 0, 0.80) 50%,
+      rgba(0, 0, 0, 0.42) 100%
+    );
+  }
+
+  .hero-content-wrapper {
+    max-width: 700px;
+
+    min-height: 100vh;
+
+    padding: 100px 6% 50px;
+
+    justify-content: center;
+  }
+
+  .hero-logo {
+    margin-bottom: 28px;
+  }
+
+  .hero-logo img {
+    width: 390px;
+  }
+
+  .hero-divider {
+    width: 100%;
+
+    max-width: 520px;
+
+    height: 2px;
+
+    margin-bottom: 25px;
+  }
+
+  .hero-text-content {
+    gap: 15px;
+  }
+
+  .hero-heading {
+    font-size: 25px;
+
+    line-height: 1.35;
+  }
+
+  .hero-description {
+    font-size: 18px;
+
+    line-height: 1.4;
+  }
+
+  .hero-demo {
+    margin-top: 70px;
+  }
+
+  .demo-content h2 {
+    font-size: 30px;
+  }
+
+  .demo-links {
+    font-size: 15px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+
+  .hero-section {
+    min-height: 100svh;
+
+    background-position: 65% center;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.85) 55%,
+      rgba(0, 0, 0, 0.50) 100%
+    );
+  }
+
+  .hero-content-wrapper {
+    width: 100%;
+
+    max-width: none;
+
+    min-height: 100svh;
+
+    padding: 80px 22px 45px;
+
+    justify-content: center;
+  }
+
+
+  /* Logo */
+
+  .hero-logo {
+    margin-bottom: 25px;
+  }
+
+  .hero-logo img {
+    width: 290px;
+
+    max-width: 90%;
+  }
+
+
+  /* Divider */
+
+  .hero-divider {
+    width: 100%;
+
+    height: 2px;
+
+    margin-bottom: 23px;
+  }
+
+
+  /* Text */
+
+  .hero-text-content {
+    gap: 14px;
+  }
+
+  .hero-heading {
+    font-size: 20px;
+
+    line-height: 1.4;
+
+    letter-spacing: 0;
+  }
+
+  .hero-description {
+    font-size: 16px;
+
+    line-height: 1.45;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+
+  /* Demo */
+
+  .hero-demo {
+    margin-top: 55px;
+  }
+
+  .demo-line {
+    width: 2px;
+
+    margin-right: 12px;
+  }
+
+  .demo-content h2 {
+    font-size: 27px;
+
+    margin-bottom: 7px;
+  }
+
+  .demo-links {
+    font-size: 13px;
+
+    gap: 6px;
+
+    line-height: 1.5;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .hero-section {
+    background-position: 62% center;
+  }
+
+  .hero-content-wrapper {
+    padding: 75px 18px 35px;
+  }
+
+  .hero-logo {
+    margin-bottom: 21px;
+  }
+
+  .hero-logo img {
+    width: 240px;
+  }
+
+  .hero-divider {
+    margin-bottom: 20px;
+  }
+
+  .hero-text-content {
+    gap: 12px;
+  }
+
+  .hero-heading {
+    font-size: 18px;
+
+    line-height: 1.4;
+  }
+
+  .hero-description {
+    font-size: 15px;
+
+    line-height: 1.45;
+  }
+
+  .hero-demo {
+    margin-top: 45px;
+  }
+
+  .demo-line {
+    margin-right: 10px;
+  }
+
+  .demo-content h2 {
+    font-size: 24px;
+  }
+
+  .demo-links {
+    font-size: 11px;
+
+    gap: 5px;
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+  .hero-content-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .hero-logo img {
+    width: 215px;
+  }
+
+  .hero-heading {
+    font-size: 17px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-demo {
+    margin-top: 40px;
+  }
+
+  .demo-content h2 {
+    font-size: 22px;
+  }
+
+  .demo-links {
+    font-size: 10px;
+  }
+}
