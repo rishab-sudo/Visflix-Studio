@@ -5,66 +5,118 @@ import "./Navbar.css";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Smooth scroll to section
+  const handleScroll = (id) => {
+    setMenuOpen(false);
+
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
   return (
     <>
+      {/* ================= NAVBAR ================= */}
       <nav className="navbar">
         <div className="navbar-container">
 
-          <Link to="/" className="navbar-logo">
+          {/* LOGO */}
+          <Link
+            to="/"
+            className="navbar-logo"
+            onClick={() => handleScroll("home")}
+          >
             <img src="/logo.png" alt="Visflix Studio" />
           </Link>
 
+          {/* ================= DESKTOP NAV ================= */}
           <div className="desktop-nav">
 
-            <Link to="/" className="nav-link">
+            <button
+              type="button"
+              className="nav-link"
+              onClick={() => handleScroll("home")}
+            >
               HOME
-            </Link>
+            </button>
 
             <span className="nav-divider"></span>
 
-            <Link to="/about" className="nav-link">
+            <button
+              type="button"
+              className="nav-link"
+              onClick={() => handleScroll("about")}
+            >
               ABOUT US
-            </Link>
+            </button>
 
             <span className="nav-divider"></span>
 
-            <Link to="/expertise" className="nav-link">
+            <button
+              type="button"
+              className="nav-link"
+              onClick={() => handleScroll("expertise")}
+            >
               OUR EXPERTISE
-            </Link>
+            </button>
 
             <span className="nav-divider"></span>
 
-            <Link to="/showreel" className="nav-link">
+            <button
+              type="button"
+              className="nav-link"
+              onClick={() => handleScroll("showreel")}
+            >
               SHOWREEL
-            </Link>
+            </button>
 
             <span className="nav-divider"></span>
 
-            <Link to="/showcase" className="nav-link">
+            <button
+              type="button"
+              className="nav-link"
+              onClick={() => handleScroll("showcase")}
+            >
               SHOWCASE
-            </Link>
+            </button>
 
             <span className="nav-divider"></span>
 
-            <Link to="/team" className="nav-link">
+            <button
+              type="button"
+              className="nav-link"
+              onClick={() => handleScroll("team")}
+            >
               TEAM
-            </Link>
+            </button>
 
             <span className="nav-divider"></span>
 
-            <Link to="/contact" className="contact-btn">
+            <button
+              type="button"
+              className="contact-btn"
+              onClick={() => handleScroll("contact")}
+            >
               CONTACT
-            </Link>
+            </button>
 
           </div>
 
+          {/* ================= HAMBURGER ================= */}
           <button
+            type="button"
             className={`hamburger ${menuOpen ? "active" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle Menu"
           >
             <span></span>
             <span></span>
@@ -74,58 +126,88 @@ const Navbar = () => {
         </div>
       </nav>
 
+      {/* ================= MOBILE OVERLAY ================= */}
       <div
         className={`mobile-overlay ${menuOpen ? "show" : ""}`}
         onClick={closeMenu}
       ></div>
 
+      {/* ================= MOBILE MENU ================= */}
       <aside className={`mobile-menu ${menuOpen ? "open" : ""}`}>
 
+        {/* MOBILE HEADER */}
         <div className="mobile-menu-header">
 
-          <Link to="/" onClick={closeMenu}>
+          <Link
+            to="/"
+            onClick={() => handleScroll("home")}
+          >
             <img src="/logo.png" alt="Visflix Studio" />
           </Link>
 
-          <button className="close-menu" onClick={closeMenu}>
+          <button
+            type="button"
+            className="close-menu"
+            onClick={closeMenu}
+            aria-label="Close Menu"
+          >
             ×
           </button>
 
         </div>
 
+        {/* MOBILE NAVIGATION */}
         <div className="mobile-nav-links">
 
-          <Link to="/" onClick={closeMenu}>
+          <button
+            type="button"
+            onClick={() => handleScroll("home")}
+          >
             HOME
-          </Link>
+          </button>
 
-          <Link to="/about" onClick={closeMenu}>
+          <button
+            type="button"
+            onClick={() => handleScroll("about")}
+          >
             ABOUT US
-          </Link>
+          </button>
 
-          <Link to="/expertise" onClick={closeMenu}>
+          <button
+            type="button"
+            onClick={() => handleScroll("expertise")}
+          >
             OUR EXPERTISE
-          </Link>
+          </button>
 
-          <Link to="/showreel" onClick={closeMenu}>
+          <button
+            type="button"
+            onClick={() => handleScroll("reel")}
+          >
             SHOWREEL
-          </Link>
+          </button>
 
-          <Link to="/showcase" onClick={closeMenu}>
+          <button
+            type="button"
+            onClick={() => handleScroll("showcase")}
+          >
             SHOWCASE
-          </Link>
+          </button>
 
-          <Link to="/team" onClick={closeMenu}>
+          <button
+            type="button"
+            onClick={() => handleScroll("team")}
+          >
             TEAM
-          </Link>
+          </button>
 
-          <Link
-            to="/contact"
+          <button
+            type="button"
             className="mobile-contact"
-            onClick={closeMenu}
+            onClick={() => handleScroll("contact")}
           >
             CONTACT
-          </Link>
+          </button>
 
         </div>
 

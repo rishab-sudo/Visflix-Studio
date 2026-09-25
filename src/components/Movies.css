@@ -1,0 +1,702 @@
+/* =========================================
+   MOVIES SECTION
+========================================= */
+
+.movies-section {
+  display: block;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: #050606;
+  color: #ffffff;
+
+  padding: 50px 0 100px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+.movies-container {
+  width: 100%;
+  max-width: 1800px;
+
+  margin: 0 auto;
+
+  padding: 0 75px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   TABS
+========================================= */
+
+.movies-tabs {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 28px;
+
+  margin-bottom: 55px;
+
+  white-space: nowrap;
+
+  box-sizing: border-box;
+}
+
+.movies-tab {
+  position: relative;
+
+  display: inline-block;
+
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 38px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+}
+
+.movies-tab:hover {
+  color: #ff6b00;
+}
+
+.movies-tab.active {
+  color: #ff6b00;
+}
+
+.movies-tab.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: -8px;
+
+  height: 3px;
+
+  background: #ff6b00;
+}
+
+.tab-separator {
+  color: #ffffff;
+
+  font-size: 38px;
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.movie-category {
+  width: 100%;
+
+  margin-bottom: 90px;
+
+  box-sizing: border-box;
+}
+
+.movie-category:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   CATEGORY HEADING
+========================================= */
+
+.category-heading {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 40px;
+
+  box-sizing: border-box;
+}
+
+.category-line {
+  width: 4px;
+  height: 42px;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  background: #ff6b00;
+}
+
+.category-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 36px;
+  font-weight: 800;
+
+  line-height: 1.1;
+}
+
+/* =========================================
+   DESKTOP GRID
+========================================= */
+
+.movies-desktop-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  column-gap: 60px;
+  row-gap: 45px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   MOVIE CARD
+========================================= */
+
+.movie-card {
+  width: 100%;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.movie-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 2 / 3;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background: #1c1c1c;
+
+  box-sizing: border-box;
+}
+
+.movie-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.movie-card:hover .movie-image {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   MOBILE SLIDER
+========================================= */
+
+.movies-mobile-slider {
+  display: none;
+
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+.movies-all-mobile {
+  display: none;
+}
+
+/* =========================================
+   SWIPER
+========================================= */
+
+.movies-swiper {
+  width: 100%;
+
+  padding: 0;
+
+  overflow: visible;
+}
+
+.movies-mobile-slider .swiper-wrapper {
+  align-items: stretch;
+}
+
+.movies-mobile-slider .swiper-slide {
+  height: auto;
+
+  display: flex;
+
+  box-sizing: border-box;
+}
+
+.movies-mobile-slider .movie-card {
+  width: 100%;
+}
+
+/* =========================================
+   SWIPER ARROWS
+========================================= */
+
+.movies-mobile-slider .swiper-button-prev,
+.movies-mobile-slider .swiper-button-next {
+  width: 44px;
+  height: 44px;
+
+  top: 50%;
+
+  margin-top: 0;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  color: #ffffff;
+
+  z-index: 10;
+}
+
+.movies-mobile-slider .swiper-button-prev {
+  left: 15px;
+}
+
+.movies-mobile-slider .swiper-button-next {
+  right: 15px;
+}
+
+.movies-mobile-slider .swiper-button-prev::after,
+.movies-mobile-slider .swiper-button-next::after {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (max-width: 1500px) {
+  .movies-container {
+    padding: 0 60px;
+  }
+
+  .movies-tabs {
+    gap: 22px;
+  }
+
+  .movies-tab {
+    font-size: 32px;
+  }
+
+  .tab-separator {
+    font-size: 32px;
+  }
+
+  .movies-desktop-grid {
+    column-gap: 45px;
+  }
+}
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+  .movies-container {
+    padding: 0 45px;
+  }
+
+  .movies-tabs {
+    gap: 17px;
+  }
+
+  .movies-tab {
+    font-size: 27px;
+  }
+
+  .tab-separator {
+    font-size: 27px;
+  }
+
+  .category-heading {
+    margin-bottom: 30px;
+  }
+
+  .category-heading h2 {
+    font-size: 32px;
+  }
+
+  .movies-desktop-grid {
+    column-gap: 30px;
+    row-gap: 35px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+  .movies-section {
+    padding-top: 35px;
+  }
+
+  .movies-container {
+    padding: 0 30px;
+  }
+
+  .movies-tabs {
+    justify-content: flex-start;
+
+    gap: 13px;
+
+    overflow-x: auto;
+
+    padding: 0 5px 12px;
+
+    margin-bottom: 40px;
+
+    scrollbar-width: none;
+  }
+
+  .movies-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .movies-tab {
+    flex-shrink: 0;
+
+    font-size: 23px;
+  }
+
+  .tab-separator {
+    flex-shrink: 0;
+
+    font-size: 23px;
+  }
+
+  .movies-desktop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 25px;
+  }
+
+  .category-heading h2 {
+    font-size: 29px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+  .movies-section {
+    min-height: auto;
+
+    padding: 30px 0 70px;
+
+    overflow: hidden;
+  }
+
+  .movies-container {
+    width: 100%;
+
+    padding: 0;
+  }
+
+  /* =========================
+     TABS
+  ========================== */
+
+  .movies-tabs {
+    width: 100%;
+
+    justify-content: flex-start;
+
+    gap: 12px;
+
+    padding: 0 22px 12px;
+
+    margin-bottom: 35px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+
+    box-sizing: border-box;
+  }
+
+  .movies-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .movies-tab {
+    flex-shrink: 0;
+
+    font-size: 18px;
+
+    font-weight: 700;
+  }
+
+  .movies-tab.active::after {
+    bottom: -5px;
+
+    height: 2px;
+  }
+
+  .tab-separator {
+    flex-shrink: 0;
+
+    font-size: 20px;
+  }
+
+  /* =========================
+     DESKTOP HIDDEN
+  ========================== */
+
+  .movies-all-desktop {
+    display: none;
+  }
+
+  .movies-desktop-grid {
+    display: none;
+  }
+
+  /* =========================
+     MOBILE ALL
+  ========================== */
+
+  .movies-all-mobile {
+    display: block;
+
+    width: 100%;
+  }
+
+  /* =========================
+     CATEGORY
+  ========================== */
+
+  .movie-category {
+    width: 100%;
+
+    margin-bottom: 60px;
+  }
+
+  .movies-all-mobile .movie-category {
+    margin-bottom: 0;
+  }
+
+  /* =========================
+     HEADING
+  ========================== */
+
+  .category-heading {
+    width: 100%;
+
+    padding: 0 22px;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+
+    box-sizing: border-box;
+  }
+
+  .category-line {
+    width: 3px;
+    height: 40px;
+  }
+
+  .category-heading h2 {
+    font-size: 29px;
+  }
+
+  /* =========================
+     MOBILE SLIDER
+  ========================== */
+
+  .movies-mobile-slider {
+    display: block;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+  }
+
+  .movies-mobile-slider .swiper {
+    width: 100%;
+
+    overflow: visible;
+  }
+
+  .movies-mobile-slider .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .movies-mobile-slider .swiper-slide {
+    height: auto;
+
+    display: flex;
+
+    box-sizing: border-box;
+  }
+
+  .movies-mobile-slider .movie-image-wrapper {
+    width: 100%;
+
+    aspect-ratio: 2 / 3;
+
+    border-radius: 10px;
+  }
+
+  /* =========================
+     ARROWS
+  ========================== */
+
+  .movies-mobile-slider .swiper-button-prev,
+  .movies-mobile-slider .swiper-button-next {
+    width: 40px;
+    height: 40px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background: rgba(0, 0, 0, 0.65);
+  }
+
+  .movies-mobile-slider .swiper-button-prev {
+    left: 12px;
+  }
+
+  .movies-mobile-slider .swiper-button-next {
+    right: 12px;
+  }
+
+  .movies-mobile-slider .swiper-button-prev::after,
+  .movies-mobile-slider .swiper-button-next::after {
+    font-size: 22px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .movies-section {
+    padding-bottom: 55px;
+  }
+
+  .movies-tabs {
+    gap: 10px;
+
+    padding-left: 18px;
+    padding-right: 18px;
+
+    margin-bottom: 30px;
+  }
+
+  .movies-tab {
+    font-size: 16px;
+  }
+
+  .tab-separator {
+    font-size: 18px;
+  }
+
+  .category-heading {
+    padding: 0 20px;
+
+    margin-bottom: 25px;
+  }
+
+  .category-line {
+    width: 2px;
+    height: 34px;
+  }
+
+  .category-heading h2 {
+    font-size: 25px;
+  }
+
+  .movies-mobile-slider .swiper-button-prev {
+    left: 10px;
+  }
+
+  .movies-mobile-slider .swiper-button-next {
+    right: 10px;
+  }
+
+  .movies-mobile-slider .swiper-button-prev::after,
+  .movies-mobile-slider .swiper-button-next::after {
+    font-size: 20px;
+  }
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .movies-tab {
+    font-size: 15px;
+  }
+
+  .tab-separator {
+    font-size: 17px;
+  }
+
+  .category-heading h2 {
+    font-size: 23px;
+  }
+
+  .movies-mobile-slider .swiper-button-prev {
+    left: 7px;
+  }
+
+  .movies-mobile-slider .swiper-button-next {
+    right: 7px;
+  }
+}

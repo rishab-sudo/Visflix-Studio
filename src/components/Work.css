@@ -1,0 +1,1102 @@
+/* =========================================================
+   WORK SECTION
+========================================================= */
+
+.work-section {
+  width: 100%;
+  min-height: 770px;
+
+  position: relative;
+
+  padding: 45px 0 50px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 15% 40%,
+      rgba(85, 20, 10, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 65%,
+      rgba(70, 20, 10, 0.15),
+      transparent 30%
+    ),
+    #030505;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.work-container {
+  width: 100%;
+
+
+  margin: 0 auto;
+
+  position: relative;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.work-header {
+  width: 92%;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  position: relative;
+
+  z-index: 30;
+}
+
+
+/* =========================================================
+   WORK TITLE
+========================================================= */
+
+.work-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  flex-shrink: 0;
+}
+
+
+.work-heading-line {
+  width: 2px;
+  height: 40px;
+
+  background: #ff5a16;
+
+  display: block;
+}
+
+
+.work-heading h2 {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 36px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: 0.3px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.work-filters {
+  display: flex;
+
+  align-items: center;
+margin: auto;
+  justify-content: center !important;
+/* background-color: #ff5a16; */
+  gap: 25px;
+
+  white-space: nowrap;
+}
+
+
+.work-filter {
+  position: relative;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  padding: 5px 0;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 27px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.work-filter:hover {
+  color: #ff5a16;
+
+  transform: translateY(-1px);
+}
+
+
+.work-filter.active {
+  color: #ff5a16;
+}
+
+
+.work-filter.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: -5px;
+
+  height: 2px;
+
+  background: #ff5a16;
+}
+
+
+.work-filter-divider {
+  color: #ffffff;
+
+  font-size: 27px;
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+.work-slider {
+  width: 100%;
+
+  height: 495px;
+
+  position: relative;
+
+  margin-top: 5% !important;
+
+  touch-action: pan-y;
+
+  user-select: none;
+
+  -webkit-user-select: none;
+
+  cursor: grab;
+
+  perspective: 1400px;
+
+  perspective-origin: 50% 50%;
+  /* background-color: #ff5a16; */
+}
+
+
+.work-slider:active {
+  cursor: grabbing;
+}
+
+
+/* =========================================================
+   SLIDER STAGE
+========================================================= */
+
+.work-slider-stage {
+  width: 100%;
+
+  height: 100%;
+
+  position: relative;
+
+  transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   CARD BASE
+========================================================= */
+
+.work-card {
+  width: 320px;
+
+  height: 480px;
+
+  position: absolute;
+
+  top: 40px;
+
+  left: 50%;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transform-style: preserve-3d;
+
+  transform-origin: center center;
+
+  transition:
+    transform 0.65s cubic-bezier(
+      0.22,
+      0.61,
+      0.36,
+      1
+    ),
+    opacity 0.5s ease,
+    filter 0.5s ease,
+    width 0.5s ease,
+    height 0.5s ease;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================================
+   CENTER CARD
+========================================================= */
+
+.work-card.is-center {
+  z-index: 20;
+
+  width: 325px;
+
+  height: 472px !important;
+
+  transform:
+    translateX(-50%)
+    translateZ(180px)
+    rotateY(0deg)
+    scale(1);
+
+  opacity: 1;
+
+  filter: none;
+}
+
+
+/* =========================================================
+   LEFT CARD
+========================================================= */
+
+.work-card.is-left {
+  z-index: 15;
+
+  transform:
+    translateX(calc(-50% - 255px))
+    translateZ(40px)
+    rotateY(11deg)
+    scale(0.88);
+
+  opacity: 0.96;
+
+  filter: brightness(0.94);
+}
+
+
+/* =========================================================
+   RIGHT CARD
+========================================================= */
+
+.work-card.is-right {
+  z-index: 15;
+
+  transform:
+    translateX(calc(-50% + 255px))
+    translateZ(40px)
+    rotateY(-11deg)
+    scale(0.88);
+
+  opacity: 0.96;
+
+  filter: brightness(0.94);
+}
+
+
+/* =========================================================
+   FAR LEFT
+========================================================= */
+
+.work-card.is-far-left {
+  z-index: 10;
+
+  transform:
+    translateX(calc(-50% - 455px))
+    translateZ(-80px)
+    rotateY(17deg)
+    scale(0.73);
+
+  opacity: 0.82;
+
+  filter: brightness(0.85);
+}
+
+
+/* =========================================================
+   FAR RIGHT
+========================================================= */
+
+.work-card.is-far-right {
+  z-index: 10;
+
+  transform:
+    translateX(calc(-50% + 455px))
+    translateZ(-80px)
+    rotateY(-17deg)
+    scale(0.73);
+
+  opacity: 0.82;
+
+  filter: brightness(0.85);
+}
+
+/* =========================================================
+   THIRD LEFT
+========================================================= */
+
+.work-card.is-far-left-2 {
+  z-index: 5;
+
+  transform:
+    translateX(calc(-50% - 640px))
+    translateZ(-150px)
+    rotateY(21deg)
+    scale(0.62);
+
+  opacity: 0.9;
+
+  filter: brightness(0.7);
+}
+
+
+/* =========================================================
+   THIRD RIGHT
+========================================================= */
+
+.work-card.is-far-right-2 {
+  z-index: 5;
+
+  transform:
+    translateX(calc(-50% + 640px))
+    translateZ(-150px)
+    rotateY(-21deg)
+    scale(0.62);
+
+  opacity: 0.9;
+
+  filter: brightness(0.7);
+}
+/* =========================================================
+   HIDDEN
+========================================================= */
+
+.work-card.is-hidden {
+  z-index: 0;
+
+  transform:
+    translateX(-50%)
+    translateZ(-300px)
+    scale(0.45);
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD INNER
+========================================================= */
+
+.work-card-inner {
+  width: 100%;
+
+  height: 100%;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: inherit;
+
+  background: #111;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.work-card-image {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.7s ease;
+}
+
+
+/* =========================================================
+   CENTER IMAGE
+========================================================= */
+
+.work-card.is-center .work-card-image {
+  transform: scale(1);
+
+  filter: brightness(1);
+}
+
+
+/* =========================================================
+   SIDE IMAGE
+========================================================= */
+
+.work-card.is-left .work-card-image,
+.work-card.is-right .work-card-image {
+  filter: brightness(0.9);
+}
+
+
+/* =========================================================
+   FAR IMAGE
+========================================================= */
+
+.work-card.is-far-left .work-card-image,
+.work-card.is-far-right .work-card-image {
+  filter: brightness(0.78);
+}
+
+
+/* =========================================================
+   CARD OVERLAY
+========================================================= */
+
+.work-card-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.02) 0%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.18) 100%
+    );
+}
+
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.work-explore {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  position: relative;
+
+  z-index: 30;
+
+  margin-top: 95px;
+}
+
+
+.work-explore button {
+  min-width: 215px;
+
+  height: 50px;
+
+  padding: 0 20px;
+
+  border: 2px solid #ff5a16;
+
+  border-radius: 2px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #080808;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 21px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.3px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.work-explore button:hover {
+  background: #ff5a16;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   LARGE SCREEN
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .work-section {
+    min-height: 775px;
+  }
+
+
+  .work-slider {
+    height: 510px;
+
+    margin-top: 20px;
+  }
+
+
+  .work-card.is-center {
+    width: 325px;
+
+    height: 455px;
+  }
+
+
+  .work-card.is-left {
+    transform:
+      translateX(calc(-50% - 270px))
+      translateZ(40px)
+      rotateY(11deg)
+      scale(0.89);
+  }
+
+
+  .work-card.is-right {
+    transform:
+      translateX(calc(-50% + 270px))
+      translateZ(40px)
+      rotateY(-11deg)
+      scale(0.89);
+  }
+
+
+  .work-card.is-far-left {
+    transform:
+      translateX(calc(-50% - 475px))
+      translateZ(-80px)
+      rotateY(17deg)
+      scale(0.74);
+  }
+
+
+  .work-card.is-far-right {
+    transform:
+      translateX(calc(-50% + 475px))
+      translateZ(-80px)
+      rotateY(-17deg)
+      scale(0.74);
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1300px) {
+
+  .work-header {
+    width: 90%;
+  }
+
+
+  .work-heading h2 {
+    font-size: 32px;
+  }
+
+
+  .work-filters {
+    gap: 17px;
+  }
+
+
+  .work-filter {
+    font-size: 21px;
+  }
+
+
+  .work-filter-divider {
+    font-size: 21px;
+  }
+
+
+  .work-slider {
+    height: 440px;
+  }
+
+
+  .work-card {
+    width: 245px;
+
+    height: 345px;
+  }
+
+
+  .work-card.is-center {
+    width: 285px;
+
+    height: 405px;
+  }
+
+
+  .work-card.is-left {
+    transform:
+      translateX(calc(-50% - 220px))
+      translateZ(30px)
+      rotateY(11deg)
+      scale(0.88);
+  }
+
+
+  .work-card.is-right {
+    transform:
+      translateX(calc(-50% + 220px))
+      translateZ(30px)
+      rotateY(-11deg)
+      scale(0.88);
+  }
+
+
+  .work-card.is-far-left {
+    transform:
+      translateX(calc(-50% - 380px))
+      translateZ(-70px)
+      rotateY(17deg)
+      scale(0.72);
+  }
+
+
+  .work-card.is-far-right {
+    transform:
+      translateX(calc(-50% + 380px))
+      translateZ(-70px)
+      rotateY(-17deg)
+      scale(0.72);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .work-section {
+    min-height: 650px;
+
+    padding-top: 40px;
+  }
+
+
+  .work-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+  }
+
+
+  .work-filters {
+    width: 100%;
+
+    justify-content: flex-start;
+
+    overflow-x: auto;
+
+    padding-bottom: 8px;
+
+    scrollbar-width: none;
+  }
+
+
+  .work-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .work-filter {
+    font-size: 18px;
+  }
+
+
+  .work-filter-divider {
+    font-size: 19px;
+  }
+
+
+  .work-slider {
+    height: 390px;
+
+    perspective: 1100px;
+  }
+
+
+  .work-card {
+    width: 195px;
+
+    height: 280px;
+
+    top: 45px;
+  }
+
+
+  .work-card.is-center {
+    width: 230px;
+
+    height: 325px;
+
+    transform:
+      translateX(-50%)
+      translateZ(120px)
+      rotateY(0deg)
+      scale(1);
+  }
+
+
+  .work-card.is-left {
+    transform:
+      translateX(calc(-50% - 165px))
+      translateZ(20px)
+      rotateY(14deg)
+      scale(0.88);
+  }
+
+
+  .work-card.is-right {
+    transform:
+      translateX(calc(-50% + 165px))
+      translateZ(20px)
+      rotateY(-14deg)
+      scale(0.88);
+  }
+
+
+  .work-card.is-far-left {
+    transform:
+      translateX(calc(-50% - 285px))
+      translateZ(-60px)
+      rotateY(20deg)
+      scale(0.73);
+  }
+
+
+  .work-card.is-far-right {
+    transform:
+      translateX(calc(-50% + 285px))
+      translateZ(-60px)
+      rotateY(-20deg)
+      scale(0.73);
+  }
+
+
+  .work-explore {
+    margin-top: 0;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .work-section {
+    min-height: 560px;
+
+    padding:
+      35px
+      0
+      45px;
+  }
+
+
+  .work-header {
+    width: 88%;
+
+    gap: 22px;
+  }
+
+
+  .work-heading {
+    gap: 13px;
+  }
+
+
+  .work-heading-line {
+    height: 32px;
+  }
+
+
+  .work-heading h2 {
+    font-size: 28px;
+  }
+
+
+  .work-filters {
+    gap: 13px;
+
+    width: 100%;
+  }
+
+
+  .work-filter {
+    font-size: 14px;
+  }
+
+
+  .work-filter-divider {
+    font-size: 16px;
+  }
+
+
+  .work-slider {
+    height: 350px;
+
+    margin-top: 5px;
+
+    perspective: 900px;
+  }
+
+
+  .work-card {
+    width: 150px;
+
+    height: 225px;
+
+    top: 45px;
+  }
+
+
+  .work-card.is-center {
+    width: 185px;
+
+    height: 275px;
+
+    transform:
+      translateX(-50%)
+      translateZ(90px)
+      rotateY(0deg)
+      scale(1);
+  }
+
+
+  .work-card.is-left {
+    transform:
+      translateX(calc(-50% - 112px))
+      translateZ(10px)
+      rotateY(18deg)
+      scale(0.86);
+  }
+
+
+  .work-card.is-right {
+    transform:
+      translateX(calc(-50% + 112px))
+      translateZ(10px)
+      rotateY(-18deg)
+      scale(0.86);
+  }
+
+
+  .work-card.is-far-left {
+    transform:
+      translateX(calc(-50% - 200px))
+      translateZ(-60px)
+      rotateY(25deg)
+      scale(0.68);
+  }
+
+
+  .work-card.is-far-right {
+    transform:
+      translateX(calc(-50% + 200px))
+      translateZ(-60px)
+      rotateY(-25deg)
+      scale(0.68);
+  }
+
+
+  .work-explore {
+    margin-top: -5px;
+  }
+
+
+  .work-explore button {
+    min-width: 180px;
+
+    height: 44px;
+
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .work-section {
+    min-height: 530px;
+  }
+
+
+  .work-heading h2 {
+    font-size: 25px;
+  }
+
+
+  .work-filter {
+    font-size: 13px;
+  }
+
+
+  .work-slider {
+    height: 325px;
+  }
+
+
+  .work-card {
+    width: 135px;
+
+    height: 205px;
+  }
+
+
+  .work-card.is-center {
+    width: 165px;
+
+    height: 245px;
+  }
+
+
+  .work-card.is-left {
+    transform:
+      translateX(calc(-50% - 100px))
+      translateZ(0)
+      rotateY(19deg)
+      scale(0.83);
+  }
+
+
+  .work-card.is-right {
+    transform:
+      translateX(calc(-50% + 100px))
+      translateZ(0)
+      rotateY(-19deg)
+      scale(0.83);
+  }
+
+
+  .work-card.is-far-left {
+    transform:
+      translateX(calc(-50% - 175px))
+      translateZ(-60px)
+      rotateY(25deg)
+      scale(0.65);
+  }
+
+
+  .work-card.is-far-right {
+    transform:
+      translateX(calc(-50% + 175px))
+      translateZ(-60px)
+      rotateY(-25deg)
+      scale(0.65);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .work-card,
+  .work-card-image,
+  .work-filter,
+  .work-explore button {
+    transition: none;
+  }
+}
