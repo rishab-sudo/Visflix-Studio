@@ -182,7 +182,7 @@ const Footer = () => {
               alt="Gallery Preview"
             />
           </div>
-        </div>
+      </div>
       )}
     </>
   );
