@@ -12,15 +12,14 @@ import {
 
 import "./Footer.css";
 
-// Replace these with your actual image paths
+// Gallery Images
 const galleryImages = [
   require("../assets/gallery1.jpg"),
   require("../assets/gallery2.jpg"),
-    require("../assets/gallery3.jpg"),
-      require("../assets/gallery4.jpg"),
-        require("../assets/gallery5.jpg"),
-          require("../assets/gallery6.jpg"),
-          
+  require("../assets/gallery3.jpg"),
+  require("../assets/gallery4.jpg"),
+  require("../assets/gallery5.jpg"),
+  require("../assets/gallery6.jpg"),
 ];
 
 const Footer = () => {
@@ -43,11 +42,7 @@ const Footer = () => {
 
   // Prevent background scrolling when popup is open
   useEffect(() => {
-    if (selectedImage) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = selectedImage ? "hidden" : "auto";
 
     return () => {
       document.body.style.overflow = "auto";
@@ -61,7 +56,7 @@ const Footer = () => {
 
           {/* ================= LEFT COLUMN ================= */}
           <div className="footer-column footer-social-column">
-            
+
             <div className="footer-logo">
               <img
                 src="/images/logo.png"
@@ -78,21 +73,43 @@ const Footer = () => {
             </p>
 
             <div className="footer-socials">
-              <a  aria-label="Instagram">
+
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
                 <FaInstagram />
               </a>
 
-              <a  aria-label="Facebook">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
                 <FaFacebookF />
               </a>
 
-              <a  aria-label="LinkedIn">
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
                 <FaLinkedinIn />
               </a>
 
-              <a  aria-label="YouTube">
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+              >
                 <FaYoutube />
               </a>
+
             </div>
           </div>
 
@@ -109,6 +126,14 @@ const Footer = () => {
                   className="footer-gallery-item"
                   key={index}
                   onClick={() => setSelectedImage(image)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      setSelectedImage(image);
+                    }
+                  }}
+                  aria-label={`Open Gallery ${index + 1}`}
                 >
                   <img
                     src={image}
@@ -121,6 +146,7 @@ const Footer = () => {
                 </div>
               ))}
             </div>
+
           </div>
 
           {/* ================= RIGHT COLUMN ================= */}
@@ -132,6 +158,7 @@ const Footer = () => {
 
             <div className="footer-contact-list">
 
+              {/* Location */}
               <div className="footer-contact-item">
                 <FaMapMarkerAlt />
                 <span>
@@ -139,18 +166,26 @@ const Footer = () => {
                 </span>
               </div>
 
+              {/* WhatsApp */}
               <div className="footer-contact-item">
                 <FaWhatsapp />
-                <span>
+
+                <a
+                  href="https://wa.me/917505867318"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   +91 75 0586 7318
-                </span>
+                </a>
               </div>
 
+              {/* Email */}
               <div className="footer-contact-item">
                 <FaEnvelope />
-                <span>
+
+                <a href="mailto:studiovisflix@gmail.com">
                   studiovisflix@gmail.com
-                </span>
+                </a>
               </div>
 
             </div>
@@ -165,7 +200,9 @@ const Footer = () => {
           className="footer-image-popup"
           onClick={() => setSelectedImage(null)}
         >
+
           <button
+            type="button"
             className="footer-popup-close"
             onClick={() => setSelectedImage(null)}
             aria-label="Close image"
@@ -182,7 +219,8 @@ const Footer = () => {
               alt="Gallery Preview"
             />
           </div>
-      </div>
+
+        </div>
       )}
     </>
   );
