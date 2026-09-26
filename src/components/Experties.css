@@ -79,7 +79,7 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  border: 1px solid #ff681b;
+  border: 1px solid #ff681b !important;
   border-radius: 11px;
 
   overflow: hidden;

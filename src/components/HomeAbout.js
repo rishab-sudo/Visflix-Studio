@@ -11,12 +11,12 @@ const HomeAbout = () => {
   return (
     <section 
      id="about"
-      className="aboutus-section"
+      className="  aboutus-section"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <div className="aboutus-overlay"></div>
+  
 
-      <div className="aboutus-container">
+      <div className="aboutus-container ">
 
         {/* Heading */}
         <div className="aboutus-heading">

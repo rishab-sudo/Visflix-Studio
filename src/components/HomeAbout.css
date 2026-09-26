@@ -5,39 +5,22 @@
 .aboutus-section {
   position: relative;
   width: 100%;
-  min-height: 700px;
-margin-top: 2%;
-  background-size: cover;
+
+
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 
-  padding: 34px 42px;
+  padding: 25px 50px;
 
+                                                     ;
   color: #ffffff;
-  overflow: hidden;
+
 
 
 }
 
-/* =========================================================
-   DARK OVERLAY
-========================================================= */
 
-.aboutus-overlay {
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.92) 0%,
-      rgba(0, 0, 0, 0.78) 38%,
-      rgba(0, 0, 0, 0.62) 70%,
-      rgba(0, 0, 0, 0.72) 100%
-    );
-
-  z-index: 1;
-}
 
 /* =========================================================
    MAIN CONTAINER
@@ -46,7 +29,7 @@ margin-top: 2%;
 .aboutus-container {
   position: relative;
   z-index: 2;
-  border: 1px solid #f06a1b;
+  /* border: 1px solid #f06a1b; */
   border-radius: 12px;
 
   box-sizing: border-box;
