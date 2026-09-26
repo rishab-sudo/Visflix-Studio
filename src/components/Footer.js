@@ -78,19 +78,19 @@ const Footer = () => {
             </p>
 
             <div className="footer-socials">
-              <a href="#" aria-label="Instagram">
+              <a  aria-label="Instagram">
                 <FaInstagram />
               </a>
 
-              <a href="#" aria-label="Facebook">
+              <a  aria-label="Facebook">
                 <FaFacebookF />
               </a>
 
-              <a href="#" aria-label="LinkedIn">
+              <a  aria-label="LinkedIn">
                 <FaLinkedinIn />
               </a>
 
-              <a href="#" aria-label="YouTube">
+              <a  aria-label="YouTube">
                 <FaYoutube />
               </a>
             </div>
