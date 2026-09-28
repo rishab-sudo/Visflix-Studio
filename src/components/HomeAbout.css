@@ -5,7 +5,7 @@
 .aboutus-section {
   position: relative;
   width: 100%;
-
+  box-sizing: border-box;
 
   background-size: contain;
   background-position: center;
@@ -13,13 +13,8 @@
 
   padding: 25px 50px;
 
-                                                     ;
   color: #ffffff;
-
-
-
 }
-
 
 
 /* =========================================================
@@ -29,22 +24,30 @@
 .aboutus-container {
   position: relative;
   z-index: 2;
-  /* border: 1px solid #f06a1b; */
-  border-radius: 12px;
+
+  width: 100%;
+  max-width: 1800px;
+
+  min-height: 100%;
+  margin: 0 auto;
+
+  padding: 35px 40px;
 
   box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-padding: 35px 15px;
+
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
+
 
 /* =========================================================
    HEADING
 ========================================================= */
 
 .aboutus-heading {
+  width: 100%;
+
   display: flex;
   align-items: center;
 
@@ -74,31 +77,46 @@ padding: 35px 15px;
   color: #ffffff;
 }
 
+
 /* =========================================================
    CONTENT
 ========================================================= */
 
 .aboutus-content {
   width: 100%;
-  max-width: 1680px;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
 }
 
+
+/* TEXT */
+
 .page-text {
+  width: 100%;
+
   margin: 0 0 24px;
 
   color: #ffffff;
 
   font-size: 20px;
-  line-height: 1.28;
+  line-height: 1.45;
 
   font-weight: 500;
 
   letter-spacing: -0.2px;
+
+  text-align: left;
+
+  box-sizing: border-box;
 }
 
 .page-text:last-child {
   margin-bottom: 0;
 }
+
 
 /* =========================================================
    STATS
@@ -106,14 +124,19 @@ padding: 35px 15px;
 
 .aboutus-stats {
   width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
 
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
 
-  margin-top: auto;
-  padding-top: 35px;
+  padding-top: 45px;
+
+  box-sizing: border-box;
 }
+
 
 /* =========================================================
    SINGLE STAT
@@ -127,7 +150,10 @@ padding: 35px 15px;
   align-items: center;
 
   text-align: center;
+
+  box-sizing: border-box;
 }
+
 
 /* =========================================================
    ICON CIRCLE
@@ -151,6 +177,8 @@ padding: 35px 15px;
   font-size: 54px;
 
   transition: all 0.3s ease;
+
+  box-sizing: border-box;
 }
 
 .aboutus-stat:hover .aboutus-icon {
@@ -159,6 +187,7 @@ padding: 35px 15px;
 
   transform: translateY(-5px);
 }
+
 
 /* =========================================================
    NUMBER
@@ -179,6 +208,7 @@ padding: 35px 15px;
   font-size: 27px;
 }
 
+
 /* =========================================================
    LABEL
 ========================================================= */
@@ -194,8 +224,32 @@ padding: 35px 15px;
   text-transform: uppercase;
 }
 
+
 /* =========================================================
-   TABLET
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .aboutus-container {
+    max-width: 1900px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .aboutus-content,
+  .aboutus-stats {
+    max-width: 1600px;
+  }
+
+  .page-text {
+    font-size: 21px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / LAPTOP
 ========================================================= */
 
 @media (max-width: 1200px) {
@@ -204,12 +258,22 @@ padding: 35px 15px;
     padding: 30px;
   }
 
+  .aboutus-container {
+    padding: 30px 25px;
+  }
+
   .aboutus-heading h2 {
     font-size: 34px;
   }
 
+  .aboutus-content,
+  .aboutus-stats {
+    max-width: 100%;
+  }
+
   .page-text {
     font-size: 18px;
+    line-height: 1.5;
   }
 
   .aboutus-icon {
@@ -228,6 +292,48 @@ padding: 35px 15px;
   }
 }
 
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .aboutus-section {
+    padding: 25px 20px;
+  }
+
+  .aboutus-container {
+    padding: 25px 20px;
+  }
+
+  .aboutus-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .page-text {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .aboutus-stats {
+    padding-top: 35px;
+  }
+
+  .aboutus-icon {
+    width: 95px;
+    height: 95px;
+
+    font-size: 40px;
+  }
+
+  .aboutus-label {
+    font-size: 17px;
+  }
+}
+
+
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -237,12 +343,25 @@ padding: 35px 15px;
   .aboutus-section {
     min-height: auto;
 
-    padding: 28px 20px;
+    padding: 28px 15px;
 
-    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .aboutus-container {
+    width: 100%;
+
+    padding: 25px 15px;
+
+    margin: 0 auto;
+
+    align-items: center;
   }
 
   .aboutus-heading {
+    width: 100%;
+
     gap: 12px;
 
     margin-bottom: 30px;
@@ -257,26 +376,49 @@ padding: 35px 15px;
     font-size: 28px;
   }
 
+
+  /* CENTERED TEXT CONTAINER */
+
   .aboutus-content {
+    width: 100%;
     max-width: 100%;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
   }
 
   .page-text {
+    width: 100%;
+
     font-size: 15px;
     line-height: 1.55;
 
     margin-bottom: 18px;
+
+    text-align: left;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
+
+  /* STATS */
+
   .aboutus-stats {
+    width: 100%;
+
     margin-top: 25px;
 
     padding-top: 20px;
 
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
 
     gap: 10px;
+
+    box-sizing: border-box;
   }
 
   .aboutus-stat {
@@ -305,6 +447,7 @@ padding: 35px 15px;
   }
 }
 
+
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
@@ -312,7 +455,15 @@ padding: 35px 15px;
 @media (max-width: 480px) {
 
   .aboutus-section {
-    padding: 24px 15px;
+    padding: 24px 10px;
+  }
+
+  .aboutus-container {
+    padding: 20px 12px;
+  }
+
+  .aboutus-heading {
+    margin-bottom: 25px;
   }
 
   .aboutus-heading h2 {
@@ -321,22 +472,29 @@ padding: 35px 15px;
 
   .page-text {
     font-size: 14px;
+
     line-height: 1.5;
+
+    margin-bottom: 18px;
   }
 
   .aboutus-stats {
     grid-template-columns: 1fr;
 
     gap: 30px;
+
+    margin-top: 25px;
   }
 
   .aboutus-stat {
-    flex-direction: column;
+    width: 100%;
   }
 
   .aboutus-icon {
     width: 85px;
     height: 85px;
+
+    font-size: 32px;
   }
 
   .aboutus-label {

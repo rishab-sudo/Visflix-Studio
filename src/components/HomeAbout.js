@@ -9,14 +9,12 @@ import "./HomeAbout.css";
 
 const HomeAbout = () => {
   return (
-    <section 
-     id="about"
-      className="  aboutus-section"
+    <section
+      id="about"
+      className="aboutus-section"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-  
-
-      <div className="aboutus-container ">
+      <div className="aboutus-container">
 
         {/* Heading */}
         <div className="aboutus-heading">
@@ -43,10 +41,10 @@ const HomeAbout = () => {
             solutions across Concept Development, Scriptwriting, Storyboarding,
             Casting, Location Scouting, Direction, Cinematography, Filming,
             Visual Effects (VFX), Color Grading, Digital Intermediate (DI),
-            AI-Powered Content Creation, Professional Video Editing, Motion
-            Graphics, and Sound Edit/Design. Every project is executed with
-            meticulous attention to detail, ensuring exceptional quality and a
-            seamless production workflow.
+            AI-Powered Content Creation, Professional Video Editing,
+            Motion Graphics, and Sound Edit/Design. Every project is executed
+            with meticulous attention to detail, ensuring exceptional quality
+            and a seamless production workflow.
           </p>
 
           <p className="page-text">
@@ -62,7 +60,6 @@ const HomeAbout = () => {
 
           {/* EXPERIENCE */}
           <div className="aboutus-stat">
-
             <div className="aboutus-icon">
               <FaBriefcase />
             </div>
@@ -74,12 +71,10 @@ const HomeAbout = () => {
             <div className="aboutus-label">
               YEARS OF EXPERIENCE
             </div>
-
           </div>
 
           {/* PROJECTS */}
           <div className="aboutus-stat">
-
             <div className="aboutus-icon">
               <FaVideo />
             </div>
@@ -91,12 +86,10 @@ const HomeAbout = () => {
             <div className="aboutus-label">
               PROJECTS
             </div>
-
           </div>
 
           {/* SHOTS */}
           <div className="aboutus-stat">
-
             <div className="aboutus-icon">
               <FaImages />
             </div>
@@ -108,7 +101,6 @@ const HomeAbout = () => {
             <div className="aboutus-label">
               SHOTS
             </div>
-
           </div>
 
         </div>
