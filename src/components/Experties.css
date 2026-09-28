@@ -4,7 +4,7 @@
 
 .experties-section {
   width: 100%;
-  background: #050606;
+
   color: #ffffff;
   padding: 70px 0;
   overflow: hidden;
@@ -92,16 +92,7 @@
 .experties-card-overlay {
   position: absolute;
   inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.40) 0%,
-      rgba(0, 0, 0, 0.62) 55%,
-      rgba(0, 0, 0, 0.88) 100%
-    );
-
-  z-index: -1;
+z-index: -1;
 }
 
 

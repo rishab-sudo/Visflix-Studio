@@ -4,7 +4,7 @@
 
 .team-section {
   width: 100%;
-  background: #050606;
+
   color: #ffffff;
   padding: 25px 0 45px;
   overflow: hidden;
@@ -93,7 +93,8 @@
 ========================================= */
 
 .team-card {
-  width: 100%;
+  width: 90%;
+
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -107,7 +108,7 @@
   height: 510px;
 
   border: 1px solid rgba(255, 255, 255, 0.7);
-
+  border-radius: 5px !important;
   background: #020303;
 
   overflow: hidden;

@@ -18,7 +18,7 @@ const expertiseData = [
     id: 1,
     title: "PRE-PRODUCTION",
     icon: <FaFileAlt />,
-    background: preProductionBg,
+    background:productionBg ,
     points: [
       "Concept Development",
       "Script Writing",
@@ -33,7 +33,7 @@ const expertiseData = [
     id: 2,
     title: "PRODUCTION",
     icon: <FaVideo />,
-    background: productionBg,
+    background:postProductionBg ,
     points: [
       "Direction",
       "Cinematography",
@@ -48,7 +48,7 @@ const expertiseData = [
     id: 3,
     title: "POST-PRODUCTION",
     icon: <FaDesktop />,
-    background: postProductionBg,
+    background:  preProductionBg,
     points: [
       "VFX & Compositing",
       "Color Grading",

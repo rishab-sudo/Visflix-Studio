@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./Work.css";
 
 // =========================================================
-// IMPORT YOUR IMAGES HERE
+// IMPORT IMAGES
 // =========================================================
 
 import work1 from "../assets/work1.jpeg";
@@ -82,31 +82,176 @@ const categories = [
 ];
 
 const Work = () => {
-  const [activeCategory, setActiveCategory] = useState("ALL");
+  const [activeCategory, setActiveCategory] =
+    useState("ALL");
 
-  // Center card
-  const [activeIndex, setActiveIndex] = useState(3);
+  const [activeIndex, setActiveIndex] =
+    useState(0);
+
+  // =======================================================
+  // DESKTOP = 7
+  // TABLET = 5
+  // MOBILE = 3
+  // =======================================================
+
+  const [visibleCards, setVisibleCards] =
+    useState(7);
 
   const startX = useRef(0);
   const isDragging = useRef(false);
 
   // =========================================================
-  // FILTER DATA
+  // RESPONSIVE CARD COUNT
   // =========================================================
 
-  const filteredProjects =
+  useEffect(() => {
+    const updateCardCount = () => {
+      if (window.innerWidth <= 768) {
+        setVisibleCards(3);
+      } else if (window.innerWidth <= 1200) {
+        setVisibleCards(5);
+      } else {
+        setVisibleCards(7);
+      }
+    };
+
+    updateCardCount();
+
+    window.addEventListener(
+      "resize",
+      updateCardCount
+    );
+
+    return () => {
+      window.removeEventListener(
+        "resize",
+        updateCardCount
+      );
+    };
+  }, []);
+
+  // =========================================================
+  // FILTER ORIGINAL PROJECTS
+  // =========================================================
+
+  const categoryProjects =
     activeCategory === "ALL"
       ? projects
       : projects.filter(
-          (project) => project.category === activeCategory
+          (project) =>
+            project.category === activeCategory
         );
 
   // =========================================================
-  // CHANGE SLIDE
+  // CREATE ODD NUMBER OF SLIDES
+  //
+  // Desktop = 7
+  // Tablet  = 5
+  // Mobile  = 3
+  //
+  // If category has less projects,
+  // repeat them until odd count is reached.
+  // =========================================================
+
+  const getOddProjects = () => {
+    if (categoryProjects.length === 0) {
+      return [];
+    }
+
+    /*
+      We never want more than visibleCards.
+
+      Example:
+
+      8 projects + desktop
+      => 7
+
+      5 projects + desktop
+      => 5
+
+      4 projects + desktop
+      => 5 by repeating
+
+      2 projects + desktop
+      => 7 by repeating
+
+      1 project + desktop
+      => 7 by repeating
+    */
+
+    let targetCount;
+
+    if (
+      categoryProjects.length >= visibleCards
+    ) {
+      targetCount = visibleCards;
+    } else {
+      /*
+        If there are fewer projects,
+        create the nearest required ODD count.
+
+        1 -> 3
+        2 -> 3
+        3 -> 3
+        4 -> 5
+        5 -> 5
+        6 -> 7
+        7 -> 7
+      */
+
+      if (categoryProjects.length <= 3) {
+        targetCount = 3;
+      } else if (
+        categoryProjects.length <= 5
+      ) {
+        targetCount = 5;
+      } else {
+        targetCount = 7;
+      }
+    }
+
+    const result = [];
+
+    for (let i = 0; i < targetCount; i++) {
+      const original =
+        categoryProjects[
+          i % categoryProjects.length
+        ];
+
+      /*
+        Unique key for repeated cards
+      */
+
+      result.push({
+        ...original,
+        slideId: `${original.id}-${i}`,
+      });
+    }
+
+    return result;
+  };
+
+  const filteredProjects =
+    getOddProjects();
+
+  // =========================================================
+  // RESET ACTIVE INDEX WHEN CATEGORY / SCREEN CHANGES
+  // =========================================================
+
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [
+    activeCategory,
+    visibleCards,
+  ]);
+
+  // =========================================================
+  // GO TO SLIDE
   // =========================================================
 
   const goToSlide = (index) => {
-    const total = filteredProjects.length;
+    const total =
+      filteredProjects.length;
 
     if (!total) return;
 
@@ -125,9 +270,12 @@ const Work = () => {
 
   const handlePointerDown = (e) => {
     isDragging.current = true;
+
     startX.current = e.clientX;
 
-    e.currentTarget.setPointerCapture?.(e.pointerId);
+    e.currentTarget.setPointerCapture?.(
+      e.pointerId
+    );
   };
 
   // =========================================================
@@ -137,8 +285,8 @@ const Work = () => {
   const handlePointerMove = (e) => {
     if (!isDragging.current) return;
 
-    const currentX = e.clientX;
-    const difference = currentX - startX.current;
+    const difference =
+      e.clientX - startX.current;
 
     if (Math.abs(difference) > 60) {
       if (difference < 0) {
@@ -159,91 +307,92 @@ const Work = () => {
     isDragging.current = false;
 
     try {
-      e.currentTarget.releasePointerCapture?.(e.pointerId);
+      e.currentTarget.releasePointerCapture?.(
+        e.pointerId
+      );
     } catch (error) {
-      // Ignore pointer capture errors
+      // Ignore
     }
   };
 
   // =========================================================
-  // GET CARD POSITION
+  // GET CIRCULAR DIFFERENCE
   // =========================================================
 
-  const getCardClass = (index) => {
-    const total = filteredProjects.length;
+  const getDifference = (index) => {
+    const total =
+      filteredProjects.length;
 
-    if (total === 0) {
-      return "work-card is-hidden";
-    }
+    if (!total) return 999;
 
-    let difference = index - activeIndex;
+    let difference =
+      index - activeIndex;
 
-    // Circular positioning
-    if (difference > Math.floor(total / 2)) {
+    /*
+      Circular slider
+    */
+
+    if (
+      difference >
+      Math.floor(total / 2)
+    ) {
       difference -= total;
     }
 
-    if (difference < -Math.floor(total / 2)) {
+    if (
+      difference <
+      -Math.floor(total / 2)
+    ) {
       difference += total;
     }
 
-    // =====================================================
-    // CENTER
-    // =====================================================
+    return difference;
+  };
 
+  // =========================================================
+  // GET CARD CLASS
+  // =========================================================
+
+  const getCardClass = (index) => {
+    const difference =
+      getDifference(index);
+
+    // CENTER
     if (difference === 0) {
       return "work-card is-center";
     }
 
-    // =====================================================
-    // FIRST LEFT
-    // =====================================================
-
+    // LEFT 1
     if (difference === -1) {
       return "work-card is-left";
     }
 
-    // =====================================================
-    // FIRST RIGHT
-    // =====================================================
-
+    // RIGHT 1
     if (difference === 1) {
       return "work-card is-right";
     }
 
-    // =====================================================
-    // SECOND LEFT
-    // =====================================================
-
+    // LEFT 2
     if (difference === -2) {
       return "work-card is-far-left";
     }
 
-    // =====================================================
-    // SECOND RIGHT
-    // =====================================================
-
+    // RIGHT 2
     if (difference === 2) {
       return "work-card is-far-right";
     }
 
-    // =====================================================
-    // THIRD LEFT
-    // =====================================================
-
+    // LEFT 3
     if (difference === -3) {
       return "work-card is-far-left-2";
     }
 
-    // =====================================================
-    // THIRD RIGHT
-    // =====================================================
-
+    // RIGHT 3
     if (difference === 3) {
       return "work-card is-far-right-2";
     }
 
-    // Everything else hidden
+    // EVERYTHING ELSE
     return "work-card is-hidden";
   };
 
@@ -251,22 +400,28 @@ const Work = () => {
   // CATEGORY CHANGE
   // =========================================================
 
-  const handleCategoryChange = (category) => {
+  const handleCategoryChange = (
+    category
+  ) => {
     setActiveCategory(category);
 
-    // Start from center
-    // If there are enough cards, use index 3
-    setActiveIndex(
-      category === "ALL"
-        ? 3
-        : Math.min(3, Math.max(0, filteredProjects.length - 1))
-    );
+    /*
+      New selected category always
+      starts from center.
+    */
+
+    setActiveIndex(0);
   };
 
-  return (
-    
-    <section className="work-section" id="work">
+  // =========================================================
+  // JSX
+  // =========================================================
 
+  return (
+    <section
+      className="work-section"
+      id="work"
+    >
       <div className="work-container">
 
         {/* =================================================
@@ -283,35 +438,45 @@ const Work = () => {
 
           </div>
 
-          {/* FILTERS */}
+          {/* =================================================
+              FILTERS
+          ================================================= */}
 
           <div className="work-filters">
 
-            {categories.map((category, index) => (
-              <React.Fragment key={category}>
-
-                <button
-                  type="button"
-                  className={`work-filter ${
-                    activeCategory === category
-                      ? "active"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    handleCategoryChange(category)
-                  }
+            {categories.map(
+              (category, index) => (
+                <React.Fragment
+                  key={category}
                 >
-                  {category}
-                </button>
 
-                {index !== categories.length - 1 && (
-                  <span className="work-filter-divider">
-                    |
-                  </span>
-                )}
+                  <button
+                    type="button"
+                    className={`work-filter ${
+                      activeCategory ===
+                      category
+                        ? "active"
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handleCategoryChange(
+                        category
+                      )
+                    }
+                  >
+                    {category}
+                  </button>
 
-              </React.Fragment>
-            ))}
+                  {index !==
+                    categories.length - 1 && (
+                    <span className="work-filter-divider">
+                      |
+                    </span>
+                  )}
+
+                </React.Fragment>
+              )
+            )}
 
           </div>
 
@@ -322,39 +487,51 @@ const Work = () => {
         ================================================= */}
 
         <div
-          className="work-slider"
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-          onPointerCancel={handlePointerUp}
+          className={`work-slider visible-${visibleCards}`}
+          onPointerDown={
+            handlePointerDown
+          }
+          onPointerMove={
+            handlePointerMove
+          }
+          onPointerUp={
+            handlePointerUp
+          }
+          onPointerCancel={
+            handlePointerUp
+          }
         >
 
           <div className="work-slider-stage">
 
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map(
+              (project, index) => (
+                <div
+                  key={project.slideId}
+                  className={getCardClass(
+                    index
+                  )}
+                  onClick={() =>
+                    setActiveIndex(index)
+                  }
+                >
 
-              <div
-                key={project.id}
-                className={getCardClass(index)}
-                onClick={() => setActiveIndex(index)}
-              >
+                  <div className="work-card-inner">
 
-                <div className="work-card-inner">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="work-card-image"
+                      draggable="false"
+                    />
 
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="work-card-image"
-                    draggable="false"
-                  />
+                    <div className="work-card-overlay"></div>
 
-                  <div className="work-card-overlay"></div>
+                  </div>
 
                 </div>
-
-              </div>
-
-            ))}
+              )
+            )}
 
           </div>
 
@@ -373,7 +550,6 @@ const Work = () => {
         </div>
 
       </div>
-
     </section>
   );
 };

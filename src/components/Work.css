@@ -14,18 +14,7 @@
 
   color: #ffffff;
 
-  background:
-    radial-gradient(
-      circle at 15% 40%,
-      rgba(85, 20, 10, 0.18),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 85% 65%,
-      rgba(70, 20, 10, 0.15),
-      transparent 30%
-    ),
-    #030505;
+
 
   box-sizing: border-box;
 }
@@ -77,6 +66,7 @@
 
   align-items: center;
 
+
   gap: 18px;
 
   flex-shrink: 0;
@@ -86,10 +76,7 @@
 .work-heading-line {
   width: 2px;
   height: 40px;
-
-  background: #ff5a16;
-
-  display: block;
+ display: block;
 }
 
 
@@ -116,8 +103,7 @@
 
 .work-filters {
   display: flex;
-
-  align-items: center;
+align-items: center;
 margin: auto;
   justify-content: center !important;
 /* background-color: #ff5a16; */

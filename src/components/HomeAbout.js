@@ -4,7 +4,7 @@ import {
   FaVideo,
   FaImages,
 } from "react-icons/fa";
-import backgroundImage from "../assets/about-bg.png";
+
 import "./HomeAbout.css";
 
 const HomeAbout = () => {
@@ -12,7 +12,7 @@ const HomeAbout = () => {
     <section
       id="about"
       className="aboutus-section"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+     
     >
       <div className="aboutus-container">
 
