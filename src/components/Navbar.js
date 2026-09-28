@@ -35,7 +35,7 @@ const Navbar = () => {
             className="navbar-logo"
             onClick={() => handleScroll("home")}
           >
-            <img src="/logo.png" alt="Visflix Studio" />
+            <img src = {require("../assets/VisFlix-Logo.png")}/>
           </Link>
 
           {/* ================= DESKTOP NAV ================= */}
