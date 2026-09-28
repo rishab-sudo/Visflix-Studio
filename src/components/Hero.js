@@ -20,10 +20,7 @@ const Hero = () => {
 
         {/* Logo */}
         <div className="hero-logo">
-          <img
-            src="/logo.png"
-            alt="Visflix Studio"
-          />
+ <img alt="visflix "src = {require("../assets/VisFlix-Logo.png")} />
         </div>
 
         {/* Horizontal Divider */}

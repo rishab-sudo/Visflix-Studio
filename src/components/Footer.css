@@ -52,12 +52,14 @@
 ========================================================= */
 
 .footer-logo {
+  max-width: fit-content;
 margin-right: 16px;
 margin-bottom: 32px;
 }
 
 .footer-logo img {
-  width: 100%;
+  width: 245px;
+  max-width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
