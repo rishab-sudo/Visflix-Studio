@@ -65,15 +65,15 @@ const Experties = () => {
   return (
     
     <section className="experties-section"  id="expertise">
-      <div className="experties-container">
+      <div className="experties-container container">
 
         {/* Section Heading */}
         <div className="experties-heading">
           <div className="experties-heading-line"></div>
 
           <div>
-            <h2>OUR EXPERTISE</h2>
-            <p>End-to-end production solutions under one roof</p>
+            <h2 className="section-heading">OUR EXPERTISE</h2>
+            <p className="section-subHeading">End-to-end production solutions under one roof</p>
           </div>
         </div>
 

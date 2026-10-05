@@ -147,46 +147,58 @@ const Footer = () => {
           </div>
 
           {/* ================= RIGHT COLUMN ================= */}
-          <div className="footer-column footer-contact-column">
 
-            <h3 className="footer-title">
-              Contact Us
-            </h3>
+<div className="footer-column footer-contact-column">
 
-            <div className="footer-contact-list">
+  <h3 className="footer-title">
+    Contact Us
+  </h3>
 
-              {/* Location */}
-              <div className="footer-contact-item">
-                <FaMapMarkerAlt />
-                <span>
-                  Mumbai | Delhi | Bareilly
-                </span>
-              </div>
+  <div className="footer-contact-list">
 
-              {/* WhatsApp */}
-              <div className="footer-contact-item">
-                <FaWhatsapp />
+    {/* Location */}
+    <div className="footer-contact-item">
+      <FaMapMarkerAlt />
+      <span>
+        Mumbai | Delhi | Bareilly
+      </span>
+    </div>
 
-                <a
-                  href="https://wa.me/917505867318"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  +91 75 0586 7318
-                </a>
-              </div>
+    {/* WhatsApp */}
+    <div className="footer-contact-item">
+      <FaWhatsapp />
 
-              {/* Email */}
-              <div className="footer-contact-item">
-                <FaEnvelope />
+      <a
+        href="https://wa.me/917505867318"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          textDecoration: "none",
+          color: "#ddd",
+        }}
+      >
+        +91 75 0586 7318
+      </a>
+    </div>
 
-                <a href="mailto:studiovisflix@gmail.com">
-                  studiovisflix@gmail.com
-                </a>
-              </div>
+    {/* Email */}
+    <div className="footer-contact-item">
+      <FaEnvelope />
 
-            </div>
-          </div>
+      <a
+        href="mailto:studiovisflix@gmail.com"
+        style={{
+          textDecoration: "none",
+          color: "#ddd",
+        }}
+      >
+        studiovisflix@gmail.com
+      </a>
+    </div>
+
+  </div>
+
+</div>
 
         </div>
       </footer>

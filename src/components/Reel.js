@@ -76,7 +76,7 @@ const Reel = () => {
         <div className="reel-heading">
           <span className="reel-heading-line"></span>
 
-          <h2>SHOWREEL</h2>
+          <h2 className="section-heading">SHOWREEL</h2>
         </div>
 
         {/* Reel Grid */}

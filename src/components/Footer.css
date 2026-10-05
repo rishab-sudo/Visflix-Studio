@@ -53,7 +53,8 @@
 
 .footer-logo {
   max-width: fit-content;
-margin-right: 16px;
+margin-left: 0px !important;
+background-color: blueviolet;
 margin-bottom: 32px;
 }
 
@@ -188,6 +189,7 @@ margin-bottom: 32px;
 .footer-contact-list {
   display: flex;
   flex-direction: column;
+  
   gap: 28px;
 }
 
@@ -195,13 +197,12 @@ margin-bottom: 32px;
   display: flex;
   align-items: center;
   gap: 15px;
-
-  color: #ddd;
-  font-size: 18px;
+font-size: 18px;
   line-height: 1.5;
 }
 
 .footer-contact-item svg {
+  
   flex-shrink: 0;
   color: #fff;
   font-size: 18px;

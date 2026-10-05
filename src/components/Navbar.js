@@ -76,7 +76,7 @@ const Navbar = () => {
               className="nav-link"
               onClick={() => handleScroll("showreel")}
             >
-              SHOWREEL
+             SHOWCASE
             </button>
 
             <span className="nav-divider"></span>
@@ -86,7 +86,7 @@ const Navbar = () => {
               className="nav-link"
               onClick={() => handleScroll("showcase")}
             >
-              SHOWCASE
+               SHOWREEL
             </button>
 
             <span className="nav-divider"></span>

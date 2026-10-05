@@ -7,39 +7,51 @@ import "./Team.css";
 const teamMembers = [
   {
     id: 1,
-    image: "/images/team1.jpg",
+    image: require("../assets/team/Ajeet Chauhan.jpg"),
     designation: "Founder | Creative Director",
     name: "Ajeet Chauhan",
   },
   {
     id: 2,
-    image: "/images/team2.jpg",
+    image: require("../assets/team/Aman Singh.jpg"),
     designation: "VFX Director",
     name: "Aman Singh",
   },
   {
     id: 3,
-    image: "/images/team3.jpg",
+    image: require("../assets/team/Bharat Chandra.jpg"),
     designation: "Film Director | DI Colourist",
     name: "Bharat Chandra",
   },
   {
     id: 4,
-    image: "/images/team4.jpg",
+     image: require("../assets/team/Himanshu Kanojiya.jpg"),
     designation: "Ai Video Producer | Motion Designer",
     name: "Himanshu Kanojiya",
   },
 
 {
     id: 5,
-    image: "/images/team5.jpg",
+     image: require("../assets/team/Manisha Chandra.jpg"),
     designation: "Creative Producer",
     name: "Member Name",
   },
 
   {
     id: 6,
-    image: "/images/team6.jpg",
+    image: require("../assets/team/Ajit Bharti.jpg"),
+    designation: "VFX Artist",
+    name: "Member Name",
+  },
+    {
+    id: 7,
+    image: require("../assets/team/Nikhil Chauhan.jpg"),
+    designation: "VFX Artist",
+    name: "Member Name",
+  },
+      {
+    id: 8,
+    image: require("../assets/team/Shikhar Chauhan.jpg"),
     designation: "VFX Artist",
     name: "Member Name",
   },
@@ -55,7 +67,7 @@ const Team = () => {
         <div className="team-heading">
           <span className="team-heading-line"></span>
 
-          <h2>MEET MY TEAM</h2>
+          <h2 className="section-heading">MEET MY TEAM</h2>
         </div>
 
         {/* Slider */}

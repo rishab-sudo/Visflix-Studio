@@ -1,32 +1,94 @@
-import React from "react";
+import React, { useState } from "react";
+import Carousel from "react-bootstrap/Carousel";
 import "./Hero.css";
-import heroBg from "../assets/Ai Demo Image.jpg";
+
+import hero1 from "../assets/hero1.jpg";
+import hero2 from "../assets/hero2.jpg";
+import hero3 from "../assets/hero3.jpg";
+import hero4 from "../assets/hero4.jpg";
 
 const Hero = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const slides = [
+    {
+      image: hero1,
+      demo: "FILMMAKING",
+    },
+    {
+      image: hero2,
+      demo: "VFX",
+    },
+    {
+      image: hero3,
+      demo: "DI & COLOR",
+    },
+    {
+      image: hero4,
+      demo: "AI",
+    },
+  ];
+
+  const handleDemoClick = (index) => {
+    setActiveSlide(index);
+  };
+
   return (
-    <section
-      className="hero-section"
-      style={{
-        backgroundImage: `url("${heroBg}")`,
-      }}
-    >
-      {/* Black Overlay */}
+    <section className="hero-section">
+
+      {/* =========================================
+          BACKGROUND CAROUSEL
+      ========================================= */}
+      <Carousel
+        activeIndex={activeSlide}
+        onSelect={(selectedIndex) => setActiveSlide(selectedIndex)}
+        interval={4000}
+        pause={false}
+        controls={false}
+        indicators={false}
+        fade
+        className="hero-carousel "
+      >
+        {slides.map((slide, index) => (
+          <Carousel.Item key={index}>
+            <div
+              className="hero-slide-bg"
+              style={{
+                backgroundImage: `url("${slide.image}")`,
+              }}
+            />
+          </Carousel.Item>
+        ))}
+      </Carousel>
+
+      {/* =========================================
+          BLACK OVERLAY
+      ========================================= */}
       <div className="hero-overlay"></div>
 
-      {/* ==============================
-          SINGLE HERO CONTENT WRAPPER
-      =============================== */}
-      <div className="hero-content-wrapper">
+      {/* =========================================
+          HERO CONTENT
+      ========================================= */}
+      <div className="hero-content-wrapper container">
 
-        {/* Logo */}
+        {/* =========================================
+            LOGO
+        ========================================= */}
         <div className="hero-logo">
- <img alt="visflix "src = {require("../assets/VisFlix-Logo.png")} />
+          <img
+            src={require("../assets/VisFlix-Logo.png")}
+            alt="Visflix"
+          />
         </div>
 
-        {/* Horizontal Divider */}
+        {/* =========================================
+            HORIZONTAL DIVIDER
+        ========================================= */}
         <div className="hero-divider"></div>
 
-        {/* Heading + Description */}
+        {/* =========================================
+            HEADING + DESCRIPTION
+        ========================================= */}
         <div className="hero-text-content">
 
           <h1 className="hero-heading">
@@ -43,34 +105,70 @@ const Hero = () => {
 
         </div>
 
-        {/* Demo */}
+        {/* =========================================
+            DEMO
+        ========================================= */}
         <div className="hero-demo">
 
           <div className="demo-line"></div>
 
           <div className="demo-content">
 
-            <h2>DEMO</h2>
+            <h2 className="section-heading">
+              DEMO
+            </h2>
 
             <div className="demo-links">
 
-              <span>FILMMAKING</span>
+              {/* FILMMAKING */}
+              <button
+                type="button"
+                className={`demo-option ${
+                  activeSlide === 0 ? "active" : ""
+                }`}
+                onClick={() => handleDemoClick(0)}
+              >
+                FILMMAKING
+              </button>
 
               <span className="demo-separator">|</span>
 
-              <span>VFX</span>
+              {/* VFX */}
+              <button
+                type="button"
+                className={`demo-option ${
+                  activeSlide === 1 ? "active" : ""
+                }`}
+                onClick={() => handleDemoClick(1)}
+              >
+                VFX
+              </button>
 
               <span className="demo-separator">|</span>
 
-              <span>DI</span>
+              {/* DI & COLOR */}
+              <button
+                type="button"
+                className={`demo-option ${
+                  activeSlide === 2 ? "active" : ""
+                }`}
+                onClick={() => handleDemoClick(2)}
+              >
+                DI & COLOR
+              </button>
 
               <span className="demo-separator">|</span>
 
-              <span>COLOR</span>
-
-              <span className="demo-separator">|</span>
-
-              <span>AI</span>
+              {/* AI */}
+              <button
+                type="button"
+                className={`demo-option ${
+                  activeSlide === 3 ? "active" : ""
+                }`}
+                onClick={() => handleDemoClick(3)}
+              >
+                AI
+              </button>
 
             </div>
 
@@ -79,6 +177,7 @@ const Hero = () => {
         </div>
 
       </div>
+
     </section>
   );
 };

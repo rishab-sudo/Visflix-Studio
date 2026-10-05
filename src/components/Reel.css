@@ -4,8 +4,7 @@
 
 .reel-section {
   width: 100%;
-
-  padding: 0 0 85px;
+padding: 0 0 85px;
   overflow: hidden;
   color: #ffffff;
 }
@@ -38,9 +37,7 @@
 .reel-heading h2 {
   margin: 0;
   color: #ffffff;
-  font-size: 36px;
-  line-height: 1;
-  font-weight: 800;
+
   letter-spacing: -0.5px;
 }
 

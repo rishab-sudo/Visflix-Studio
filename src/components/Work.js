@@ -432,9 +432,9 @@ const Work = () => {
 
           <div className="work-heading">
 
-            <span className="work-heading-line"></span>
-
-            <h2>WORK</h2>
+         
+  <div className="reel-heading-line"></div>
+            <h2 className="section-heading">WORK</h2>
 
           </div>
 

@@ -14,16 +14,16 @@ const HomeAbout = () => {
       className="aboutus-section"
      
     >
-      <div className="aboutus-container">
+      <div className="aboutus-container container">
 
         {/* Heading */}
         <div className="aboutus-heading">
-          <span className="aboutus-heading-line"></span>
-          <h2>ABOUT US</h2>
+          <span className="aboutus-heading-line "></span>
+          <h2 className="section-heading">ABOUT US</h2>
         </div>
 
         {/* Content */}
-        <div className="aboutus-content">
+        <div className="aboutus-content ">
 
           <p className="page-text">
             VisFlix Studio is a creative Pre-Production, Production and

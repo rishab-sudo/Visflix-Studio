@@ -37,7 +37,7 @@
 }
 
 .navbar-logo img {
-  width: 245px;
+  width: 195px;
   max-width: 100%;
   height: auto;
   display: block;
@@ -176,7 +176,7 @@
 .contact-btn {
   margin-left: 22px;
 
-  padding: 10px 17px;
+  padding: 3.5px 17px;
 
   background: #f4f4f4;
   color: #171717;

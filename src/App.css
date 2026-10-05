@@ -18,8 +18,20 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  font-family: poppins !important;
 }
 body {
   overflow-x: hidden;
 }
+.container{
+  min-width: 90% !important;
+  max-width: 95% !important;
+  /* background-color: aquamarine; */
+}
+.section-heading{
+  font-weight: 600 !important;
 
+}
+.section-subHeading{
+  text-transform: uppercase;
+}
