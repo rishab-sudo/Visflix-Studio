@@ -68,15 +68,7 @@
   inset: 0;
 
   z-index: 1;
-
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.92) 0%,
-    rgba(0, 0, 0, 0.72) 45%,
-    rgba(0, 0, 0, 0.35) 100%
-  );
-
-  pointer-events: none;
+pointer-events: none;
 }
 
 
@@ -330,12 +322,8 @@
 
 .demo-option.active {
   color: #f58220;
-
-  font-weight: 700;
-
-  text-shadow: 0 0 12px rgba(245, 130, 32, 0.35);
+ font-weight: 600;
 }
-
 
 /* Separator */
 
