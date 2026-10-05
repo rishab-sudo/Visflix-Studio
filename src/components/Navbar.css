@@ -97,6 +97,42 @@
   flex-shrink: 0;
 }
 
+/* =====================================================
+   ACTIVE NAV LINK
+===================================================== */
+
+.nav-link.active {
+  color: #fbfbfb;
+}
+
+.nav-link.active:hover {
+  color: #fbfbfb;
+}
+
+
+/* =====================================================
+   ACTIVE MOBILE LINK
+===================================================== */
+
+.mobile-nav-links > button.active {
+  color: #fbfbfb;
+}
+
+.mobile-nav-links > button.active:hover {
+  color: #fbfbfb;
+}
+
+
+/* =====================================================
+   ACTIVE CONTACT
+===================================================== */
+
+.contact-btn.active {
+  background: #fbfbfb;
+  color: #171717;
+  border-color: #fbfbfb;
+}
+
 
 /* =====================================================
    EXPERTISE DROPDOWN

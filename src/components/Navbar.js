@@ -4,9 +4,11 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   // Smooth scroll to section
   const handleScroll = (id) => {
+    setActiveSection(id);
     setMenuOpen(false);
 
     const section = document.getElementById(id);
@@ -35,7 +37,10 @@ const Navbar = () => {
             className="navbar-logo"
             onClick={() => handleScroll("home")}
           >
-            <img src = {require("../assets/VisFlix-Logo.png")} alt="visflix"/>
+            <img
+              src={require("../assets/VisFlix-Logo.png")}
+              alt="visflix"
+            />
           </Link>
 
           {/* ================= DESKTOP NAV ================= */}
@@ -43,7 +48,9 @@ const Navbar = () => {
 
             <button
               type="button"
-              className="nav-link"
+              className={`nav-link ${
+                activeSection === "home" ? "active" : ""
+              }`}
               onClick={() => handleScroll("home")}
             >
               HOME
@@ -53,7 +60,9 @@ const Navbar = () => {
 
             <button
               type="button"
-              className="nav-link"
+              className={`nav-link ${
+                activeSection === "about" ? "active" : ""
+              }`}
               onClick={() => handleScroll("about")}
             >
               ABOUT US
@@ -63,7 +72,9 @@ const Navbar = () => {
 
             <button
               type="button"
-              className="nav-link"
+              className={`nav-link ${
+                activeSection === "expertise" ? "active" : ""
+              }`}
               onClick={() => handleScroll("expertise")}
             >
               OUR EXPERTISE
@@ -73,27 +84,33 @@ const Navbar = () => {
 
             <button
               type="button"
-              className="nav-link"
-              onClick={() => handleScroll("showreel")}
+              className={`nav-link ${
+                activeSection === "work" ? "active" : ""
+              }`}
+              onClick={() => handleScroll("work")}
             >
-             SHOWCASE
+              SHOWCASE
             </button>
 
             <span className="nav-divider"></span>
 
             <button
               type="button"
-              className="nav-link"
-              onClick={() => handleScroll("showcase")}
+              className={`nav-link ${
+                activeSection === "reel" ? "active" : ""
+              }`}
+              onClick={() => handleScroll("reel")}
             >
-               SHOWREEL
+              SHOWREEL
             </button>
 
             <span className="nav-divider"></span>
 
             <button
               type="button"
-              className="nav-link"
+              className={`nav-link ${
+                activeSection === "team" ? "active" : ""
+              }`}
               onClick={() => handleScroll("team")}
             >
               TEAM
@@ -103,7 +120,9 @@ const Navbar = () => {
 
             <button
               type="button"
-              className="contact-btn"
+              className={`contact-btn ${
+                activeSection === "contact" ? "active" : ""
+              }`}
               onClick={() => handleScroll("contact")}
             >
               CONTACT
@@ -161,6 +180,7 @@ const Navbar = () => {
 
           <button
             type="button"
+            className={activeSection === "home" ? "active" : ""}
             onClick={() => handleScroll("home")}
           >
             HOME
@@ -168,6 +188,7 @@ const Navbar = () => {
 
           <button
             type="button"
+            className={activeSection === "about" ? "active" : ""}
             onClick={() => handleScroll("about")}
           >
             ABOUT US
@@ -175,6 +196,7 @@ const Navbar = () => {
 
           <button
             type="button"
+            className={activeSection === "expertise" ? "active" : ""}
             onClick={() => handleScroll("expertise")}
           >
             OUR EXPERTISE
@@ -182,6 +204,7 @@ const Navbar = () => {
 
           <button
             type="button"
+            className={activeSection === "reel" ? "active" : ""}
             onClick={() => handleScroll("reel")}
           >
             SHOWREEL
@@ -189,13 +212,15 @@ const Navbar = () => {
 
           <button
             type="button"
-            onClick={() => handleScroll("showcase")}
+            className={activeSection === "work" ? "active" : ""}
+            onClick={() => handleScroll("work")}
           >
             SHOWCASE
           </button>
 
           <button
             type="button"
+            className={activeSection === "team" ? "active" : ""}
             onClick={() => handleScroll("team")}
           >
             TEAM
@@ -203,7 +228,9 @@ const Navbar = () => {
 
           <button
             type="button"
-            className="mobile-contact"
+            className={`mobile-contact ${
+              activeSection === "contact" ? "active" : ""
+            }`}
             onClick={() => handleScroll("contact")}
           >
             CONTACT
