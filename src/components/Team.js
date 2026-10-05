@@ -13,48 +13,49 @@ const teamMembers = [
   },
   {
     id: 2,
-    image: require("../assets/team/Aman Singh.jpg"),
-    designation: "VFX Director",
-    name: "Aman Singh",
+    image: require("../assets/team/Bharat Chandra.jpg"),
+    designation: "Film Director | DI Colourist",
+    name: "Bharat Chandra ",
   },
   {
     id: 3,
-    image: require("../assets/team/Bharat Chandra.jpg"),
-    designation: "Film Director | DI Colourist",
-    name: "Bharat Chandra",
+    image: require("../assets/team/Nikhil Chauhan.jpg"),
+    designation: "Creative Producer",
+    name: "Nikhil Chauhan ",
   },
   {
     id: 4,
-     image: require("../assets/team/Himanshu Kanojiya.jpg"),
-    designation: "Ai Video Producer | Motion Designer",
-    name: "Himanshu Kanojiya",
+     image: require("../assets/team/Aman Singh.jpg"),
+    designation: "VFX Director",
+    name: "Aman Singh ",
   },
 
 {
     id: 5,
-     image: require("../assets/team/Manisha Chandra.jpg"),
-    designation: "Creative Producer",
-    name: "Member Name",
+     image: require("../assets/team/Himanshu Kanojiya.jpg"),
+    designation: "Ai Video Producer",
+    name: "Himanshu Kanojiya",
   },
 
   {
     id: 6,
-    image: require("../assets/team/Ajit Bharti.jpg"),
-    designation: "VFX Artist",
-    name: "Member Name",
+    image: require("../assets/team/Manisha Chandra.jpg"),
+    designation: "Filmmaker",
+    name: "Manisha Chandra",
+  },
+        {
+    id: 7,
+    image: require("../assets/team/Shikhar Chauhan.jpg"),
+    designation: "DOPt",
+    name: "Shikhar Chauhan",
   },
     {
-    id: 7,
-    image: require("../assets/team/Nikhil Chauhan.jpg"),
-    designation: "VFX Artist",
-    name: "Member Name",
-  },
-      {
     id: 8,
-    image: require("../assets/team/Shikhar Chauhan.jpg"),
-    designation: "VFX Artist",
-    name: "Member Name",
+    image: require("../assets/team/Ajit Bharti.jpg"),
+    designation: "Cinematographer",
+    name: "Ajit Bharti",
   },
+
 ];
 
 const Team = () => {
