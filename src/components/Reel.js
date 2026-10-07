@@ -70,7 +70,7 @@ const Reel = () => {
   return (
     
     <section className="reel-section" id="reel">
-      <div className="reel-container">
+      <div className="reel-container container">
 
         {/* Section Heading */}
         <div className="reel-heading">
