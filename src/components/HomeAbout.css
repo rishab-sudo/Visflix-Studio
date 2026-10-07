@@ -70,11 +70,8 @@ display: flex;
 
 .aboutus-content {
 margin: 0 auto;
-
-  box-sizing: border-box;
+box-sizing: border-box;
 }
-
-
 /* TEXT */
 
 .page-text {
@@ -107,16 +104,12 @@ margin: 0 auto;
 .aboutus-stats {
   width: 100%;
   max-width: 1500px;
-
-  margin: 0 auto;
-
-  display: flex;
+ margin: 0 auto;
+ display: flex;
   justify-content: space-around;
   align-items: flex-start;
-
-  padding-top: 45px;
-
-  box-sizing: border-box;
+padding-top: 45px;
+ box-sizing: border-box;
 }
 
 /* =========================================================
