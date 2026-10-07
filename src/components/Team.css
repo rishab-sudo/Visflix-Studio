@@ -105,7 +105,7 @@ margin: auto;
 
 .team-image-wrapper {
   width: 96%;
-  height: 510px;
+  height: auto;
 
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 5px !important;
