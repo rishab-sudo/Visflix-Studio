@@ -58,7 +58,7 @@ const Footer = () => {
           <div className="footer-column footer-social-column">
 
             <div className="footer-logo">
-                <img alt="visflix "src = {require("../assets/VisFlix-Logo.png")} />
+                <img alt="visflix "src = {require("../assets/footer-logo.png")} />
             </div>
 
             <h3 className="footer-title">
