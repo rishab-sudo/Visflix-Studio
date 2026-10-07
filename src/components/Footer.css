@@ -54,7 +54,9 @@
 .footer-logo {
   max-width: fit-content;
 margin-left: 0px !important;
+margin-top: -29px;
 /* background-color: blueviolet; */
+
 margin-bottom: 32px;
 }
 
