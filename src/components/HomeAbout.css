@@ -6,14 +6,16 @@
   position: relative;
   width: 100%;
   box-sizing: border-box;
+
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 
-  padding: 65px 0px;
+  padding: 65px 0;
 
-  color: #ffffff; 
+  color: #ffffff;
 }
+
 
 /* =========================================================
    MAIN CONTAINER
@@ -22,57 +24,38 @@
 .aboutus-container {
   position: relative;
   z-index: 2;
-border: 1px solid #f36b21;
-border-radius: 7px;
-min-height: 100%;
+
+  border: 1px solid #f36b21;
+  border-radius: 7px;
+
+  min-height: 100%;
+
   margin: 0 auto;
- padding: 35px 35px !important;
- box-sizing: border-box;
-display: flex;
+
+  padding: 35px 35px !important;
+
+  box-sizing: border-box;
+
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* =========================================================
-   HEADING
-========================================================= */
-
-.aboutus-heading {
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-
-  gap: 18px;
-
-  margin-bottom: 42px;
-}
-
-.aboutus-heading-line {
-  width: 3px;
-  height: 40px;
-
-  background: #f36b21;
-
-  display: block;
-}
-
-.aboutus-heading h2 {
-  margin: 0;
-
-  letter-spacing: -1px;
-
-  color: #ffffff;
-}
-
 /* =========================================================
    CONTENT
 ========================================================= */
 
 .aboutus-content {
-margin: 0 auto;
-box-sizing: border-box;
+  width: 100%;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
 }
-/* TEXT */
+
+
+/* =========================================================
+   TEXT
+========================================================= */
 
 .page-text {
   width: 100%;
@@ -97,6 +80,7 @@ box-sizing: border-box;
   margin-bottom: 0;
 }
 
+
 /* =========================================================
    STATS
 ========================================================= */
@@ -104,13 +88,19 @@ box-sizing: border-box;
 .aboutus-stats {
   width: 100%;
   max-width: 1500px;
- margin: 0 auto;
- display: flex;
+
+  margin: 0 auto;
+
+  display: flex;
+
   justify-content: space-around;
   align-items: flex-start;
-padding-top: 45px;
- box-sizing: border-box;
+
+  padding-top: 45px;
+
+  box-sizing: border-box;
 }
+
 
 /* =========================================================
    SINGLE STAT
@@ -127,6 +117,7 @@ padding-top: 45px;
 
   box-sizing: border-box;
 }
+
 
 /* =========================================================
    ICON CIRCLE
@@ -156,10 +147,12 @@ padding-top: 45px;
 
 .aboutus-stat:hover .aboutus-icon {
   border-color: #f36b21;
+
   color: #f36b21;
 
   transform: translateY(-5px);
 }
+
 
 /* =========================================================
    NUMBER
@@ -180,6 +173,7 @@ padding-top: 45px;
   font-size: 27px;
 }
 
+
 /* =========================================================
    LABEL
 ========================================================= */
@@ -197,155 +191,86 @@ padding-top: 45px;
 
 
 /* =========================================================
-   LARGE DESKTOP
+   TABLET
 ========================================================= */
 
-@media (min-width: 1600px) {
-
-  .aboutus-container {
-    max-width: 1900px;
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-
-  .aboutus-content,
-  .aboutus-stats {
-    max-width: 1600px;
-  }
-
-  .page-text {
-    font-size: 21px;
-  }
-}
-
-/* =========================================================
-   TABLET / LAPTOP
-========================================================= */
-
-@media (max-width: 1200px) {
+@media (max-width: 991px) {
 
   .aboutus-section {
-    padding: 30px;
+    padding: 40px 20px;
   }
 
   .aboutus-container {
-    padding: 30px 25px;
+    padding: 30px 25px !important;
   }
 
-  .aboutus-heading h2 {
-    font-size: 34px;
+  .aboutus-heading-line {
+    width: 3px;
+    height: 35px;
   }
 
-  .aboutus-content,
-  .aboutus-stats {
-    max-width: 100%;
-  }
 
   .page-text {
     font-size: 18px;
+
     line-height: 1.5;
   }
 
-  .aboutus-icon {
-    width: 110px;
-    height: 110px;
+  .aboutus-stats {
+    padding-top: 40px;
 
-    font-size: 45px;
+    justify-content: space-around;
+  }
+
+  .aboutus-stat {
+    width: 30%;
+  }
+
+  .aboutus-icon {
+    width: 105px;
+    height: 105px;
+
+    font-size: 43px;
+
+    margin-bottom: 20px;
   }
 
   .aboutus-number {
     font-size: 30px;
   }
 
-  .aboutus-label {
-    font-size: 20px;
-  }
-}
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-  .aboutus-section {
-    padding: 25px 20px;
-  }
-
-  .aboutus-container {
-    padding: 25px 20px;
-  }
-
-  .aboutus-content {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .page-text {
-    font-size: 17px;
-    line-height: 1.5;
-  }
-
-  .aboutus-stats {
-    padding-top: 35px;
-  }
-
-  .aboutus-icon {
-    width: 95px;
-    height: 95px;
-
-    font-size: 40px;
+  .aboutus-number span {
+    font-size: 24px;
   }
 
   .aboutus-label {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
+
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
   .aboutus-section {
-    min-height: auto;
-
-    padding: 28px 15px;
-
-    background-size: cover;
-    background-position: center;
+    padding: 28px 10px;
   }
 
   .aboutus-container {
     width: 100%;
 
-    padding: 25px 15px;
+    padding: 25px 15px !important;
 
     margin: 0 auto;
 
-    align-items: center;
-  }
-
-  .aboutus-heading {
-    width: 100%;
-
-    gap: 12px;
-
-    margin-bottom: 30px;
-  }
-
-  .aboutus-heading-line {
-    width: 2px;
-    height: 30px;
-  }
-
-  .aboutus-heading h2 {
-    font-size: 28px;
+    border-radius: 7px;
   }
 
 
-  /* CENTERED TEXT CONTAINER */
+  /* CONTENT */
 
   .aboutus-content {
     width: 100%;
@@ -360,6 +285,7 @@ padding-top: 45px;
     width: 100%;
 
     font-size: 15px;
+
     line-height: 1.55;
 
     margin-bottom: 18px;
@@ -371,47 +297,81 @@ padding-top: 45px;
   }
 
 
-  /* STATS */
+  /* =====================================================
+     STATS
+     KEEP ALL 3 IN ONE ROW
+  ===================================================== */
 
   .aboutus-stats {
     width: 100%;
 
-    margin-top: 25px;
+    margin-top: 15px;
 
     padding-top: 20px;
 
-    display: grid;
+    display: flex;
 
-    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row;
 
-    gap: 10px;
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 5px;
 
     box-sizing: border-box;
   }
 
   .aboutus-stat {
-    width: 100%;
+    width: 33.333%;
+
+    flex: 0 0 33.333%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
   }
+
+
+  /* ICON */
 
   .aboutus-icon {
-    width: 75px;
-    height: 75px;
+    width: 65px;
+    height: 65px;
 
-    font-size: 30px;
+    font-size: 26px;
 
-    margin-bottom: 14px;
+    margin-bottom: 12px !important;
+
+    border-width: 2px;
   }
 
+
+  /* NUMBER */
+
   .aboutus-number {
-    font-size: 24px;
+    font-size: 21px;
+
+    margin-bottom: 5px;
   }
 
   .aboutus-number span {
-    font-size: 20px;
+    font-size: 17px;
   }
 
+
+  /* LABEL */
+
   .aboutus-label {
-    font-size: 13px;
+    font-size: 10px;
+
+    line-height: 1.2;
+
+    white-space: normal;
   }
 }
 
@@ -423,20 +383,14 @@ padding-top: 45px;
 @media (max-width: 480px) {
 
   .aboutus-section {
-    padding: 24px 10px;
+    padding: 24px 8px;
   }
 
   .aboutus-container {
-    padding: 20px 12px;
+    padding: 20px 12px !important;
   }
 
-  .aboutus-heading {
-    margin-bottom: 25px;
-  }
-
-  .aboutus-heading h2 {
-    font-size: 24px;
-  }
+/* TEXT */
 
   .page-text {
     font-size: 14px;
@@ -446,25 +400,62 @@ padding-top: 45px;
     margin-bottom: 18px;
   }
 
-  .aboutus-stats {
-    grid-template-columns: 1fr;
 
-    gap: 30px;
+  /* STATS - STILL ONE ROW */
+
+  .aboutus-stats {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 2px;
 
     margin-top: 25px;
+
+    padding-top: 20px;
   }
 
   .aboutus-stat {
-    width: 100%;
+    width: 33.333%;
+
+    flex: 0 0 33.333%;
   }
+
+
+  /* ICON */
 
   .aboutus-icon {
-    width: 85px;
-    height: 85px;
-    font-size: 32px;
+    width: 58px;
+    height: 58px;
+
+    font-size: 23px;
+
+    margin-bottom: 10px;
   }
 
-  .aboutus-label {
+
+  /* NUMBER */
+
+  .aboutus-number {
+    font-size: 19px;
+  }
+
+  .aboutus-number span {
     font-size: 15px;
+  }
+
+  /* LABEL */
+  .aboutus-label {
+    font-size: 9px;
+
+    line-height: 1.2;
+
+    white-space: normal;
   }
 }

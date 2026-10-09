@@ -13,6 +13,7 @@ import work5 from "../assets/work2.jpeg";
 import work6 from "../assets/work1.jpeg";
 import work7 from "../assets/work2.jpeg";
 import work8 from "../assets/work1.jpeg";
+import  Heading  from "../components/Heading";
 
 // =========================================================
 // WORK DATA
@@ -40,7 +41,7 @@ const projects = [
   {
     id: 4,
     title: "Project Four",
-    category: "TV SERIALS",
+    category: "SERIES",
     image: work4,
   },
   {
@@ -77,7 +78,7 @@ const categories = [
   "ALL",
   "MOVIES",
   "TVCS",
-  "TV SERIALS",
+  "SERIES",
   "MUSIC VIDEOS",
 ];
 
@@ -429,15 +430,9 @@ const Work = () => {
         ================================================= */}
 
         <div className="work-header">
-
-          <div className="work-heading">
-
-         
-  <div className="reel-heading-line"></div>
-            <h2 className="section-heading">WORK</h2>
-
-          </div>
-
+      <Heading
+heading="Work"
+/>
           {/* =================================================
               FILTERS
           ================================================= */}

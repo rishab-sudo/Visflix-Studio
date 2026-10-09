@@ -4,31 +4,26 @@ import {
   FaVideo,
   FaImages,
 } from "react-icons/fa";
-
+import Heading from "./Heading";
 import "./HomeAbout.css";
 
 const HomeAbout = () => {
   return (
-    <section
-      id="about"
-      className="aboutus-section"
-     
-    >
+    <section id="about" className="aboutus-section">
       <div className="aboutus-container container">
 
         {/* Heading */}
-        <div className="aboutus-heading">
-          <span className="aboutus-heading-line "></span>
-          <h2 className="section-heading">ABOUT US</h2>
-        </div>
+      <Heading
+heading="ABOUT US"
+/>
 
         {/* Content */}
-        <div className="aboutus-content ">
+        <div className="aboutus-content">
 
           <p className="page-text">
             VisFlix Studio is a creative Pre-Production, Production and
             Post-Production house delivering world-class visual experiences
-            for feature films, television commercials (TVCs), TV Serials,
+            for feature films, television commercials (TVCs), series,
             music videos, digital campaigns and premium cinematic productions.
             With over 10 years of industry experience, we bring together
             creativity, technology, and precision across Pre-Production,
@@ -58,7 +53,7 @@ const HomeAbout = () => {
         {/* Stats */}
         <div className="aboutus-stats">
 
-          {/* EXPERIENCE */}
+          {/* Experience */}
           <div className="aboutus-stat">
             <div className="aboutus-icon">
               <FaBriefcase />
@@ -73,7 +68,7 @@ const HomeAbout = () => {
             </div>
           </div>
 
-          {/* PROJECTS */}
+          {/* Projects */}
           <div className="aboutus-stat">
             <div className="aboutus-icon">
               <FaVideo />
@@ -88,7 +83,7 @@ const HomeAbout = () => {
             </div>
           </div>
 
-          {/* SHOTS */}
+          {/* Shots */}
           <div className="aboutus-stat">
             <div className="aboutus-icon">
               <FaImages />

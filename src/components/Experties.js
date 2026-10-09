@@ -12,6 +12,7 @@ import "./Experties.css";
 import preProductionBg from "../assets/experty1.png";
 import productionBg from "../assets/experty2.png";
 import postProductionBg from "../assets/experty3.png";
+import Heading  from "../components/Heading";
 
 const expertiseData = [
   {
@@ -68,15 +69,9 @@ const Experties = () => {
       <div className="experties-container container">
 
         {/* Section Heading */}
-        <div className="experties-heading">
-          <div className="experties-heading-line"></div>
-
-          <div>
-            <h2 className="section-heading">OUR EXPERTISE</h2>
-            <p className="section-subHeading">End-to-end production solutions under one roof</p>
-          </div>
-        </div>
-
+             <Heading
+heading="Experties"
+/>
         {/* Expertise Cards */}
         <div className="experties-grid">
           {expertiseData.map((item) => (

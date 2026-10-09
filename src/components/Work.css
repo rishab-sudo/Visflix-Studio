@@ -47,29 +47,6 @@
 
 
 /* =========================================================
-   WORK TITLE
-========================================================= */
-
-.work-heading {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  flex-shrink: 0;
-}
-
-.work-heading-line {
-  width: 2px;
-  height: 40px;
-  display: block;
-}
-
-.work-heading h2 {
-  margin: 0;
-  color: #ffffff;
-}
-
-
-/* =========================================================
    FILTERS
    PERFECT HORIZONTAL SCREEN CENTER
 ========================================================= */
@@ -88,9 +65,7 @@
   gap: 25px;
 
   white-space: nowrap;
-
-  /* Prevent heading from affecting its position */
-  margin: 0;
+margin-top: -18px;
 
   z-index: 50;
 }
@@ -543,154 +518,21 @@
 
   transform: translateY(-2px);
 }
+/* =========================================
+   TABLET RESPONSIVE
+   601px – 900px
+========================================= */
 
-
-/* =========================================================
-   LARGE SCREEN
-========================================================= */
-
-@media (min-width: 1600px) {
-
-  .work-section {
-    min-height: 775px;
-  }
-
-  .work-slider {
-    height: 510px;
-    margin-top: 20px;
-  }
-
-  .work-card.is-center {
-    width: 325px;
-    height: 455px;
-  }
-
-  .work-card.is-left {
-    transform:
-      translateX(calc(-50% - 270px))
-      translateZ(40px)
-      rotateY(11deg)
-      scale(0.89);
-  }
-
-  .work-card.is-right {
-    transform:
-      translateX(calc(-50% + 270px))
-      translateZ(40px)
-      rotateY(-11deg)
-      scale(0.89);
-  }
-
-  .work-card.is-far-left {
-    transform:
-      translateX(calc(-50% - 475px))
-      translateZ(-80px)
-      rotateY(17deg)
-      scale(0.74);
-  }
-
-  .work-card.is-far-right {
-    transform:
-      translateX(calc(-50% + 475px))
-      translateZ(-80px)
-      rotateY(-17deg)
-      scale(0.74);
-  }
-}
-
-
-/* =========================================================
-   LAPTOP
-========================================================= */
-
-@media (max-width: 1300px) {
-
-  .work-header {
-    width: 90%;
-  }
-
-  .work-heading h2 {
-    font-size: 32px;
-  }
-
-  .work-filters {
-    gap: 17px;
-  }
-
-  .work-filter {
-    font-size: 21px;
-  }
-
-  .work-filter-divider {
-    font-size: 21px;
-  }
-
-  .work-slider {
-    height: 440px;
-  }
-
-  .work-card {
-    width: 245px;
-    height: 345px;
-  }
-
-  .work-card.is-center {
-    width: 285px;
-    height: 405px;
-  }
-
-  .work-card.is-left {
-    transform:
-      translateX(calc(-50% - 220px))
-      translateZ(30px)
-      rotateY(11deg)
-      scale(0.88);
-  }
-
-  .work-card.is-right {
-    transform:
-      translateX(calc(-50% + 220px))
-      translateZ(30px)
-      rotateY(-11deg)
-      scale(0.88);
-  }
-
-  .work-card.is-far-left {
-    transform:
-      translateX(calc(-50% - 380px))
-      translateZ(-70px)
-      rotateY(17deg)
-      scale(0.72);
-  }
-
-  .work-card.is-far-right {
-    transform:
-      translateX(calc(-50% + 380px))
-      translateZ(-70px)
-      rotateY(-17deg)
-      scale(0.72);
-  }
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
+@media (min-width: 601px) and (max-width: 900px) {
 
   .work-section {
     min-height: 650px;
-    padding-top: 40px;
+    padding: 40px 0 45px;
   }
 
   .work-header {
     width: 92%;
-
-    /* Keep heading and tabs separate */
     display: block;
-
-    position: relative;
   }
 
   .work-heading {
@@ -698,55 +540,53 @@
     align-items: center;
   }
 
-  /*
-     On tablet, filters are centered relative
-     to the complete screen.
-  */
+  /* Filters: 3 items in row one, 2 centered in row two */
   .work-filters {
     position: relative;
-
     left: auto;
     transform: none;
 
     width: 100%;
-
-    margin-top: 25px;
-
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 
-    overflow-x: auto;
+    gap: 16px 22px;
+    margin: 25px auto 0;
+    padding: 0;
 
-    padding-bottom: 8px;
-
-    scrollbar-width: none;
+    white-space: normal;
+    overflow: visible;
+    box-sizing: border-box;
   }
 
-  .work-filters::-webkit-scrollbar {
+  .work-filter-divider {
     display: none;
   }
 
   .work-filter {
     font-size: 18px;
+    flex-shrink: 0;
   }
 
-  .work-filter-divider {
-    font-size: 19px;
-  }
-
+  /* Slider dimensions */
   .work-slider {
+    width: 100%;
     height: 390px;
+    margin-top: 12px !important;
     perspective: 1100px;
   }
 
   .work-card {
     width: 195px;
     height: 280px;
-    top: 45px;
+    top: 35px;
   }
 
   .work-card.is-center {
     width: 230px;
-    height: 325px;
+    height: 325px !important;
 
     transform:
       translateX(-50%)
@@ -791,11 +631,9 @@
     margin-top: 0;
   }
 }
-
-
-/* =========================================================
+/* =========================================
    MOBILE
-========================================================= */
+========================================= */
 
 @media (max-width: 600px) {
 
@@ -820,26 +658,29 @@
     font-size: 28px;
   }
 
-  /*
-     Tabs stay centered horizontally.
-     Horizontal scrolling is allowed if they don't fit.
-  */
+  /* Filters: first row 3 items, second row 2 centered */
   .work-filters {
-    width: 100vw;
+    position: relative;
+    left: auto;
+    transform: none;
 
-    margin-left: calc(-1 * ((100vw - 100%) / 2));
-
-    gap: 13px;
-
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 
-    overflow-x: auto;
+    width: 100%;
+    gap: 12px 14px;
+    margin: 22px auto 0;
+    padding: 0;
 
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 8px;
-
+    white-space: normal;
+    overflow: visible;
     box-sizing: border-box;
+  }
+
+  .work-filter-divider {
+    display: none;
   }
 
   .work-filter {
@@ -847,27 +688,23 @@
     flex-shrink: 0;
   }
 
-  .work-filter-divider {
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-
+  /* Slider sizing */
   .work-slider {
+    width: 100%;
     height: 350px;
-    margin-top: 5px;
+    margin-top: 12px !important;
     perspective: 900px;
   }
 
   .work-card {
     width: 150px;
     height: 225px;
-    top: 45px;
+    top: 35px;
   }
 
   .work-card.is-center {
     width: 185px;
-    height: 275px;
-
+    height: 275px !important;
     transform:
       translateX(-50%)
       translateZ(90px)
@@ -918,10 +755,9 @@
   }
 }
 
-
-/* =========================================================
+/* =========================================
    SMALL MOBILE
-========================================================= */
+========================================= */
 
 @media (max-width: 380px) {
 
@@ -931,6 +767,10 @@
 
   .work-heading h2 {
     font-size: 25px;
+  }
+
+  .work-filters {
+    gap: 10px 12px;
   }
 
   .work-filter {
@@ -948,7 +788,7 @@
 
   .work-card.is-center {
     width: 165px;
-    height: 245px;
+    height: 245px !important;
   }
 
   .work-card.is-left {
@@ -981,20 +821,5 @@
       translateZ(-60px)
       rotateY(-25deg)
       scale(0.65);
-  }
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .work-card,
-  .work-card-image,
-  .work-filter,
-  .work-explore button {
-    transition: none;
   }
 }

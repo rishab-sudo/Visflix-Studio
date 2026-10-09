@@ -7,92 +7,92 @@ import hero2 from "../assets/hero3.jpg";
 import hero3 from "../assets/hero2.jpg";
 import hero4 from "../assets/hero4.jpg";
 
+// Mobile images
+import hero1Mobile from "../assets/Ai Demo Image Phone.jpg";
+import hero2Mobile from "../assets/Color Demo Image Phone.jpg";
+import hero3Mobile from "../assets/Filmmaking Demo Image Phone.jpg";
+import hero4Mobile from "../assets/VFX Demo Image Phone.jpg";
+
+import logo from "../assets/VisFlix-Logo.png";
+
+const slides = [
+  {
+    image: hero1,
+    mobileImage: hero1Mobile,
+    demo: "FILMMAKING",
+  },
+  {
+    image: hero2,
+    mobileImage: hero2Mobile,
+    demo: "VFX",
+  },
+  {
+    image: hero3,
+    mobileImage: hero3Mobile,
+    demo: "DI & COLOR",
+  },
+  {
+    image: hero4,
+    mobileImage: hero4Mobile,
+    demo: "AI",
+  },
+];
+
 const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-
-  const slides = [
-    {
-      image: hero1,
-      demo: "FILMMAKING",
-    },
-    {
-      image: hero2,
-      demo: "VFX",
-    },
-    {
-      image: hero3,
-      demo: "DI & COLOR",
-    },
-    {
-      image: hero4,
-      demo: "AI",
-    },
-  ];
-
-  const handleDemoClick = (index) => {
-    setActiveSlide(index);
-  };
 
   return (
     <section className="hero-section">
 
-      {/* =========================================
-          BACKGROUND CAROUSEL
-      ========================================= */}
+      {/* BACKGROUND CAROUSEL */}
       <Carousel
         activeIndex={activeSlide}
-        onSelect={(selectedIndex) => setActiveSlide(selectedIndex)}
+        onSelect={(selectedIndex) => {
+          if (selectedIndex !== null) {
+            setActiveSlide(selectedIndex);
+          }
+        }}
         interval={4000}
         pause={false}
         controls={false}
         indicators={false}
         fade
-        className="hero-carousel "
+        className="hero-carousel"
       >
         {slides.map((slide, index) => (
-          <Carousel.Item key={index}>
+          <Carousel.Item key={slide.demo}>
             <div
               className="hero-slide-bg"
               style={{
-                backgroundImage: `url("${slide.image}")`,
+                "--desktop-image": `url("${slide.image}")`,
+                "--mobile-image": `url("${slide.mobileImage}")`,
               }}
+              role="img"
+              aria-label={`${slide.demo} background`}
             />
           </Carousel.Item>
         ))}
       </Carousel>
 
-      {/* =========================================
-          BLACK OVERLAY
-      ========================================= */}
-      <div className="hero-overlay"></div>
+      {/* BLACK OVERLAY */}
+      <div className="hero-overlay" />
 
-      {/* =========================================
-          HERO CONTENT
-      ========================================= */}
-      <div className="hero-content-wrapper container">
+      {/* HERO CONTENT */}
+      <div className="hero-content-wrapper">
 
-        {/* =========================================
-            LOGO
-        ========================================= */}
+        {/* LOGO */}
         <div className="hero-logo">
-          <img
-            src={require("../assets/VisFlix-Logo.png")}
-            alt="Visflix"
-          />
+          <img src={logo} alt="VisFlix" />
         </div>
 
-        {/* =========================================
-            HORIZONTAL DIVIDER
-        ========================================= */}
-        <div className="hero-divider"></div>
+        {/* DIVIDER */}
+        <div className="hero-divider" />
 
-        {/* =========================================
-            HEADING + DESCRIPTION
-        ========================================= */}
+        {/* HEADING + DESCRIPTION */}
         <div className="hero-text-content">
-
           <h1 className="hero-heading">
-            Pre-Production&nbsp; | &nbsp;Production&nbsp; | &nbsp;Post-Production
+            Pre-Production <span>|</span> Production <span>|</span>{" "}
+            Post-Production
           </h1>
 
           <p className="hero-description">
@@ -102,82 +102,39 @@ const Hero = () => {
             <br className="desktop-break" />
             leave a lasting impact.
           </p>
-
         </div>
 
-        {/* =========================================
-            DEMO
-        ========================================= */}
+        {/* DEMO */}
         <div className="hero-demo">
-
-          <div className="demo-line"></div>
+          <div className="demo-line" />
 
           <div className="demo-content">
-
-            <h2 className="section-heading">
-              DEMO
-            </h2>
+            <h2 className="section-heading">DEMO</h2>
 
             <div className="demo-links">
+              {slides.map((slide, index) => (
+                <React.Fragment key={slide.demo}>
+                  {index > 0 && (
+                    <span className="demo-separator">|</span>
+                  )}
 
-              {/* FILMMAKING */}
-              <button
-                type="button"
-                className={`demo-option ${
-                  activeSlide === 0 ? "active" : ""
-                }`}
-                onClick={() => handleDemoClick(0)}
-              >
-                FILMMAKING
-              </button>
-
-              <span className="demo-separator">|</span>
-
-              {/* VFX */}
-              <button
-                type="button"
-                className={`demo-option ${
-                  activeSlide === 1 ? "active" : ""
-                }`}
-                onClick={() => handleDemoClick(1)}
-              >
-                VFX
-              </button>
-
-              <span className="demo-separator">|</span>
-
-              {/* DI & COLOR */}
-              <button
-                type="button"
-                className={`demo-option ${
-                  activeSlide === 2 ? "active" : ""
-                }`}
-                onClick={() => handleDemoClick(2)}
-              >
-                DI & COLOR
-              </button>
-
-              <span className="demo-separator">|</span>
-
-              {/* AI */}
-              <button
-                type="button"
-                className={`demo-option ${
-                  activeSlide === 3 ? "active" : ""
-                }`}
-                onClick={() => handleDemoClick(3)}
-              >
-                AI
-              </button>
-
+                  <button
+                    type="button"
+                    className={`demo-option ${
+                      activeSlide === index ? "active" : ""
+                    }`}
+                    onClick={() => setActiveSlide(index)}
+                    aria-pressed={activeSlide === index}
+                  >
+                    {slide.demo}
+                  </button>
+                </React.Fragment>
+              ))}
             </div>
-
           </div>
-
         </div>
 
       </div>
-
     </section>
   );
 };

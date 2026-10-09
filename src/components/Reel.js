@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import { Play, Pause } from "lucide-react";
-
+import { Play, Pause, } from "lucide-react";
+import Heading from "../components/Heading"
 import "./Reel.css";
 
 const reels = [
@@ -73,12 +73,9 @@ const Reel = () => {
       <div className="reel-container container">
 
         {/* Section Heading */}
-        <div className="reel-heading">
-          <span className="reel-heading-line"></span>
-
-          <h2 className="section-heading">SHOWREEL</h2>
-        </div>
-
+            <Heading
+heading="SHOW REEL"
+/>
         {/* Reel Grid */}
         <div className="reel-grid">
           {reels.map((reel, index) => (

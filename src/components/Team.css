@@ -1,13 +1,14 @@
+
 /* =========================================
    TEAM SECTION
 ========================================= */
 
 .team-section {
   width: 100%;
-
   color: #ffffff;
-  padding: 25px 0px ;
+  padding: 25px 0;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .team-container {
@@ -47,10 +48,6 @@
 
 /* =========================================
    SLIDER OUTER WRAPPER
-
-   IMPORTANT:
-   overflow: hidden prevents the border
-   of previous/next slides from appearing.
 ========================================= */
 
 .team-slider-wrapper {
@@ -61,11 +58,6 @@
 
 /* =========================================
    SWIPER
-
-   IMPORTANT:
-   Do NOT use overflow: visible.
-   This clips all slides outside the
-   4-card visible area.
 ========================================= */
 
 .team-swiper {
@@ -74,7 +66,6 @@
   overflow: hidden !important;
 }
 
-/* Make sure Swiper itself clips the slides */
 .team-swiper.swiper {
   overflow: hidden !important;
 }
@@ -94,39 +85,77 @@
 
 .team-card {
   width: 100%;
-margin: auto;
+  margin: 0 auto;
   box-sizing: border-box;
   overflow: hidden;
 }
 
 /* =========================================
-   IMAGE
+   IMAGE WRAPPER
 ========================================= */
 
 .team-image-wrapper {
-  width: 96%;
-  height: auto;
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
 
   border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 5px !important;
+  border-radius: 5px;
   background: #020303;
 
   overflow: hidden;
   box-sizing: border-box;
 }
 
+/* =========================================
+   BOTH IMAGES
+========================================= */
+
 .team-image {
   width: 100%;
   height: 100%;
-margin: auto !important;
+  margin: 0 auto !important;
   display: block;
-
   object-fit: cover;
 
-  transition: transform 0.5s ease;
+  position: absolute;
+  inset: 0;
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.5s ease;
 }
 
-/* Optional image hover zoom */
+/* Black and white image - default */
+
+.team-image-bw {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Color image - hidden initially */
+
+.team-image-color {
+  opacity: 0;
+  z-index: 2;
+}
+
+/* =========================================
+   HOVER EFFECT
+   B&W CHANGES TO COLOR
+========================================= */
+
+.team-card:hover .team-image-bw {
+  opacity: 0;
+}
+
+.team-card:hover .team-image-color {
+  opacity: 1;
+}
+
+/* Optional subtle zoom on hover */
+
 .team-card:hover .team-image {
   transform: scale(1.04);
 }
@@ -141,9 +170,7 @@ margin: auto !important;
 
 .team-designation {
   margin: 0 0 6px;
-
   color: #ffffff;
-
   font-size: 18px;
   line-height: 1.3;
   font-weight: 400;
@@ -158,116 +185,51 @@ margin: auto !important;
 }
 
 /* =========================================
-   LARGE LAPTOP
+   MOBILE - MAX WIDTH 767PX
 ========================================= */
 
-@media (max-width: 1199px) {
-
-  .team-container {
-    padding: 0 35px;
-  }
-
-  .team-heading {
-    margin-bottom: 35px;
-  }
-
-  .team-heading h2 {
-    font-size: 32px;
-  }
-
-  .team-image-wrapper {
-    height: 450px;
-  }
-
-  .team-designation {
-    font-size: 19px;
-  }
-
-  .team-name {
-    font-size: 24px;
-  }
-}
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 991px) {
-
-  .team-section {
-    padding: 25px 0 40px;
-  }
-
-  .team-container {
-    padding: 0 30px;
-  }
-
-  .team-heading {
-    margin-bottom: 30px;
-  }
-
-  .team-heading-line {
-    height: 35px;
-  }
-
-  .team-heading h2 {
-    font-size: 29px;
-  }
-
-  .team-image-wrapper {
-    height: 430px;
-  }
-
-  .team-designation {
-    font-size: 18px;
-  }
-
-  .team-name {
-    font-size: 23px;
-  }
-}
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 575px) {
-
+@media (max-width: 767px) {
   .team-section {
     padding: 20px 0 35px;
   }
 
   .team-container {
+    width: 100%;
     padding: 0 20px;
   }
 
-  .team-heading {
-    gap: 13px;
-    margin-bottom: 28px;
-  }
-
-  .team-heading-line {
-    width: 2px;
-    height: 30px;
-  }
-
-  .team-heading h2 {
-    font-size: 25px;
-  }
+  /* Slider */
 
   .team-slider-wrapper {
     width: 100%;
     overflow: hidden;
   }
 
-  .team-swiper {
+  .team-swiper,
+  .team-swiper.swiper {
     width: 100%;
     overflow: hidden !important;
   }
 
-  .team-image-wrapper {
-    height: 430px;
+  .team-swiper .swiper-slide {
+    height: auto;
   }
+
+  /* Team card image */
+
+  .team-image-wrapper {
+    width: 100%;
+    height: 430px;
+    margin: 0 auto !important;
+  }
+
+  .team-image {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto !important;
+  }
+
+  /* Team information */
 
   .team-info {
     padding-top: 13px;
@@ -285,28 +247,20 @@ margin: auto !important;
 }
 
 /* =========================================
-   SMALL MOBILE
+   TOUCH DEVICES
+   Keep B&W as default where hover is absent
 ========================================= */
 
-@media (max-width: 380px) {
-
-  .team-container {
-    padding: 0 15px;
+@media (hover: none) {
+  .team-card:hover .team-image-bw {
+    opacity: 1;
   }
 
-  .team-heading h2 {
-    font-size: 22px;
+  .team-card:hover .team-image-color {
+    opacity: 0;
   }
 
-  .team-image-wrapper {
-    height: 390px;
-  }
-
-  .team-designation {
-    font-size: 16px;
-  }
-
-  .team-name {
-    font-size: 20px;
+  .team-card:hover .team-image {
+    transform: none;
   }
 }
