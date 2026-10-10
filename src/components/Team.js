@@ -1,9 +1,11 @@
-
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Heading from "../components/Heading";
 
 import "swiper/css";
+import "swiper/css/navigation";
 import "./Team.css";
 
 const teamMembers = [
@@ -72,7 +74,21 @@ const Team = () => {
         <Heading heading="meet my team" />
 
         <div className="team-slider-wrapper">
+          {/* Previous Arrow */}
+          <button
+            type="button"
+            className="team-nav-arrow team-prev"
+            aria-label="Previous team members"
+          >
+            <FaChevronLeft />
+          </button>
+
           <Swiper
+            modules={[Navigation]}
+            navigation={{
+              prevEl: ".team-prev",
+              nextEl: ".team-next",
+            }}
             className="team-swiper"
             slidesPerView={4}
             spaceBetween={35}
@@ -133,6 +149,15 @@ const Team = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+
+          {/* Next Arrow */}
+          <button
+            type="button"
+            className="team-nav-arrow team-next"
+            aria-label="Next team members"
+          >
+            <FaChevronRight />
+          </button>
         </div>
       </div>
     </section>
