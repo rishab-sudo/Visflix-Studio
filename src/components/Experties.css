@@ -273,7 +273,7 @@ z-index: -1;
   }
 
   .experties-container {
-    width: 88%;
+    width: 100% !important;
   }
   .experties-heading p {
     font-size: 16px;

@@ -635,7 +635,7 @@ margin-top: -18px;
    MOBILE
 ========================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
 
   .work-section {
     min-height: 560px;
@@ -704,7 +704,7 @@ margin-top: -18px;
 
   .work-card.is-center {
     width: 185px;
-    height: 275px !important;
+    height: 265px !important;
     transform:
       translateX(-50%)
       translateZ(90px)

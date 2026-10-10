@@ -188,10 +188,74 @@
 .reel-card:hover .reel-title {
   transform: translateY(-5px);
 }
+/* =========================================
+   TABLET RESPONSIVE (768px - 1024px)
+========================================= */
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .reel-section {
+    padding: 35px 0 !important;
+  }
+
+  .reel-container {
+    width: 92%;
+    max-width: 100%;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .reel-grid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 18px;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .reel-card {
+    width: 100%;
+    height: 420px;
+    margin: 0;
+    border-radius: 7px;
+  }
+
+  .reel-video {
+    transform: none;
+  }
+
+  .reel-card:hover .reel-video {
+    transform: none;
+  }
+
+  .reel-play-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .reel-title {
+    font-size: 19px;
+    bottom: 25px;
+    padding: 0 10px;
+  }
+
+  .reel-heading {
+    gap: 13px;
+    margin-bottom: 25px;
+  }
+
+  .reel-heading-line {
+    width: 2px;
+    height: 31px;
+  }
+
+  .reel-heading h2 {
+    font-size: 27px;
+  }
+}
 /* =========================================================
    MOBILE - MAX WIDTH 767PX
 ========================================================= */
+
 
 @media (max-width: 767px) {
   .reel-section {
@@ -207,15 +271,15 @@
 
   .reel-grid {
     width: 100%;
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 12px;
     padding: 0 !important;
     margin: 0 !important;
   }
 
   .reel-card {
     width: 100%;
-    height: 440px;
+    height: 300px;
     margin: 0;
     border-radius: 7px;
   }
@@ -229,14 +293,14 @@
   }
 
   .reel-play-button {
-    width: 48px;
-    height: 48px;
+    width: 38px;
+    height: 38px;
   }
 
   .reel-title {
-    font-size: 21px;
-    bottom: 30px;
-    padding: 0 12px;
+    font-size: 14px;
+    bottom: 20px;
+    padding: 0 6px;
   }
 
   .reel-heading {
