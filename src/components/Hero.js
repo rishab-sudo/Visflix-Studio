@@ -108,7 +108,7 @@ const Hero = () => {
         <div className="hero-demo">
           <div className="demo-line" />
 
-          <div className="demo-content">
+          <div className="demo-content" >
             <h2 >DEMO</h2>
 
             <div className="demo-links">
