@@ -109,7 +109,7 @@ const Hero = () => {
           <div className="demo-line" />
 
           <div className="demo-content">
-            <h2 className="section-heading">DEMO</h2>
+            <h2 >DEMO</h2>
 
             <div className="demo-links">
               {slides.map((slide, index) => (
