@@ -70,7 +70,7 @@ const Experties = () => {
 
         {/* Section Heading */}
              <Heading
-heading="Experties"
+heading="OUR EXPERTISE"
 />
         {/* Expertise Cards */}
         <div className="experties-grid">
