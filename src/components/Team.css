@@ -61,7 +61,6 @@
 
 /* =========================================
    IMAGE WRAPPER
-   Original image dimensions / aspect ratio
 ========================================= */
 
 .team-image-wrapper {
@@ -92,7 +91,7 @@
     transform 0.5s ease;
 }
 
-/* Default black & white image */
+/* Desktop default: black and white */
 
 .team-image-bw {
   position: relative;
@@ -100,7 +99,7 @@
   opacity: 1;
 }
 
-/* Color image overlays B&W image */
+/* Desktop default: hide colored image */
 
 .team-image-color {
   position: absolute;
@@ -114,7 +113,7 @@
 }
 
 /* =========================================
-   HOVER EFFECT
+   DESKTOP HOVER EFFECT
 ========================================= */
 
 .team-card:hover .team-image-bw {
@@ -289,19 +288,33 @@
 }
 
 /* =========================================
-   TOUCH DEVICES
+   MOBILE + TABLET
+   ALWAYS SHOW COLORED IMAGES
+   DESKTOP LAYOUT REMAINS UNCHANGED
 ========================================= */
 
-@media (hover: none) {
+@media (max-width: 991px), (hover: none) and (pointer: coarse) {
+  .team-card .team-image-bw {
+    opacity: 0 !important;
+    transform: none !important;
+  }
+
+  .team-card .team-image-color {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   .team-card:hover .team-image-bw {
-    opacity: 1;
+    opacity: 0 !important;
+    transform: none !important;
   }
 
   .team-card:hover .team-image-color {
-    opacity: 0;
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   .team-card:hover .team-image {
-    transform: none;
+    transform: none !important;
   }
 }

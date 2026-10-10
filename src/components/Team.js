@@ -123,12 +123,14 @@ const Team = () => {
               <SwiperSlide key={member.id}>
                 <div className="team-card">
                   <div className="team-image-wrapper">
+                    {/* Black and white image: desktop default */}
                     <img
                       src={member.image}
                       alt={member.name}
                       className="team-image team-image-bw"
                     />
 
+                    {/* Colored image: desktop hover / mobile default */}
                     <img
                       src={member.colorImage}
                       alt={`${member.name} in color`}
@@ -141,9 +143,7 @@ const Team = () => {
                       {member.designation}
                     </p>
 
-                    <h3 className="team-name">
-                      {member.name}
-                    </h3>
+                    <h3 className="team-name">{member.name}</h3>
                   </div>
                 </div>
               </SwiperSlide>

@@ -19,7 +19,7 @@ border-top: 1px solid #ccc;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 70px;
+  gap: 50px;
 
   align-items: start;
 }
@@ -76,6 +76,7 @@ margin-bottom: 32px;
 .footer-socials {
   display: flex;
   align-items: center;
+  margin-top: -14.5px;
   gap: 18px;
 }
 
@@ -368,6 +369,7 @@ font-size: 18px;
   .footer-gallery-column,
   .footer-contact-column {
     padding-left: 0;
+  
   }
 
   .footer-title {
