@@ -74,7 +74,7 @@ const Reel = () => {
 
         {/* Section Heading */}
             <Heading
-heading="SHOW REEL"
+heading="SHOWREEL"
 />
         {/* Reel Grid */}
         <div className="reel-grid">

@@ -56,7 +56,7 @@ heading="ABOUT US"
           {/* Experience */}
           <div className="aboutus-stat">
             <div className="aboutus-icon">
-              <FaBriefcase />
+              <img src={require("../assets/icons/about-Experience-Icon.png")} alt="project"/>
             </div>
 
             <div className="aboutus-number">
@@ -71,7 +71,7 @@ heading="ABOUT US"
           {/* Projects */}
           <div className="aboutus-stat">
             <div className="aboutus-icon">
-              <FaVideo />
+              <img src={require("../assets/icons/about- project-icon.png")} alt="project"/>
             </div>
 
             <div className="aboutus-number">
@@ -86,7 +86,7 @@ heading="ABOUT US"
           {/* Shots */}
           <div className="aboutus-stat">
             <div className="aboutus-icon">
-              <FaImages />
+             <img src={require("../assets/icons/about-shots-icon.png")} alt="project"/>
             </div>
 
             <div className="aboutus-number">
