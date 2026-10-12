@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  FaBriefcase,
-  FaVideo,
-  FaImages,
-} from "react-icons/fa";
+
 import Heading from "./Heading";
 import "./HomeAbout.css";
 
