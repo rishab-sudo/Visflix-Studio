@@ -1,3 +1,4 @@
+
 /* =========================================
    HERO SECTION
 ========================================= */
@@ -32,14 +33,12 @@
 
 .hero-carousel .carousel-item {
   width: 100%;
-  height: 100%;
   height: 95vh;
   min-height: 600px;
   position: relative;
-
 }
 
-/* Make Bootstrap fade slides fill the hero */
+/* Bootstrap fade slides */
 .hero-carousel.carousel-fade .carousel-item {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
@@ -58,13 +57,10 @@
   inset: 0;
   width: 100%;
   height: 100%;
-
-  /* IMPORTANT: Actually apply the imported image */
   background-image: var(--desktop-image);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-
   display: block;
 }
 
@@ -96,7 +92,6 @@
   min-height: 95vh;
   position: relative;
   z-index: 2;
-
   padding: 60px 55px;
   box-sizing: border-box;
 
@@ -173,6 +168,15 @@
   color: #ffffff;
 }
 
+/* Desktop/tablet: show original heading */
+.heading-desktop {
+  display: inline;
+}
+
+.heading-mobile {
+  display: none;
+}
+
 /* =========================================
    DESCRIPTION
 ========================================= */
@@ -198,10 +202,7 @@
   margin-top: 65px;
 }
 
-/* =========================================
-   ORANGE LINE
-========================================= */
-
+/* Orange line */
 .demo-line {
   width: 3px;
   background: #f58220;
@@ -209,20 +210,14 @@
   flex-shrink: 0;
 }
 
-/* =========================================
-   DEMO CONTENT
-========================================= */
-
+/* Demo content */
 .demo-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* =========================================
-   DEMO HEADING
-========================================= */
-
+/* Demo heading */
 .demo-content h2 {
   margin: 0 0 12px;
   color: #ffffff;
@@ -232,10 +227,7 @@
   font-weight: 700;
 }
 
-/* =========================================
-   DEMO LINKS
-========================================= */
-
+/* Demo links */
 .demo-links {
   display: flex;
   align-items: center;
@@ -248,10 +240,7 @@
   font-weight: 500;
 }
 
-/* =========================================
-   DEMO BUTTONS
-========================================= */
-
+/* Demo buttons */
 .demo-option {
   padding: 0;
   margin: 0;
@@ -418,21 +407,21 @@
 }
 
 /* =========================================
-   MOBILE
+   MOBILE ONLY
 ========================================= */
 
 @media (max-width: 767px) {
   .hero-section {
     height: 100svh;
-    min-height: 650px;
+    min-height: 600px;
   }
 
   .hero-carousel .carousel-item {
     height: 100svh;
-    min-height: 650px;
+    min-height: 600px;
   }
 
-  /* IMPORTANT: Use mobile image on mobile screens */
+  /* Mobile background image */
   .hero-slide-bg {
     background-image: var(--mobile-image);
     background-size: cover;
@@ -443,76 +432,132 @@
   .hero-overlay {
     background: linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.88) 0%,
-      rgba(0, 0, 0, 0.65) 55%,
-      rgba(0, 0, 0, 0.32) 100%
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.55) 60%,
+      rgba(0, 0, 0, 0.30) 100%
     );
   }
 
+  /* Content wrapper */
   .hero-content-wrapper {
     width: 100%;
     max-width: none;
     min-height: 100svh;
-    padding: 25px;
+    padding: 20px 15px;
     justify-content: center;
+    align-items: flex-start;
   }
 
   /* Logo */
   .hero-logo {
-    margin-bottom: 25px;
+    width: 100%;
+    margin-bottom: 12px;
   }
 
   .hero-logo img {
-    width: 290px;
-    max-width: 90%;
+    width: 175px;
+    max-width: 85%;
+    height: auto;
   }
 
   /* Divider */
   .hero-divider {
     width: 100%;
+    max-width: 100%;
     height: 2px;
-    margin-bottom: 23px;
+    margin-bottom: 12px;
   }
 
-  /* Text */
+  /* Text content */
   .hero-text-content {
-    gap: 14px;
+    width: 100%;
+    gap: 8px;
+    text-align: left;
+  }
+
+  /* Hide desktop heading only on mobile */
+  .heading-desktop {
+    display: none;
+  }
+
+  /* Show bullet heading only on mobile */
+  .heading-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
   }
 
   .hero-heading {
-    font-size: 20px;
-    line-height: 1.4;
+    width: 100%;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.3;
+    font-weight: 700;
     letter-spacing: 0;
   }
 
+  .hero-heading .heading-mobile-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  /* Orange bullet points */
+  .hero-heading .heading-mobile-item i {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    min-width: 4px;
+    border-radius: 50%;
+    background-color: #f58220;
+  }
+
+  /* Description */
   .hero-description {
-    font-size: 16px;
-    line-height: 1.45;
+    max-width: 230px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.3;
+    font-weight: 400;
   }
 
   .desktop-break {
     display: none;
   }
 
-  /* Demo */
+  /* Demo section */
   .hero-demo {
-    margin-top: 45px;
+    margin-top: 20px;
+    align-items: stretch;
   }
 
   .demo-line {
     width: 2px;
-    margin-right: 12px;
+    margin-right: 8px;
+  }
+
+  .demo-content {
+    min-width: 0;
   }
 
   .demo-content h2 {
-    font-size: 27px;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    line-height: 1.1;
   }
 
   .demo-links {
-    font-size: 13px;
-    gap: 6px;
-    line-height: 1.7;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    line-height: 1.5;
   }
 
   .demo-option {

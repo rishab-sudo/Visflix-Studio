@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./Hero.css";
@@ -43,7 +44,6 @@ const Hero = () => {
 
   return (
     <section className="hero-section">
-
       {/* BACKGROUND CAROUSEL */}
       <Carousel
         activeIndex={activeSlide}
@@ -59,7 +59,7 @@ const Hero = () => {
         fade
         className="hero-carousel"
       >
-        {slides.map((slide, index) => (
+        {slides.map((slide) => (
           <Carousel.Item key={slide.demo}>
             <div
               className="hero-slide-bg"
@@ -79,7 +79,6 @@ const Hero = () => {
 
       {/* HERO CONTENT */}
       <div className="hero-content-wrapper">
-
         {/* LOGO */}
         <div className="hero-logo">
           <img src={logo} alt="VisFlix" />
@@ -91,8 +90,29 @@ const Hero = () => {
         {/* HEADING + DESCRIPTION */}
         <div className="hero-text-content">
           <h1 className="hero-heading">
-            Pre-Production <span>|</span> Production <span>|</span>{" "}
-            Post-Production
+            {/* Desktop and tablet heading */}
+            <span className="heading-desktop">
+              Pre-Production <span>|</span> Production <span>|</span>{" "}
+              Post-Production
+            </span>
+
+            {/* Mobile-only bullet heading */}
+            <span className="heading-mobile">
+              <span className="heading-mobile-item">
+                <i aria-hidden="true" />
+                Pre-Production
+              </span>
+
+              <span className="heading-mobile-item">
+                <i aria-hidden="true" />
+                Production
+              </span>
+
+              <span className="heading-mobile-item">
+                <i aria-hidden="true" />
+                Post-Production
+              </span>
+            </span>
           </h1>
 
           <p className="hero-description">
@@ -108,8 +128,8 @@ const Hero = () => {
         <div className="hero-demo">
           <div className="demo-line" />
 
-          <div className="demo-content" >
-            <h2 >DEMO</h2>
+          <div className="demo-content">
+            <h2>DEMO</h2>
 
             <div className="demo-links">
               {slides.map((slide, index) => (
@@ -133,7 +153,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
