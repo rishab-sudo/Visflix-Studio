@@ -12,7 +12,7 @@ import "./Experties.css";
 import preProductionBg from "../assets/experty1.png";
 import productionBg from "../assets/experty2.png";
 import postProductionBg from "../assets/experty3.png";
-import Heading  from "../components/Heading";
+import Heading  from "../components/Heading" ;
 
 const expertiseData = [
   {
