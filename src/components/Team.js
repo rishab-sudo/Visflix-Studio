@@ -25,10 +25,10 @@ const teamMembers = [
   },
   {
     id: 3,
-    image: require("../assets/team/Nikhil Chauhan blck.jpg"),
-    colorImage: require("../assets/team/Nikhil Chauhan.jpg"),
-    designation: "Creative Producer",
-    name: "Nikhil Chauhan",
+    image: require("../assets/team/Manisha Chandra blck.jpg"),
+    colorImage: require("../assets/team/Manisha Chandra.jpg"),
+    designation: "Filmmaker",
+    name: "Manisha Chandra",
   },
   {
     id: 4,
@@ -44,12 +44,13 @@ const teamMembers = [
     designation: "AI Video Producer",
     name: "Himanshu Kanojiya",
   },
-  {
+
+    {
     id: 6,
-    image: require("../assets/team/Manisha Chandra blck.jpg"),
-    colorImage: require("../assets/team/Manisha Chandra.jpg"),
-    designation: "Filmmaker",
-    name: "Manisha Chandra",
+    image: require("../assets/team/Nikhil Chauhan blck.jpg"),
+    colorImage: require("../assets/team/Nikhil Chauhan.jpg"),
+    designation: "Creative Producer",
+    name: "Nikhil Chauhan",
   },
   {
     id: 7,

@@ -9,18 +9,16 @@
   margin-top: 2.5%;
   position: relative;
   overflow: hidden;
-border-top: 1px solid #ccc;
+  border-top: 1px solid #ccc;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .footer-container {
   width: min(1400px, 90%);
   margin: 0 auto;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
-
   align-items: start;
 }
 
@@ -33,7 +31,7 @@ border-top: 1px solid #ccc;
 }
 
 .footer-title {
-  margin: 0 0 32px;
+  margin: 0 0 15px;
   font-size: 28px;
   line-height: 1.2;
   font-weight: 500;
@@ -41,7 +39,7 @@ border-top: 1px solid #ccc;
 }
 
 .footer-subtitle {
-  margin: 0 0 32px;
+  margin: 0 0 29px;
   font-size: 19px;
   line-height: 1.5;
   color: #ddd;
@@ -62,7 +60,7 @@ margin-bottom: 32px;
 }
 
 .footer-logo img {
-  width: 245px;
+  width: 195px;
   max-width: 100%;
   height: auto;
   display: block;
@@ -201,7 +199,7 @@ margin-bottom: 32px;
   display: flex;
   align-items: center;
   gap: 15px;
-font-size: 18px;
+font-size: 18 px;
   line-height: 1.5;
 }
 

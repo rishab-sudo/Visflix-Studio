@@ -61,6 +61,8 @@ const Footer = () => {
                 <img alt="visflix "src = {require("../assets/footer-logo.png")} />
             </div>
 
+           <div>
+  
             <h3 className="footer-title">
               Follow Me
             </h3>
@@ -69,6 +71,7 @@ const Footer = () => {
               Connect me with social media
             </p>
 
+</div>
             <div className="footer-socials">
 
               <a

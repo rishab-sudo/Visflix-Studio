@@ -127,7 +127,7 @@
   width: 128px;
   height: 128px;
 
-  border: 2px solid #eeeeee;
+  border: 1px solid #eeeeee;
   border-radius: 50%;
 
   display: flex;
@@ -138,7 +138,7 @@
 
   color: #d8d8d8;
 
-  font-size: 54px;
+
 
   transition: all 0.3s ease;
 
@@ -146,11 +146,7 @@
 }
 
 .aboutus-stat:hover .aboutus-icon {
-  border-color: #f36b21;
-
-  color: #f36b21;
-
-  transform: translateY(-5px);
+transform: translateY(-5px);
 }
 
 
@@ -253,209 +249,81 @@
    MOBILE
 ========================================================= */
 
+
+/* =========================================================
+   MOBILE FIX — ABOUT US STATS CIRCLES
+   ========================================================= */
+
 @media (max-width: 767px) {
-
-  .aboutus-section {
-    padding: 28px 10px;
-  }
-
-  .aboutus-container {
-    width: 100%;
-
-    padding: 25px 15px !important;
-
-    margin: 0 auto;
-
-    border-radius: 7px;
-  }
-
-
-  /* CONTENT */
-
-  .aboutus-content {
-    width: 100%;
-    max-width: 100%;
-
-    margin: 0 auto;
-
-    box-sizing: border-box;
-  }
-
-  .page-text {
-    width: 100%;
-
-    font-size: 15px;
-
-    line-height: 1.55;
-
-    margin-bottom: 18px;
-
-    text-align: left;
-
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-  }
-
-
-  /* =====================================================
-     STATS
-     KEEP ALL 3 IN ONE ROW
-  ===================================================== */
 
   .aboutus-stats {
     width: 100%;
-
-    margin-top: 15px;
-
-    padding-top: 20px;
-
+    max-width: 100%;
     display: flex;
-
     flex-direction: row;
-
     justify-content: space-between;
-
     align-items: flex-start;
-
-    gap: 5px;
-
+    gap: 0;
+    padding-top: 20px;
     box-sizing: border-box;
   }
 
   .aboutus-stat {
     width: 33.333%;
-
     flex: 0 0 33.333%;
-
+    min-width: 0;
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     text-align: center;
+    box-sizing: border-box;
   }
-
-
-  /* ICON */
 
   .aboutus-icon {
-    width: 65px;
-    height: 65px;
-
-    font-size: 26px;
-
+    width: clamp(58px, 20vw, 75px);
+    height: clamp(58px, 20vw, 75px);
+    min-width: 0;
+    flex-shrink: 0;
+    border: 1px solid #eeeeee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 12px !important;
-
-    border-width: 2px;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
+  /* Keep icons inside their circles */
+  .aboutus-icon img {
 
-  /* NUMBER */
+    width: 75%;
+    height: 75%;
+    border: none !important;
+    object-fit: contain;
+    display: block;
+  }
 
   .aboutus-number {
     font-size: 21px;
-
+    line-height: 1;
     margin-bottom: 5px;
+    white-space: nowrap;
   }
 
   .aboutus-number span {
     font-size: 17px;
   }
 
-
-  /* LABEL */
-
   .aboutus-label {
     font-size: 10px;
-
     line-height: 1.2;
-
+    text-align: center;
+    overflow-wrap: normal;
+    word-break: normal;
     white-space: normal;
   }
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
 
-@media (max-width: 480px) {
-
-  .aboutus-section {
-    padding: 24px 8px;
-  }
-
-  .aboutus-container {
-    padding: 20px 12px !important;
-  }
-
-/* TEXT */
-
-  .page-text {
-    font-size: 14px;
-
-    line-height: 1.5;
-
-    margin-bottom: 18px;
-  }
-
-
-  /* STATS - STILL ONE ROW */
-
-  .aboutus-stats {
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: row;
-
-    justify-content: space-between;
-
-    align-items: flex-start;
-
-    gap: 2px;
-
-    margin-top: 25px;
-
-    padding-top: 20px;
-  }
-
-  .aboutus-stat {
-    width: 33.333%;
-
-    flex: 0 0 33.333%;
-  }
-
-
-  /* ICON */
-
-  .aboutus-icon {
-    width: 58px;
-    height: 58px;
-
-    font-size: 23px;
-
-    margin-bottom: 10px;
-  }
-
-
-  /* NUMBER */
-
-  .aboutus-number {
-    font-size: 19px;
-  }
-
-  .aboutus-number span {
-    font-size: 15px;
-  }
-
-  /* LABEL */
-  .aboutus-label {
-    font-size: 9px;
-
-    line-height: 1.2;
-
-    white-space: normal;
-  }
-}

@@ -11,6 +11,11 @@ const Navbar = () => {
     setActiveSection(id);
     setMenuOpen(false);
 
+    if (id === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     const section = document.getElementById(id);
 
     if (section) {
@@ -161,18 +166,10 @@ const Navbar = () => {
             to="/"
             onClick={() => handleScroll("home")}
           >
-            <img src="/logo.png" alt="Visflix Studio" />
+            <img src={require("../assets/VisFlix-Logo.png")} alt="Visflix Studio" />
           </Link>
 
-          <button
-            type="button"
-            className="close-menu"
-            onClick={closeMenu}
-            aria-label="Close Menu"
-          >
-            ×
-          </button>
-
+        
         </div>
 
         {/* MOBILE NAVIGATION */}

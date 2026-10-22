@@ -91,7 +91,7 @@
 
 .nav-divider {
   width: 2px;
-  height: 38px;
+  height: 32px;
 
   background: rgba(255, 255, 255, 0.45);
 
@@ -189,7 +189,7 @@
 .dropdown-menu a {
   display: block;
 
-  padding: 11px 20px;
+  padding: 8px 20px;
 
   color: #fff;
 
@@ -217,11 +217,11 @@
 
   background: #f4f4f4;
   color: #171717;
-border-radius: 2px;
+border-radius: 5px;
 
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 17px;
+  font-weight: 600;
 
   text-decoration: none;
 
@@ -390,6 +390,7 @@ border-radius: 2px;
 }
 
 .mobile-nav-links > a,
+.mobile-nav-links > button,
 .mobile-expertise > button {
   width: 100%;
 
@@ -397,10 +398,15 @@ border-radius: 2px;
 
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
 
-  background: transparent;
+  background: transparent !important;
 
-  color: #fff;
+  color: #fff !important;
 
   font-family: Arial, Helvetica, sans-serif;
 
@@ -416,11 +422,15 @@ border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  letter-spacing: 0.5px;
 }
 
 .mobile-nav-links > a:hover,
+.mobile-nav-links > button:hover,
 .mobile-expertise > button:hover {
-  color: #cfcfcf;
+  color: #cfcfcf !important;
+  background: rgba(255,255,255,0.04) !important;
 }
 
 
@@ -484,22 +494,26 @@ border-radius: 2px;
 .mobile-nav-links .mobile-contact {
   margin-top: 25px;
 
-  padding: 13px 20px;
+  padding: 13px 20px !important;
 
-  background: #f4f4f4;
+  background: #f4f4f4 !important;
 
-  color: #171717;
+  color: #171717 !important;
 
-  border: 1px solid #f4f4f4;
+  border: 1px solid #f4f4f4 !important;
+  border-radius: 2px;
 
   justify-content: center;
 
   text-align: center;
+
+  font-weight: 700;
 }
 
 .mobile-nav-links .mobile-contact:hover {
-  background: transparent;
-  color: #fff;
+  background: transparent !important;
+  color: #fff !important;
+  border-color: #f4f4f4 !important;
 }
 
 
@@ -554,6 +568,7 @@ border-radius: 2px;
 
   .hamburger {
     display: flex;
+    color: #fbfbfb !important;
   }
 
   .mobile-menu-header {
@@ -583,6 +598,7 @@ border-radius: 2px;
   .hamburger {
     width: 38px;
     height: 38px;
+    color: #fbfbfb !important;
   }
 
   .mobile-menu-header {
