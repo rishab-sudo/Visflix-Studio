@@ -194,7 +194,7 @@ transform: translateY(-5px);
 @media (max-width: 991px) {
 
   .aboutus-section {
-    padding: 40px 20px;
+    padding: 0px 20px;
   }
 
   .aboutus-container {

@@ -259,7 +259,8 @@
 
 @media (max-width: 767px) {
   .reel-section {
-    padding: 35px 0 !important;
+    padding: 0px  !important;
+    
   }
 
   .reel-container {

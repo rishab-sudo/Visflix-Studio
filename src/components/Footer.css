@@ -358,7 +358,11 @@ font-size: 18 px;
     grid-template-columns: 1fr;
     gap: 55px;
   }
+.footer-logo img {
+  width: 150px;
+  max-width: 100%;
 
+}
   .footer-column {
     width: 100%;
   }

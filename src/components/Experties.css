@@ -216,7 +216,7 @@ z-index: -1;
 @media (max-width: 991px) {
 
   .experties-section {
-    padding: 60px 0;
+    padding: 0px ;
   }
 
   .experties-heading p {
@@ -269,7 +269,8 @@ z-index: -1;
 @media (max-width: 767px) {
 
   .experties-section {
-    padding: 50px 0;
+    margin-top: 12%;
+    padding: 0px;
   }
 
   .experties-container {
@@ -329,47 +330,5 @@ z-index: -1;
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
 
-@media (max-width: 480px) {
 
-  .experties-section {
-    padding: 40px 0;
-  }
-
-  .experties-container {
-    width: 86%;
-  }
-
-  .experties-heading p {
-    font-size: 14px;
-  }
-
-  .experties-card {
-    min-height: 470px;
-  }
-
-  .experties-card-content {
-    min-height: 470px;
-    padding: 25px 22px;
-  }
-
-  .experties-icon {
-    width: 46px;
-    height: 46px;
-
-    font-size: 42px;
-
-    margin-bottom: 20px;
-  }
-
-  .experties-card h3 {
-    font-size: 21px;
-  }
-
-  .experties-card li {
-    font-size: 15px;
-  }
-}
