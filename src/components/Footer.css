@@ -191,15 +191,16 @@ margin-bottom: 32px;
 .footer-contact-list {
   display: flex;
   flex-direction: column;
-  
+margin-top: 35px !important;
   gap: 28px;
 }
 
 .footer-contact-item {
+
   display: flex;
   align-items: center;
   gap: 15px;
-font-size: 18 px;
+font-size: 18px;
   line-height: 1.5;
 }
 
