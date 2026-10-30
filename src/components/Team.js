@@ -19,14 +19,14 @@ const teamMembers = [
   {
     id: 2,
     image: require("../assets/team/Bharat Chandra blck.jpg"),
-    colorImage: require("../assets/team/Bharat Chandra.jpg"),
+    colorImage: require("../assets/team/Bharat Chandra new (1).jpeg"),
     designation: "Film Director | DI Colourist",
     name: "Bharat Chandra",
   },
   {
     id: 3,
     image: require("../assets/team/Manisha Chandra blck.jpg"),
-    colorImage: require("../assets/team/Manisha Chandra.jpg"),
+    colorImage: require("../assets/team/manisha new (2).jpeg"),
     designation: "Filmmaker",
     name: "Manisha Chandra",
   },
