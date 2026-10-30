@@ -35,3 +35,8 @@ body {
 .section-subHeading{
   text-transform: uppercase;
 }
+@media (max-width: 767px) {
+  .page-text {
+    font-size: 15px !important;
+  }
+}

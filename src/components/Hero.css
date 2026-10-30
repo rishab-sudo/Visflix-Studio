@@ -470,16 +470,14 @@ height: 80vh !important;
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: none;
-    height: 100%;
-    margin: 0;
-    padding: 20px 18px 78px;
-    box-sizing: border-box;
-margin-bottom: 35px !important;
-    display: flex;
+  height: auto;
+ box-sizing: border-box;
+display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
+  margin-top: 65px;
+
   }
 
   /* Logo */
@@ -502,14 +500,14 @@ margin-bottom: 35px !important;
   /* Horizontal divider */
   .hero-divider {
     width: 100%;
-    max-width: 100%;
+    max-width: 90%;
     height: 2px;
     flex-shrink: 0;
     margin-bottom: 10px;
 background: linear-gradient(
       to right,
       #f58220 0%,
-      #f58220 10%,
+      #f58220 25%,
       #ffffff 10%,
       #ffffff 100%
     );
@@ -523,6 +521,7 @@ background: linear-gradient(
     align-items: center;
     text-align: center;
     gap: 8px;
+  
   }
 
   .hero-heading {

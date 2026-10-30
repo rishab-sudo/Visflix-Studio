@@ -25,7 +25,7 @@
 .aboutus-container {
   position: relative;
   z-index: 2;
-
+  width: 100%;
   border: 1px solid #f36b21;
   border-radius: 7px;
 
@@ -33,7 +33,7 @@
 
   margin: 0 auto;
 
-  padding: 35px 35px !important;
+  padding: 35px 32px !important;
 
   box-sizing: border-box;
 
@@ -41,6 +41,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 /* =========================================================
    CONTENT
 ========================================================= */
@@ -48,7 +49,7 @@
 .aboutus-content {
   width: 100%;
 
-  margin: 0 auto;
+  margin: auto;
 
   box-sizing: border-box;
 }
@@ -79,6 +80,19 @@
 
 .page-text:last-child {
   margin-bottom: 0;
+}
+
+
+/* =========================================================
+   READ MORE (desktop: hidden button + full content)
+========================================================= */
+
+.aboutus-readmore {
+  display: none;
+}
+
+.aboutus-extra-content {
+  display: block;
 }
 
 
@@ -128,7 +142,6 @@
   width: 100%;
   height: 100%;
 
- 
   border-radius: 50%;
 
   display: flex;
@@ -139,19 +152,18 @@
 
   color: #d8d8d8;
 
-
-
   transition: all 0.3s ease;
 
   box-sizing: border-box;
 }
 
 .aboutus-stat:hover .aboutus-icon {
-transform: translateY(-5px);
+  transform: translateY(-5px);
 }
-.aboutus-icon img{
-width: 120px;
-height: 120px;
+
+.aboutus-icon img {
+  width: 120px;
+  height: 120px;
 }
 
 /* =========================================================
@@ -209,7 +221,6 @@ height: 120px;
     height: 35px;
   }
 
-
   .page-text {
     font-size: 18px;
 
@@ -260,6 +271,46 @@ height: 120px;
 
 @media (max-width: 767px) {
 
+  /* ---------- Read More (mobile only) ---------- */
+
+  .aboutus-content > .page-text {
+    margin-bottom: 10px;
+  }
+
+  .aboutus-readmore {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 0;
+
+    background: none;
+    border: none;
+
+    color: #f36b21;
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .aboutus-extra-content {
+    display: none;
+  }
+
+  .aboutus-extra-content.active {
+    display: block;
+  }
+
+  .aboutus-extra-content .page-text {
+    margin-bottom: 14px;
+  }
+
+  .aboutus-extra-content .page-text:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ---------- Stats ---------- */
+
   .aboutus-stats {
     width: 100%;
     max-width: 100%;
@@ -285,12 +336,12 @@ height: 120px;
 
   .aboutus-icon {
     width: 100%;
-    height:100%;
+    height: 100%;
     max-width: 100% !important;
     max-height: 100% !important;
     min-width: 0;
     flex-shrink: 0;
-  
+
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -302,7 +353,6 @@ height: 120px;
 
   /* Keep icons inside their circles */
   .aboutus-icon img {
-
     width: 75%;
     height: 75%;
     border: none !important;
@@ -330,6 +380,3 @@ height: 120px;
     white-space: normal;
   }
 }
-
-
-

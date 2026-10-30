@@ -191,8 +191,8 @@ margin-bottom: 32px;
 .footer-contact-list {
   display: flex;
   flex-direction: column;
-margin-top: 35px !important;
-  gap: 28px;
+
+  gap: 22px;
 }
 
 .footer-contact-item {
@@ -357,7 +357,7 @@ font-size: 18px;
     width: 88%;
 
     grid-template-columns: 1fr;
-    gap: 55px;
+    gap: 35px;
   }
 .footer-logo img {
   width: 150px;
@@ -372,12 +372,13 @@ font-size: 18px;
   .footer-gallery-column,
   .footer-contact-column {
     padding-left: 0;
+    max-width: 86%;
   
   }
 
   .footer-title {
     font-size: 25px;
-    margin-bottom: 22px;
+   
   }
 
   .footer-subtitle {
@@ -396,7 +397,7 @@ font-size: 18px;
   }
 
   .footer-contact-list {
-    gap: 22px;
+    gap: 16px;
   }
 
   .footer-contact-item {

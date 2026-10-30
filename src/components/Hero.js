@@ -9,10 +9,12 @@ import hero3 from "../assets/hero2.jpg";
 import hero4 from "../assets/hero4.jpg";
 
 // Mobile images
-import hero1Mobile from "../assets/Ai Demo Image Phone.jpg";
-import hero2Mobile from "../assets/Color Demo Image Phone.jpg";
-import hero3Mobile from "../assets/Filmmaking Demo Image Phone.jpg";
-import hero4Mobile from "../assets/VFX Demo Image Phone.jpg";
+import hero1Mobile from "../assets/Filmmaking Demo Image Phone.jpg";
+import hero2Mobile from "../assets/VFX Demo Image Phone.jpg";
+import hero4Mobile from "../assets/Ai Demo Image Phone.jpg";
+import hero3Mobile from "../assets/Color Demo Image Phone.jpg";
+
+
 
 import logo from "../assets/VisFlix-Logo.png";
 
@@ -52,7 +54,7 @@ const Hero = () => {
             setActiveSlide(selectedIndex);
           }
         }}
-        interval={4000}
+        interval={3500}
         pause={false}
         controls={false}
         indicators={false}
@@ -116,7 +118,7 @@ const Hero = () => {
           </h1>
 
           <p className="hero-description">
-            From concept to final cut, we create powerful
+            From concept to final cut, we create powerful <br/>
             <br className="desktop-break" />
             visual stories that inspire, engage and
             <br className="desktop-break" />
