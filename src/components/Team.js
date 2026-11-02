@@ -28,7 +28,7 @@ const teamMembers = [
     image: require("../assets/team/Manisha Chandra blck.jpg"),
     colorImage: require("../assets/team/manisha new (2).jpeg"),
     designation: "Filmmaker",
-    name: "Manisha Chandra",
+    name: "Manisha Chandra" ,
   },
   {
     id: 4,
