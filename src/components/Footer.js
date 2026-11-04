@@ -83,7 +83,7 @@ const Footer = () => {
 
               <div className="footer-socials">
                 <a
-                  href="https://www.instagram.com/"
+                  href="https://www.instagram.com/visflixstudio?xtok=MTJrZGt2bXg1YnU0MQ=="
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
@@ -92,7 +92,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="https://www.facebook.com/"
+                  href="https://www.facebook.com/VisflixStudio"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -101,7 +101,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/"
+                  href="https://www.linkedin.com/company/visflix-studio/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -110,7 +110,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="https://www.youtube.com/"
+                  href="https://youtube.com/@visflixstudio?feature=shared"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="YouTube"

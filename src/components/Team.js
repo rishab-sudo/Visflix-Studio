@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -20,6 +21,7 @@ const teamMembers = [
     id: 2,
     image: require("../assets/team/Bharat Chandra blck.jpg"),
     colorImage: require("../assets/team/Bharat Chandra.jpg"),
+    mobileImage: require("../assets/Bharat Chandra_mobile.jpeg"),
     designation: "Film Director | DI Colourist",
     name: "Bharat Chandra",
   },
@@ -27,6 +29,7 @@ const teamMembers = [
     id: 3,
     image: require("../assets/team/Manisha Chandra blck.jpg"),
     colorImage: require("../assets/team/Manisha Chandra.jpg"),
+    mobileImage: require("../assets/Manisha Chandra_mobile.jpeg"),
     designation: "Filmmaker",
     name: "Manisha Chandra",
   },
@@ -70,13 +73,14 @@ const teamMembers = [
 const Team = () => {
   return (
     <section className="team-section" id="team">
-      <div className="team-container container">
+      <div className="team-container">
         <Heading heading="meet my team" />
 
         <div className="team-slider-wrapper">
+
           <button
             type="button"
-            className="team-nav-arrow team-prev"
+            className="team-prev"
             aria-label="Previous team members"
           >
             <FaChevronLeft />
@@ -121,35 +125,80 @@ const Team = () => {
             {teamMembers.map((member) => (
               <SwiperSlide key={member.id}>
                 <div className="team-card">
-                  <div className="team-image-wrapper">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="team-image team-image-bw"
-                      draggable={false}
-                      loading="lazy"
-                      decoding="async"
-                    />
 
-                    <img
-                      src={member.colorImage}
-                      alt=""
-                      aria-hidden="true"
-                      className="team-image team-image-color"
-                      draggable={false}
-                      loading="lazy"
-                      decoding="async"
-                    />
+                  <div
+                    className={
+                      member.mobileImage
+                        ? "team-image-wrapper-custom"
+                        : "team-image-wrapper"
+                    }
+                  >
+
+                    {/* BLACK & WHITE IMAGE */}
+
+                    <picture>
+                      {member.mobileImage && (
+                        <source
+                          media="(max-width: 767px)"
+                          srcSet={member.mobileImage}
+                        />
+                      )}
+
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className={
+                          member.mobileImage
+                            ? "team-image-bw-custom"
+                            : "team-image-bw"
+                        }
+                        draggable={false}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </picture>
+
+                    {/* COLOUR IMAGE */}
+
+                    <picture>
+                      {member.mobileImage && (
+                        <source
+                          media="(max-width: 767px)"
+                          srcSet={member.mobileImage}
+                        />
+                      )}
+
+                      <img
+                        src={member.colorImage}
+                        alt=""
+                        aria-hidden="true"
+                        className={
+                          member.mobileImage
+                            ? "team-image-color-custom"
+                            : "team-image-color"
+                        }
+                        draggable={false}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </picture>
+
                   </div>
 
                   <div className="team-info">
-                    <p className="team-designation">
-                      {member.designation}
-                    </p>
 
-                    <h3 className="team-name">
-                      {member.name}
-                    </h3>
+                    <div className="team-designation-box">
+                      <p className="page-text">
+                        {member.designation}
+                      </p>
+                    </div>
+
+                    <div className="team-name-box">
+                      <h3 className="section-heading">
+                        {member.name}
+                      </h3>
+                    </div>
+
                   </div>
                 </div>
               </SwiperSlide>
@@ -158,11 +207,12 @@ const Team = () => {
 
           <button
             type="button"
-            className="team-nav-arrow team-next"
+            className="team-next"
             aria-label="Next team members"
           >
             <FaChevronRight />
           </button>
+
         </div>
       </div>
     </section>
