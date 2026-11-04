@@ -1,8 +1,15 @@
 /* =========================================================
    FOOTER
+   --logo-h  : fixed logo block height
+   --logo-gap: gap under the logo
+   Columns 2 & 3 use both as padding-top so all three
+   titles sit on the same horizontal line (desktop/tablet)
 ========================================================= */
 
 .footer-section {
+  --logo-h: 64px;
+  --logo-gap: 28px;
+
   width: 100%;
   color: #fff;
   padding: 75px 0;
@@ -11,13 +18,14 @@
   overflow: hidden;
   border-top: 1px solid #ccc;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
 }
 
 .footer-container {
   width: min(1400px, 90%);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 50px;
   align-items: start;
 }
@@ -30,8 +38,15 @@
   min-width: 0;
 }
 
+/* Gallery + Contact columns: push down so titles align
+   with "Follow Me" (which sits below the logo) */
+.footer-gallery-column,
+.footer-contact-column {
+  padding-top: calc(var(--logo-h) + var(--logo-gap));
+}
+
 .footer-title {
-  margin: 0 0 15px;
+  margin: 0 0 14px;
   font-size: 28px;
   line-height: 1.2;
   font-weight: 500;
@@ -39,7 +54,7 @@
 }
 
 .footer-subtitle {
-  margin: 0 0 29px;
+  margin: 0 0 24px;
   font-size: 19px;
   line-height: 1.5;
   color: #ddd;
@@ -51,20 +66,20 @@
 ========================================================= */
 
 .footer-logo {
-  max-width: fit-content;
-margin-left: 0px !important;
-margin-top: -29px;
-/* background-color: blueviolet; */
-
-margin-bottom: 32px;
+  height: var(--logo-h);
+  margin: 0 0 var(--logo-gap);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .footer-logo img {
-  width: 195px;
+  height: 100%;
+  width: auto;
   max-width: 100%;
-  height: auto;
   display: block;
   object-fit: contain;
+  object-position: left center;
 }
 
 /* =========================================================
@@ -74,7 +89,7 @@ margin-bottom: 32px;
 .footer-socials {
   display: flex;
   align-items: center;
-  margin-top: -14.5px;
+  flex-wrap: wrap;
   gap: 18px;
 }
 
@@ -91,7 +106,6 @@ margin-bottom: 32px;
 
   color: #fff;
   text-decoration: none;
-
   font-size: 19px;
 
   transition: all 0.3s ease;
@@ -106,10 +120,6 @@ margin-bottom: 32px;
 /* =========================================================
    GALLERY
 ========================================================= */
-
-.footer-gallery-title {
-  margin-bottom: 28px;
-}
 
 .footer-gallery {
   width: 100%;
@@ -143,8 +153,6 @@ margin-bottom: 32px;
 .footer-gallery-item:hover img {
   transform: scale(1.1);
 }
-
-/* Gallery hover */
 
 .gallery-hover {
   position: absolute;
@@ -184,31 +192,37 @@ margin-bottom: 32px;
    CONTACT
 ========================================================= */
 
-.footer-contact-column {
-  padding-left: 15px;
-}
-
 .footer-contact-list {
   display: flex;
   flex-direction: column;
-
   gap: 22px;
 }
 
 .footer-contact-item {
-
   display: flex;
   align-items: center;
   gap: 15px;
-font-size: 18px;
+  font-size: 18px;
   line-height: 1.5;
+  color: #ddd;
 }
 
 .footer-contact-item svg {
-  
   flex-shrink: 0;
+  width: 18px;
   color: #fff;
   font-size: 18px;
+}
+
+.footer-contact-link {
+  color: #ddd;
+  text-decoration: none;
+  word-break: break-word;
+  transition: color 0.3s ease;
+}
+
+.footer-contact-link:hover {
+  color: #ff5a16;
 }
 
 /* =========================================================
@@ -289,7 +303,6 @@ font-size: 18px;
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
@@ -300,7 +313,6 @@ font-size: 18px;
     transform: scale(0.92);
     opacity: 0;
   }
-
   to {
     transform: scale(1);
     opacity: 1;
@@ -312,87 +324,93 @@ font-size: 18px;
 ========================================================= */
 
 @media (max-width: 991px) {
-
   .footer-section {
+    --logo-h: 56px;
+    --logo-gap: 24px;
     padding: 65px 0;
   }
 
   .footer-container {
     width: 90%;
-    gap: 45px;
+    gap: 30px;
   }
 
   .footer-title {
-    font-size: 25px;
+    font-size: 24px;
   }
 
   .footer-subtitle {
-    font-size: 17px;
-  }
-
-  .footer-logo {
-    width: 210px;
-  }
-
-  .footer-contact-item {
     font-size: 16px;
   }
 
+  .footer-socials {
+    gap: 12px;
+  }
+
+  .footer-socials a {
+    width: 40px;
+    height: 40px;
+    font-size: 17px;
+  }
+
+  .footer-contact-item {
+    font-size: 15px;
+    gap: 12px;
+  }
+
   .footer-gallery {
-    max-width: 280px;
+    max-width: 100%;
   }
 }
 
 /* =========================================================
-   MOBILE
+   MOBILE  (single column, everything left-aligned
+   to the same edge, no top offsets)
 ========================================================= */
 
 @media (max-width: 767px) {
-
   .footer-section {
-    padding: 55px 0;
+    --logo-h: 52px;
+    --logo-gap: 24px;
+    padding: 50px 0;
   }
 
   .footer-container {
     width: 88%;
-
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: 38px;
   }
-.footer-logo img {
-  width: 150px;
-  max-width: 100%;
 
-}
   .footer-column {
     width: 100%;
   }
 
-  .footer-social-column,
   .footer-gallery-column,
   .footer-contact-column {
-    padding-left: 0;
-    max-width: 86%;
-  
+    padding-top: 0;
   }
 
   .footer-title {
-    font-size: 25px;
-   
+    font-size: 24px;
+    margin-bottom: 12px;
   }
 
   .footer-subtitle {
     font-size: 16px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
-  .footer-logo {
-    width: 210px;
-    margin-bottom: 28px;
+  .footer-socials {
+    gap: 14px;
+  }
+
+  .footer-socials a {
+    width: 44px;
+    height: 44px;
+    font-size: 19px;
   }
 
   .footer-gallery {
-    width: 100%;
     max-width: 360px;
   }
 
@@ -414,14 +432,12 @@ font-size: 18px;
   }
 
   .footer-popup-content img {
-    max-width: 100%;
     max-height: 80vh;
   }
 
   .footer-popup-close {
     top: 15px;
     right: 15px;
-
     width: 40px;
     height: 40px;
   }
@@ -432,13 +448,12 @@ font-size: 18px;
 ========================================================= */
 
 @media (max-width: 400px) {
-
   .footer-container {
     width: 90%;
   }
 
-  .footer-logo {
-    width: 190px;
+  .footer-section {
+    --logo-h: 46px;
   }
 
   .footer-socials {
@@ -454,5 +469,9 @@ font-size: 18px;
   .footer-contact-item {
     font-size: 15px;
     align-items: flex-start;
+  }
+
+  .footer-contact-item svg {
+    margin-top: 4px;
   }
 }

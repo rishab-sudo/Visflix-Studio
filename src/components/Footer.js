@@ -22,6 +22,8 @@ const galleryImages = [
   require("../assets/gallery6.jpg"),
 ];
 
+const footerLogo = require("../assets/footer-logo.png");
+
 const Footer = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -42,10 +44,10 @@ const Footer = () => {
 
   // Prevent background scrolling when popup is open
   useEffect(() => {
-    document.body.style.overflow = selectedImage ? "hidden" : "auto";
+    document.body.style.overflow = selectedImage ? "hidden" : "";
 
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     };
   }, [selectedImage]);
 
@@ -53,27 +55,17 @@ const Footer = () => {
     <>
       <footer className="footer-section">
         <div className="footer-container">
-
           {/* ================= LEFT COLUMN ================= */}
           <div className="footer-column footer-social-column">
-
             <div className="footer-logo">
-                <img alt="visflix "src = {require("../assets/footer-logo.png")} />
+              <img src={footerLogo} alt="VisFlix Studio" />
             </div>
 
-           <div>
-  
-            <h3 className="footer-title">
-              Follow Me
-            </h3>
+            <h3 className="footer-title">Follow Me</h3>
 
-            <p className="footer-subtitle">
-              Connect me with social media
-            </p>
+            <p className="footer-subtitle">Connect me with social media</p>
 
-</div>
             <div className="footer-socials">
-
               <a
                 href="https://www.instagram.com/"
                 target="_blank"
@@ -109,16 +101,12 @@ const Footer = () => {
               >
                 <FaYoutube />
               </a>
-
             </div>
           </div>
 
           {/* ================= CENTER COLUMN ================= */}
           <div className="footer-column footer-gallery-column">
-
-            <h3 className="footer-title footer-gallery-title">
-              Our Gallery
-            </h3>
+            <h3 className="footer-title">Our Gallery</h3>
 
             <div className="footer-gallery">
               {galleryImages.map((image, index) => (
@@ -135,10 +123,7 @@ const Footer = () => {
                   }}
                   aria-label={`Open Gallery ${index + 1}`}
                 >
-                  <img
-                    src={image}
-                    alt={`Gallery ${index + 1}`}
-                  />
+                  <img src={image} alt={`Gallery ${index + 1}`} />
 
                   <div className="gallery-hover">
                     <span>+</span>
@@ -146,63 +131,44 @@ const Footer = () => {
                 </div>
               ))}
             </div>
-
           </div>
 
           {/* ================= RIGHT COLUMN ================= */}
+          <div className="footer-column footer-contact-column">
+            <h3 className="footer-title">Contact Us</h3>
 
-<div className="footer-column footer-contact-column">
+            <div className="footer-contact-list">
+              {/* Location */}
+              <div className="footer-contact-item">
+                <FaMapMarkerAlt />
+                <span>Mumbai | Delhi | Bareilly</span>
+              </div>
 
-  <h3 className="footer-title">
-    Contact Us
-  </h3>
+              {/* WhatsApp */}
+              <div className="footer-contact-item">
+                <FaWhatsapp />
+                <a
+                  href="https://wa.me/917505867318"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-contact-link"
+                >
+                  +91 75 0586 7318
+                </a>
+              </div>
 
-  <div className="footer-contact-list">
-
-    {/* Location */}
-    <div className="footer-contact-item">
-      <FaMapMarkerAlt />
-      <span>
-        Mumbai | Delhi | Bareilly
-      </span>
-    </div>
-
-    {/* WhatsApp */}
-    <div className="footer-contact-item">
-      <FaWhatsapp />
-
-      <a
-        href="https://wa.me/917505867318"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          textDecoration: "none",
-          color: "#ddd",
-        }}
-      >
-        +91 75 0586 7318
-      </a>
-    </div>
-
-    {/* Email */}
-    <div className="footer-contact-item">
-      <FaEnvelope />
-
-      <a
-        href="mailto:studiovisflix@gmail.com"
-        style={{
-          textDecoration: "none",
-          color: "#ddd",
-        }}
-      >
-        studiovisflix@gmail.com
-      </a>
-    </div>
-
-  </div>
-
-</div>
-
+              {/* Email */}
+              <div className="footer-contact-item">
+                <FaEnvelope />
+                <a
+                  href="mailto:studiovisflix@gmail.com"
+                  className="footer-contact-link"
+                >
+                  studiovisflix@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
 
@@ -212,7 +178,6 @@ const Footer = () => {
           className="footer-image-popup"
           onClick={() => setSelectedImage(null)}
         >
-
           <button
             type="button"
             className="footer-popup-close"
@@ -226,12 +191,8 @@ const Footer = () => {
             className="footer-popup-content"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={selectedImage}
-              alt="Gallery Preview"
-            />
+            <img src={selectedImage} alt="Gallery Preview" />
           </div>
-
         </div>
       )}
     </>

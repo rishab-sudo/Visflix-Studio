@@ -35,27 +35,20 @@ const Navbar = () => {
       {/* ================= NAVBAR ================= */}
       <nav className="navbar">
         <div className="navbar-container">
-
           {/* LOGO */}
           <Link
             to="/"
             className="navbar-logo"
             onClick={() => handleScroll("home")}
           >
-            <img
-              src={require("../assets/VisFlix-Logo.png")}
-              alt="visflix"
-            />
+            <img src={require("../assets/VisFlix-Logo.png")} alt="visflix" />
           </Link>
 
           {/* ================= DESKTOP NAV ================= */}
           <div className="desktop-nav">
-
             <button
               type="button"
-              className={`nav-link ${
-                activeSection === "home" ? "active" : ""
-              }`}
+              className={`nav-link ${activeSection === "home" ? "active" : ""}`}
               onClick={() => handleScroll("home")}
             >
               HOME
@@ -65,9 +58,7 @@ const Navbar = () => {
 
             <button
               type="button"
-              className={`nav-link ${
-                activeSection === "about" ? "active" : ""
-              }`}
+              className={`nav-link ${activeSection === "about" ? "active" : ""}`}
               onClick={() => handleScroll("about")}
             >
               ABOUT US
@@ -89,9 +80,7 @@ const Navbar = () => {
 
             <button
               type="button"
-              className={`nav-link ${
-                activeSection === "work" ? "active" : ""
-              }`}
+              className={`nav-link ${activeSection === "work" ? "active" : ""}`}
               onClick={() => handleScroll("work")}
             >
               SHOWCASE
@@ -101,9 +90,7 @@ const Navbar = () => {
 
             <button
               type="button"
-              className={`nav-link ${
-                activeSection === "reel" ? "active" : ""
-              }`}
+              className={`nav-link ${activeSection === "reel" ? "active" : ""}`}
               onClick={() => handleScroll("reel")}
             >
               SHOWREEL
@@ -113,9 +100,7 @@ const Navbar = () => {
 
             <button
               type="button"
-              className={`nav-link ${
-                activeSection === "team" ? "active" : ""
-              }`}
+              className={`nav-link ${activeSection === "team" ? "active" : ""}`}
               onClick={() => handleScroll("team")}
             >
               TEAM
@@ -132,7 +117,6 @@ const Navbar = () => {
             >
               CONTACT
             </button>
-
           </div>
 
           {/* ================= HAMBURGER ================= */}
@@ -146,7 +130,6 @@ const Navbar = () => {
             <span></span>
             <span></span>
           </button>
-
         </div>
       </nav>
 
@@ -158,23 +141,18 @@ const Navbar = () => {
 
       {/* ================= MOBILE MENU ================= */}
       <aside className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-
         {/* MOBILE HEADER */}
         <div className="mobile-menu-header">
-
-          <Link
-            to="/"
-            onClick={() => handleScroll("home")}
-          >
-            <img src={require("../assets/VisFlix-Logo.png")} alt="Visflix Studio" />
+          <Link to="/" onClick={() => handleScroll("home")}>
+            <img
+              src={require("../assets/VisFlix-Logo.png")}
+              alt="Visflix Studio"
+            />
           </Link>
-
-        
         </div>
 
         {/* MOBILE NAVIGATION */}
         <div className="mobile-nav-links">
-
           <button
             type="button"
             className={activeSection === "home" ? "active" : ""}
@@ -232,9 +210,7 @@ const Navbar = () => {
           >
             CONTACT
           </button>
-
         </div>
-
       </aside>
     </>
   );

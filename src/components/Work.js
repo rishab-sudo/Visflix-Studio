@@ -30,114 +30,24 @@ import Heading from "../components/Heading";
 // =========================================================
 
 const projects = [
-  {
-    id: 1,
-    title: "1000KM",
-    category: "MOVIES",
-    image: work1,
-  },
-  {
-    id: 2,
-    title: "Dwidha",
-    category: "MOVIES",
-    image: work2,
-  },
-  {
-    id: 3,
-    title: "Fakt Purusho Mate",
-    category: "MOVIES",
-    image: work3,
-  },
-  {
-    id: 4,
-    title: "Fari Ek Vaar",
-    category: "MOVIES",
-    image: work4,
-  },
-  {
-    id: 5,
-    title: "HAHACAR",
-    category: "MOVIES",
-    image: work5,
-  },
-  {
-    id: 6,
-    title: "Itta Kitta",
-    category: "MOVIES",
-    image: work6,
-  },
-  {
-    id: 7,
-    title: "Kasoombo",
-    category: "MOVIES",
-    image: work7,
-  },
-  {
-    id: 8,
-    title: "PSI Arjun",
-    category: "MOVIES",
-    image: work8,
-  },
-  {
-    id: 9,
-    title: "Trisha On The Rocks",
-    category: "MOVIES",
-    image: work9,
-  },
-  {
-    id: 10,
-    title: "Udan Chhu",
-    category: "MOVIES",
-    image: work10,
-  },
-  {
-    id: 11,
-    title: "Well Done CA Sahab",
-    category: "MOVIES",
-    image: work11,
-  },
-  {
-    id: 12,
-    title: "JSW Paints",
-    category: "TVCS",
-    image: work12,
-  },
-  {
-    id: 13,
-    title: "Out Karo",
-    category: "TVCS",
-    image: work13,
-  },
-  {
-    id: 14,
-    title: "Traya",
-    category: "TVCS",
-    image: work14,
-  },
-  {
-    id: 15,
-    title: "Hustlers",
-    category: "SERIES",
-    image: work15,
-  },
-  {
-    id: 16,
-    title: "Ek Mulaqaat",
-    category: "MUSIC VIDEOS",
-    image: work16,
-  },
-  {
-    id: 17,
-    title: "Hadh Se",
-    category: "MUSIC VIDEOS",
-    image: work17,
-  },
-  {
-    id: 18,
-    title: "Jhachdi",
-    category: "MUSIC VIDEOS",
-    image: work18,
-  },
+  { id: 1, title: "1000KM", category: "MOVIES", image: work1 },
+  { id: 2, title: "Dwidha", category: "MOVIES", image: work2 },
+  { id: 3, title: "Fakt Purusho Mate", category: "MOVIES", image: work3 },
+  { id: 4, title: "Fari Ek Vaar", category: "MOVIES", image: work4 },
+  { id: 5, title: "HAHACAR", category: "MOVIES", image: work5 },
+  { id: 6, title: "Itta Kitta", category: "MOVIES", image: work6 },
+  { id: 7, title: "Kasoombo", category: "MOVIES", image: work7 },
+  { id: 8, title: "PSI Arjun", category: "MOVIES", image: work8 },
+  { id: 9, title: "Trisha On The Rocks", category: "MOVIES", image: work9 },
+  { id: 10, title: "Udan Chhu", category: "MOVIES", image: work10 },
+  { id: 11, title: "Well Done CA Sahab", category: "MOVIES", image: work11 },
+  { id: 12, title: "JSW Paints", category: "TVCS", image: work12 },
+  { id: 13, title: "Out Karo", category: "TVCS", image: work13 },
+  { id: 14, title: "Traya", category: "TVCS", image: work14 },
+  { id: 15, title: "Hustlers", category: "SERIES", image: work15 },
+  { id: 16, title: "Ek Mulaqaat", category: "MUSIC VIDEOS", image: work16 },
+  { id: 17, title: "Hadh Se", category: "MUSIC VIDEOS", image: work17 },
+  { id: 18, title: "Jhachdi", category: "MUSIC VIDEOS", image: work18 },
 ];
 
 // =========================================================
@@ -155,13 +65,7 @@ const allCategoryPriority = [
   15, // Left: Hustlers
 ];
 
-const categories = [
-  "ALL",
-  "MOVIES",
-  "TVCS",
-  "SERIES",
-  "MUSIC VIDEOS",
-];
+const categories = ["ALL", "MOVIES", "TVCS", "SERIES", "MUSIC VIDEOS"];
 
 // =========================================================
 // WORK COMPONENT
@@ -176,10 +80,7 @@ const Work = () => {
   const isDragging = useRef(false);
 
   // Responsive card count:
-  // Desktop: 7 cards
-  // Tablet: 5 cards
-  // Mobile: 3 cards
-
+  // Desktop: 7 cards, Tablet: 5 cards, Mobile: 3 cards
   useEffect(() => {
     const updateCardCount = () => {
       if (window.innerWidth <= 768) {
@@ -192,7 +93,6 @@ const Work = () => {
     };
 
     updateCardCount();
-
     window.addEventListener("resize", updateCardCount);
 
     return () => {
@@ -202,28 +102,21 @@ const Work = () => {
 
   // Sort projects for the ALL category.
   // Other categories retain their original order.
-
   const categoryProjects =
     activeCategory === "ALL"
       ? [
           ...allCategoryPriority
-            .map((id) =>
-              projects.find((project) => project.id === id)
-            )
+            .map((id) => projects.find((project) => project.id === id))
             .filter(Boolean),
 
           ...projects.filter(
-            (project) =>
-              !allCategoryPriority.includes(project.id)
+            (project) => !allCategoryPriority.includes(project.id)
           ),
         ]
-      : projects.filter(
-          (project) => project.category === activeCategory
-        );
+      : projects.filter((project) => project.category === activeCategory);
 
   // Generate the required number of cards.
   // Repeat projects if a category contains fewer cards.
-
   const getOddProjects = () => {
     if (categoryProjects.length === 0) {
       return [];
@@ -244,8 +137,7 @@ const Work = () => {
     const result = [];
 
     for (let i = 0; i < targetCount; i += 1) {
-      const original =
-        categoryProjects[i % categoryProjects.length];
+      const original = categoryProjects[i % categoryProjects.length];
 
       result.push({
         ...original,
@@ -259,13 +151,11 @@ const Work = () => {
   const filteredProjects = getOddProjects();
 
   // Reset slider position when category or screen size changes.
-
   useEffect(() => {
     setActiveIndex(0);
   }, [activeCategory, visibleCards]);
 
   // Navigate between slides.
-
   const goToSlide = (index) => {
     const total = filteredProjects.length;
 
@@ -283,7 +173,6 @@ const Work = () => {
   };
 
   // Pointer and swipe handling.
-
   const handlePointerDown = (e) => {
     isDragging.current = true;
     startX.current = e.clientX;
@@ -299,12 +188,7 @@ const Work = () => {
     const difference = e.clientX - startX.current;
 
     if (Math.abs(difference) > 60) {
-      goToSlide(
-        difference < 0
-          ? activeIndex + 1
-          : activeIndex - 1
-      );
-
+      goToSlide(difference < 0 ? activeIndex + 1 : activeIndex - 1);
       isDragging.current = false;
     }
   };
@@ -320,7 +204,6 @@ const Work = () => {
   };
 
   // Calculate each card's position relative to the active card.
-
   const getDifference = (index) => {
     const total = filteredProjects.length;
 
@@ -342,43 +225,21 @@ const Work = () => {
   };
 
   // Assign CSS classes to the cards.
-
   const getCardClass = (index) => {
     const difference = getDifference(index);
 
-    if (difference === 0) {
-      return "work-card is-center";
-    }
-
-    if (difference === -1) {
-      return "work-card is-left";
-    }
-
-    if (difference === 1) {
-      return "work-card is-right";
-    }
-
-    if (difference === -2) {
-      return "work-card is-far-left";
-    }
-
-    if (difference === 2) {
-      return "work-card is-far-right";
-    }
-
-    if (difference === -3) {
-      return "work-card is-far-left-2";
-    }
-
-    if (difference === 3) {
-      return "work-card is-far-right-2";
-    }
+    if (difference === 0) return "work-card is-center";
+    if (difference === -1) return "work-card is-left";
+    if (difference === 1) return "work-card is-right";
+    if (difference === -2) return "work-card is-far-left";
+    if (difference === 2) return "work-card is-far-right";
+    if (difference === -3) return "work-card is-far-left-2";
+    if (difference === 3) return "work-card is-far-right-2";
 
     return "work-card is-hidden";
   };
 
   // Handle category filter clicks.
-
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
     setActiveIndex(0);
@@ -387,9 +248,7 @@ const Work = () => {
   return (
     <section className="work-section" id="work">
       <div className="work-container">
-
         {/* Header and category filters */}
-
         <div className="work-header">
           <Heading heading="Work" />
 
@@ -401,17 +260,13 @@ const Work = () => {
                   className={`work-filter ${
                     activeCategory === category ? "active" : ""
                   }`}
-                  onClick={() =>
-                    handleCategoryChange(category)
-                  }
+                  onClick={() => handleCategoryChange(category)}
                 >
                   {category}
                 </button>
 
                 {index !== categories.length - 1 && (
-                  <span className="work-filter-divider">
-                    |
-                  </span>
+                  <span className="work-filter-divider">|</span>
                 )}
               </React.Fragment>
             ))}
@@ -419,7 +274,6 @@ const Work = () => {
         </div>
 
         {/* Work slider */}
-
         <div
           className={`work-slider visible-${visibleCards}`}
           onPointerDown={handlePointerDown}
@@ -450,13 +304,9 @@ const Work = () => {
         </div>
 
         {/* Explore more button */}
-
         <div className="work-explore">
-          <button type="button">
-            EXPLORE MORE
-          </button>
+          <button type="button">EXPLORE MORE</button>
         </div>
-
       </div>
     </section>
   );

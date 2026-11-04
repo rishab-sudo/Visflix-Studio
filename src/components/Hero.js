@@ -118,7 +118,7 @@ const Hero = () => {
           </h1>
 
           <p className="hero-description">
-            From concept to final cut, we create powerful <br/>
+            From concept to final cut, we create powerful
             <br className="desktop-break" />
             visual stories that inspire, engage and
             <br className="desktop-break" />

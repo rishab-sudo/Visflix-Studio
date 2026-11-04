@@ -19,14 +19,14 @@ const teamMembers = [
   {
     id: 2,
     image: require("../assets/team/Bharat Chandra blck.jpg"),
-    colorImage: require("../assets/team/Bharat Chandra new (1).jpeg"),
+    colorImage: require("../assets/team/Bharat Chandra.jpg"),
     designation: "Film Director | DI Colourist",
     name: "Bharat Chandra",
   },
   {
     id: 3,
     image: require("../assets/team/Manisha Chandra blck.jpg"),
-    colorImage: require("../assets/team/manisha new (2).jpeg"),
+    colorImage: require("../assets/team/Manisha Chandra.jpg"),
     designation: "Filmmaker",
     name: "Manisha Chandra",
   },
@@ -44,8 +44,7 @@ const teamMembers = [
     designation: "AI Video Producer",
     name: "Himanshu Kanojiya",
   },
-
-    {
+  {
     id: 6,
     image: require("../assets/team/Nikhil Chauhan blck.jpg"),
     colorImage: require("../assets/team/Nikhil Chauhan.jpg"),
@@ -123,27 +122,32 @@ const Team = () => {
             {teamMembers.map((member) => (
               <SwiperSlide key={member.id}>
                 <div className="team-card">
+                  {/* Fixed-ratio frame: both images share the exact same box */}
                   <div className="team-image-wrapper">
-                    {/* Black and white image: desktop default */}
+                    {/* Black and white image */}
                     <img
                       src={member.image}
                       alt={member.name}
                       className="team-image team-image-bw"
+                      draggable={false}
+                      loading="lazy"
+                      decoding="async"
                     />
 
-                    {/* Colored image: desktop hover / mobile default */}
+                    {/* Colour image (decorative duplicate) */}
                     <img
                       src={member.colorImage}
-                      alt={`${member.name} in color`}
+                      alt=""
+                      aria-hidden="true"
                       className="team-image team-image-color"
+                      draggable={false}
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
 
                   <div className="team-info">
-                    <p className="team-designation">
-                      {member.designation}
-                    </p>
-
+                    <p className="team-designation">{member.designation}</p>
                     <h3 className="team-name">{member.name}</h3>
                   </div>
                 </div>
