@@ -27,6 +27,11 @@ const footerLogo = require("../assets/footer-logo.png");
 const Footer = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
+  // Smooth scroll to the top of the page (footer logo click)
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   // Close popup with ESC key
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -58,7 +63,15 @@ const Footer = () => {
           {/* ================= LEFT COLUMN ================= */}
           <div className="footer-column footer-social-column">
             <div className="footer-logo">
-              <img src={footerLogo} alt="VisFlix Studio" />
+              <button
+                type="button"
+                className="footer-logo-btn"
+                onClick={scrollToTop}
+                aria-label="Back to top"
+                title="Back to top"
+              >
+                <img src={footerLogo} alt="VisFlix Studio" draggable={false} />
+              </button>
             </div>
 
             <h3 className="footer-title">Follow Me</h3>

@@ -2,17 +2,20 @@
    FOOTER
    --logo-h  : fixed logo block height
    --logo-gap: gap under the logo
-   Columns 2 & 3 use both as padding-top so all three
-   titles sit on the same horizontal line (desktop/tablet)
+   --title-offset: vertical offset of "Our Gallery" / "Contact Us"
+   Gallery + Contact titles start on the SAME line as the logo
+   (top edge). Set --title-offset to ~15px to centre them
+   against the logo height instead.
 ========================================================= */
 
 .footer-section {
   --logo-h: 64px;
   --logo-gap: 28px;
+  --title-offset: 0px;
 
   width: 100%;
   color: #fff;
-  padding: 75px 0;
+  padding: 40px 0 75px;
   margin-top: 2.5%;
   position: relative;
   overflow: hidden;
@@ -38,11 +41,10 @@
   min-width: 0;
 }
 
-/* Gallery + Contact columns: push down so titles align
-   with "Follow Me" (which sits below the logo) */
+/* Gallery + Contact columns: titles sit on the same line as the logo */
 .footer-gallery-column,
 .footer-contact-column {
-  padding-top: calc(var(--logo-h) + var(--logo-gap));
+  padding-top: var(--title-offset);
 }
 
 .footer-title {
@@ -62,7 +64,7 @@
 }
 
 /* =========================================================
-   LOGO
+   LOGO  (click = scroll to top)
 ========================================================= */
 
 .footer-logo {
@@ -73,6 +75,44 @@
   justify-content: flex-start;
 }
 
+/* Button reset so it looks exactly like the plain logo */
+.footer-logo-btn {
+  height: 100%;
+  max-width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-logo-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.footer-logo-btn:active {
+  transform: translateY(0);
+}
+
+/* Keyboard focus ring only (not on mouse click) */
+.footer-logo-btn:focus-visible {
+  outline: 2px solid #ff5a16;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
 .footer-logo img {
   height: 100%;
   width: auto;
@@ -80,6 +120,9 @@
   display: block;
   object-fit: contain;
   object-position: left center;
+
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* =========================================================
@@ -327,7 +370,7 @@
   .footer-section {
     --logo-h: 56px;
     --logo-gap: 24px;
-    padding: 65px 0;
+    padding: 35px 0 65px;
   }
 
   .footer-container {
@@ -372,7 +415,7 @@
   .footer-section {
     --logo-h: 52px;
     --logo-gap: 24px;
-    padding: 50px 0;
+    padding: 28px 0 50px;
   }
 
   .footer-container {

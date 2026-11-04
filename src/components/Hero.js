@@ -14,8 +14,6 @@ import hero2Mobile from "../assets/VFX Demo Image Phone.jpg";
 import hero4Mobile from "../assets/Ai Demo Image Phone.jpg";
 import hero3Mobile from "../assets/Color Demo Image Phone.jpg";
 
-
-
 import logo from "../assets/VisFlix-Logo.png";
 
 const slides = [
@@ -46,6 +44,7 @@ const Hero = () => {
 
   return (
     <section className="hero-section">
+
       {/* BACKGROUND CAROUSEL */}
       <Carousel
         activeIndex={activeSlide}
@@ -81,6 +80,7 @@ const Hero = () => {
 
       {/* HERO CONTENT */}
       <div className="hero-content-wrapper">
+
         {/* LOGO */}
         <div className="hero-logo">
           <img src={logo} alt="VisFlix" />
@@ -92,13 +92,12 @@ const Hero = () => {
         {/* HEADING + DESCRIPTION */}
         <div className="hero-text-content">
           <h1 className="hero-heading">
-            {/* Desktop and tablet heading */}
+
             <span className="heading-desktop">
               Pre-Production <span>|</span> Production <span>|</span>{" "}
               Post-Production
             </span>
 
-            {/* Mobile-only bullet heading */}
             <span className="heading-mobile">
               <span className="heading-mobile-item">
                 <i aria-hidden="true" />
@@ -115,6 +114,7 @@ const Hero = () => {
                 Post-Production
               </span>
             </span>
+
           </h1>
 
           <p className="hero-description">
@@ -155,6 +155,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

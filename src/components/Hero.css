@@ -23,7 +23,6 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
 }
 
 .hero-carousel .carousel-inner {
@@ -39,6 +38,7 @@
 }
 
 /* Bootstrap fade slides */
+
 .hero-carousel.carousel-fade .carousel-item {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
@@ -168,7 +168,6 @@
   color: #ffffff;
 }
 
-/* Desktop/tablet: show original heading */
 .heading-desktop {
   display: inline;
 }
@@ -202,7 +201,6 @@
   margin-top: 65px;
 }
 
-/* Orange line */
 .demo-line {
   width: 3px;
   background: #f58220;
@@ -210,14 +208,12 @@
   flex-shrink: 0;
 }
 
-/* Demo content */
 .demo-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Demo heading */
 .demo-content h2 {
   margin: 0 0 12px;
   color: #ffffff;
@@ -227,7 +223,6 @@
   font-weight: 700;
 }
 
-/* Demo links */
 .demo-links {
   display: flex;
   align-items: center;
@@ -240,7 +235,6 @@
   font-weight: 500;
 }
 
-/* Demo buttons */
 .demo-option {
   padding: 0;
   margin: 0;
@@ -407,23 +401,20 @@
 }
 
 /* =========================================
-   MOBILE ONLY — MATCH REFERENCE SCREENSHOT
-========================================= */
-
-/* =========================================
-   MOBILE ONLY — MATCH REFERENCE SCREENSHOT
+   MOBILE
 ========================================= */
 
 @media (max-width: 767px) {
   .hero-section {
     position: relative;
     width: 100%;
-height: 80vh !important;
+    height: 80vh !important;
     overflow: hidden;
     background-color: #080808;
   }
 
   /* Carousel */
+
   .hero-carousel {
     position: absolute;
     inset: 0;
@@ -439,6 +430,7 @@ height: 80vh !important;
   }
 
   /* Mobile background image */
+
   .hero-slide-bg {
     position: absolute;
     inset: 0;
@@ -450,7 +442,8 @@ height: 80vh !important;
     background-repeat: no-repeat;
   }
 
-  /* Darken the lower section for readable text */
+  /* Dark overlay */
+
   .hero-overlay {
     position: absolute;
     inset: 0;
@@ -465,22 +458,23 @@ height: 80vh !important;
     );
   }
 
-  /* Content positioned in the lower part */
+  /* Content wrapper */
+
   .hero-content-wrapper {
     position: relative;
     z-index: 2;
     width: 100%;
-  height: auto;
- box-sizing: border-box;
-display: flex;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  margin-top: 65px;
-
+    margin-top: 65px;
   }
 
   /* Logo */
+
   .hero-logo {
     width: 100%;
     margin-bottom: 16px;
@@ -498,13 +492,15 @@ display: flex;
   }
 
   /* Horizontal divider */
+
   .hero-divider {
     width: 100%;
     max-width: 90%;
     height: 2px;
     flex-shrink: 0;
     margin-bottom: 10px;
-background: linear-gradient(
+
+    background: linear-gradient(
       to right,
       #f58220 0%,
       #f58220 25%,
@@ -513,7 +509,8 @@ background: linear-gradient(
     );
   }
 
-  /* Text */
+  /* Text area - slightly moved down */
+
   .hero-text-content {
     width: 100%;
     display: flex;
@@ -521,7 +518,7 @@ background: linear-gradient(
     align-items: center;
     text-align: center;
     gap: 8px;
-  
+    margin-top: 8px;
   }
 
   .hero-heading {
@@ -535,7 +532,6 @@ background: linear-gradient(
     text-align: center;
   }
 
-  /* Show the original horizontal heading */
   .heading-desktop {
     display: inline;
   }
@@ -545,6 +541,7 @@ background: linear-gradient(
   }
 
   /* Description */
+
   .hero-description {
     width: 100%;
     max-width: 310px;
@@ -561,6 +558,7 @@ background: linear-gradient(
   }
 
   /* Demo section */
+
   .hero-demo {
     width: 100%;
     margin-top: 22px;
@@ -616,4 +614,6 @@ background: linear-gradient(
   }
 }
 
-/* Shorter mobile screens */
+/* =========================================
+   SHORTER MOBILE SCREENS
+========================================= */
