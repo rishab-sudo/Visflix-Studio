@@ -1,13 +1,14 @@
 /* =========================================
    TEAM SECTION
-   padding-bottom = light space between the team
-   names and the footer line (desktop)
 ========================================= */
 
 .team-section {
   width: 100%;
   color: #ffffff;
-  padding: 2px 2px 40px;
+
+  /* Added top spacing above Meet My Team */
+  padding: 20px 2px 40px;
+
   margin-top: 2.5%;
   overflow: hidden;
   box-sizing: border-box;
@@ -89,12 +90,13 @@
   height: auto;
   display: block;
   object-fit: contain;
+
   transition:
     opacity 0.45s ease,
     transform 0.5s ease;
 }
 
-/* Desktop default: black and white */
+/* Black and white default */
 
 .team-image-bw {
   position: relative;
@@ -102,7 +104,7 @@
   opacity: 1;
 }
 
-/* Desktop default: hide colored image */
+/* Colored image */
 
 .team-image-color {
   position: absolute;
@@ -166,15 +168,20 @@
   top: 45%;
   transform: translateY(-50%);
   z-index: 10;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border: 1px solid rgba(255, 255, 255, 0.65);
   border-radius: 50%;
+
   background: rgba(255, 255, 255, 0.318);
   color: #111111;
+
   font-size: 15px;
   cursor: pointer;
+
   transition:
     background 0.3s ease,
     color 0.3s ease,
@@ -206,7 +213,9 @@
 ========================================= */
 
 @media (min-width: 768px) and (max-width: 991px) {
+
   .team-section {
+    padding-top: 20px;
     padding-bottom: 35px;
   }
 
@@ -238,14 +247,10 @@
 
 /* =========================================
    MOBILE
-   Tall portrait frame (16:25) shared by both images.
-   Both layers fill the frame (cover) and are pinned to
-   the TOP, so the head/face is never cut - only extra
-   bottom area is trimmed.
-   To make the frame taller/shorter, change aspect-ratio.
 ========================================= */
 
 @media (max-width: 767px) {
+
   .team-section {
     padding: 20px 0 35px;
   }
@@ -309,10 +314,11 @@
 /* =========================================
    MOBILE + TABLET
    ALWAYS SHOW COLORED IMAGES
-   DESKTOP LAYOUT REMAINS UNCHANGED
 ========================================= */
 
-@media (max-width: 991px), (hover: none) and (pointer: coarse) {
+@media (max-width: 991px),
+       (hover: none) and (pointer: coarse) {
+
   .team-card .team-image-bw {
     opacity: 0 !important;
     transform: none !important;

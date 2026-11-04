@@ -74,7 +74,6 @@ const Team = () => {
         <Heading heading="meet my team" />
 
         <div className="team-slider-wrapper">
-          {/* Previous Arrow */}
           <button
             type="button"
             className="team-nav-arrow team-prev"
@@ -122,9 +121,7 @@ const Team = () => {
             {teamMembers.map((member) => (
               <SwiperSlide key={member.id}>
                 <div className="team-card">
-                  {/* Fixed-ratio frame: both images share the exact same box */}
                   <div className="team-image-wrapper">
-                    {/* Black and white image */}
                     <img
                       src={member.image}
                       alt={member.name}
@@ -134,7 +131,6 @@ const Team = () => {
                       decoding="async"
                     />
 
-                    {/* Colour image (decorative duplicate) */}
                     <img
                       src={member.colorImage}
                       alt=""
@@ -147,15 +143,19 @@ const Team = () => {
                   </div>
 
                   <div className="team-info">
-                    <p className="team-designation">{member.designation}</p>
-                    <h3 className="team-name">{member.name}</h3>
+                    <p className="team-designation">
+                      {member.designation}
+                    </p>
+
+                    <h3 className="team-name">
+                      {member.name}
+                    </h3>
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
 
-          {/* Next Arrow */}
           <button
             type="button"
             className="team-nav-arrow team-next"
