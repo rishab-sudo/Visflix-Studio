@@ -27,6 +27,9 @@ body {
   max-width: 95% !important;
   /* background-color: aquamarine; */
 }
+section[id], footer[id] {
+  scroll-margin-top: 80px;
+}
 .section-heading{
   font-weight: 600 !important;
     font-family: poppins !important;

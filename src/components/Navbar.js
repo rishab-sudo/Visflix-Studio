@@ -16,12 +16,20 @@ const Navbar = () => {
       return;
     }
 
-    const section = document.getElementById(id);
+    const section =
+      document.getElementById(id) ||
+      document.getElementById(id.toLowerCase().replace(/\s+/g, "-")) ||
+      document.getElementById(id.toLowerCase().replace(/\s+/g, ""));
 
     if (section) {
-      section.scrollIntoView({
+      const navbarHeight = 75;
+      const elementPosition = section.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
         behavior: "smooth",
-        block: "start",
       });
     }
   };
@@ -83,7 +91,7 @@ const Navbar = () => {
               className={`nav-link ${activeSection === "work" ? "active" : ""}`}
               onClick={() => handleScroll("work")}
             >
-              SHOWCASE
+              WORK
             </button>
 
             <span className="nav-divider"></span>
@@ -179,6 +187,14 @@ const Navbar = () => {
 
           <button
             type="button"
+            className={activeSection === "work" ? "active" : ""}
+            onClick={() => handleScroll("work")}
+          >
+            WORK
+          </button>
+
+          <button
+            type="button"
             className={activeSection === "reel" ? "active" : ""}
             onClick={() => handleScroll("reel")}
           >
@@ -187,18 +203,10 @@ const Navbar = () => {
 
           <button
             type="button"
-            className={activeSection === "work" ? "active" : ""}
-            onClick={() => handleScroll("work")}
-          >
-            SHOWCASE
-          </button>
-
-          <button
-            type="button"
             className={activeSection === "team" ? "active" : ""}
             onClick={() => handleScroll("team")}
           >
-            TEAM
+           TEAM
           </button>
 
           <button
