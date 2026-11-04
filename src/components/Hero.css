@@ -1,4 +1,3 @@
-
 /* =========================================
    HERO SECTION
 ========================================= */
@@ -458,8 +457,9 @@
     );
   }
 
-  /* Content wrapper */
-
+  /* Content wrapper
+     margin-top controls how far DOWN the content sits.
+     Bigger value = content lower (was 65px). */
   .hero-content-wrapper {
     position: relative;
     z-index: 2;
@@ -470,7 +470,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 65px;
+    margin-top: 105px;
   }
 
   /* Logo */
@@ -509,7 +509,7 @@
     );
   }
 
-  /* Text area - slightly moved down */
+  /* Text area */
 
   .hero-text-content {
     width: 100%;
@@ -613,7 +613,3 @@
     opacity: 0.9;
   }
 }
-
-/* =========================================
-   SHORTER MOBILE SCREENS
-========================================= */

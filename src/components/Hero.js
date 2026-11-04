@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./Hero.css";
@@ -117,10 +116,12 @@ const Hero = () => {
 
           </h1>
 
+          {/* {" "} keeps a space between words when the <br> is hidden on
+              mobile (fixes "powerfulvisual" / "andleave") */}
           <p className="hero-description">
-            From concept to final cut, we create powerful
+            From concept to final cut, we create powerful{" "}
             <br className="desktop-break" />
-            visual stories that inspire, engage and
+            visual stories that inspire, engage and{" "}
             <br className="desktop-break" />
             leave a lasting impact.
           </p>
