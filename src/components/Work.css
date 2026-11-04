@@ -18,7 +18,7 @@
 
   width: 100%;
   position: relative;
-  padding: 0 0 20px;
+  padding: 0;
   margin-top: 2.5%;
   overflow: hidden;
   color: #ffffff;
@@ -32,6 +32,8 @@
 .work-container {
   width: 100%;
   margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -40,7 +42,7 @@
 ========================================================= */
 
 .work-header {
-  width: 92%;
+  width: 100%;
   margin: 0 auto;
 
   display: flex;
@@ -51,6 +53,15 @@
 
   position: relative;
   z-index: 30;
+  min-height: 48px;
+}
+
+.work-header .section-heading {
+  width: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
 }
 
 /* =========================================================
@@ -61,7 +72,8 @@
   position: absolute;
 
   left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
 
   display: flex;
   align-items: center;
@@ -70,7 +82,7 @@
   gap: 25px;
 
   white-space: nowrap;
-  margin-top: -18px;
+  margin: 0;
 
   z-index: 50;
 }
@@ -142,7 +154,7 @@
 
   position: relative;
 
-  margin-top: 40px !important;
+  margin-top: 48px !important;
 
   touch-action: pan-y;
   user-select: none;
@@ -181,7 +193,7 @@
 
   position: absolute;
 
-  top: 20px;
+  top: 6px;
   left: 50%;
 
   overflow: hidden;
@@ -227,7 +239,7 @@
   z-index: 15;
 
   transform:
-    translateX(calc(-50% - 217px))
+    translateX(calc(-50% - 190px))
     translateZ(30px)
     rotateY(11deg)
     scale(0.88);
@@ -240,7 +252,7 @@
   z-index: 15;
 
   transform:
-    translateX(calc(-50% + 217px))
+    translateX(calc(-50% + 190px))
     translateZ(30px)
     rotateY(-11deg)
     scale(0.88);
@@ -257,7 +269,7 @@
   z-index: 10;
 
   transform:
-    translateX(calc(-50% - 387px))
+    translateX(calc(-50% - 345px))
     translateZ(-70px)
     rotateY(17deg)
     scale(0.73);
@@ -270,7 +282,7 @@
   z-index: 10;
 
   transform:
-    translateX(calc(-50% + 387px))
+    translateX(calc(-50% + 345px))
     translateZ(-70px)
     rotateY(-17deg)
     scale(0.73);
@@ -287,7 +299,7 @@
   z-index: 5;
 
   transform:
-    translateX(calc(-50% - 544px))
+    translateX(calc(-50% - 485px))
     translateZ(-130px)
     rotateY(21deg)
     scale(0.62);
@@ -300,7 +312,7 @@
   z-index: 5;
 
   transform:
-    translateX(calc(-50% + 544px))
+    translateX(calc(-50% + 485px))
     translateZ(-130px)
     rotateY(-21deg)
     scale(0.62);
@@ -502,12 +514,12 @@
 
   .work-slider {
     width: 100%;
-    margin-top: 24px !important;
+    margin-top: 22px !important;
     perspective: 1100px;
   }
 
   .work-card {
-    top: 20px;
+    top: 8px;
   }
 
   .work-card.is-center {
@@ -516,7 +528,7 @@
 
   .work-card.is-left {
     transform:
-      translateX(calc(-50% - 145px))
+      translateX(calc(-50% - 125px))
       translateZ(20px)
       rotateY(14deg)
       scale(0.88);
@@ -524,7 +536,7 @@
 
   .work-card.is-right {
     transform:
-      translateX(calc(-50% + 145px))
+      translateX(calc(-50% + 125px))
       translateZ(20px)
       rotateY(-14deg)
       scale(0.88);
@@ -532,7 +544,7 @@
 
   .work-card.is-far-left {
     transform:
-      translateX(calc(-50% - 250px))
+      translateX(calc(-50% - 215px))
       translateZ(-60px)
       rotateY(20deg)
       scale(0.73);
@@ -540,7 +552,7 @@
 
   .work-card.is-far-right {
     transform:
-      translateX(calc(-50% + 250px))
+      translateX(calc(-50% + 215px))
       translateZ(-60px)
       rotateY(-20deg)
       scale(0.73);

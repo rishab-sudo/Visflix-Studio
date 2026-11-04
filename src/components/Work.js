@@ -247,7 +247,7 @@ const Work = () => {
 
   return (
     <section className="work-section" id="work">
-      <div className="work-container">
+      <div className="work-container container">
         {/* Header and category filters */}
         <div className="work-header">
           <Heading heading="Work" />

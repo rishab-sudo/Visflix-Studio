@@ -5,12 +5,16 @@
 .experties-section {
   width: 100%;
   color: #ffffff;
-margin-top: 2.5%;
+  margin-top: 2.5%;
   overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .experties-container {
- margin: 0 auto;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
 }
 
 .experties-heading p {

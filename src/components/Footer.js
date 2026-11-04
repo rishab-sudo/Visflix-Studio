@@ -59,126 +59,138 @@ const Footer = () => {
   return (
     <>
       <footer className="footer-section">
-        <div className="footer-container">
+        <div className="footer-container container">
           {/* ================= LEFT COLUMN ================= */}
           <div className="footer-column footer-social-column">
-            <div className="footer-logo">
-              <button
-                type="button"
-                className="footer-logo-btn"
-                onClick={scrollToTop}
-                aria-label="Back to top"
-                title="Back to top"
-              >
-                <img src={footerLogo} alt="VisFlix Studio" draggable={false} />
-              </button>
+            <div className="footer-header-slot">
+              <div className="footer-logo">
+                <button
+                  type="button"
+                  className="footer-logo-btn"
+                  onClick={scrollToTop}
+                  aria-label="Back to top"
+                  title="Back to top"
+                >
+                  <img src={footerLogo} alt="VisFlix Studio" draggable={false} />
+                </button>
+              </div>
             </div>
 
-            <h3 className="footer-title">Follow Me</h3>
+            <div className="footer-body-slot">
+              <h3 className="footer-title">Follow Me</h3>
 
-            <p className="footer-subtitle">Connect me with social media</p>
+              <p className="footer-subtitle">Connect me with social media</p>
 
-            <div className="footer-socials">
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <FaInstagram />
-              </a>
+              <div className="footer-socials">
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram />
+                </a>
 
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              >
-                <FaFacebookF />
-              </a>
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
+                  <FaFacebookF />
+                </a>
 
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedinIn />
-              </a>
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedinIn />
+                </a>
 
-              <a
-                href="https://www.youtube.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-              >
-                <FaYoutube />
-              </a>
+                <a
+                  href="https://www.youtube.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <FaYoutube />
+                </a>
+              </div>
             </div>
           </div>
 
           {/* ================= CENTER COLUMN ================= */}
           <div className="footer-column footer-gallery-column">
-            <h3 className="footer-title">Our Gallery</h3>
+            <div className="footer-header-slot">
+              <h3 className="footer-title">Our Gallery</h3>
+            </div>
 
-            <div className="footer-gallery">
-              {galleryImages.map((image, index) => (
-                <div
-                  className="footer-gallery-item"
-                  key={index}
-                  onClick={() => setSelectedImage(image)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      setSelectedImage(image);
-                    }
-                  }}
-                  aria-label={`Open Gallery ${index + 1}`}
-                >
-                  <img src={image} alt={`Gallery ${index + 1}`} />
+            <div className="footer-body-slot">
+              <div className="footer-gallery">
+                {galleryImages.map((image, index) => (
+                  <div
+                    className="footer-gallery-item"
+                    key={index}
+                    onClick={() => setSelectedImage(image)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        setSelectedImage(image);
+                      }
+                    }}
+                    aria-label={`Open Gallery ${index + 1}`}
+                  >
+                    <img src={image} alt={`Gallery ${index + 1}`} />
 
-                  <div className="gallery-hover">
-                    <span>+</span>
+                    <div className="gallery-hover">
+                      <span>+</span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 
           {/* ================= RIGHT COLUMN ================= */}
           <div className="footer-column footer-contact-column">
-            <h3 className="footer-title">Contact Us</h3>
+            <div className="footer-header-slot">
+              <h3 className="footer-title">Contact Us</h3>
+            </div>
 
-            <div className="footer-contact-list">
-              {/* Location */}
-              <div className="footer-contact-item">
-                <FaMapMarkerAlt />
-                <span>Mumbai | Delhi | Bareilly</span>
-              </div>
+            <div className="footer-body-slot">
+              <div className="footer-contact-list">
+                {/* Location */}
+                <div className="footer-contact-item">
+                  <FaMapMarkerAlt />
+                  <span>Mumbai | Delhi | Bareilly</span>
+                </div>
 
-              {/* WhatsApp */}
-              <div className="footer-contact-item">
-                <FaWhatsapp />
-                <a
-                  href="https://wa.me/917505867318"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-contact-link"
-                >
-                  +91 75 0586 7318
-                </a>
-              </div>
+                {/* WhatsApp */}
+                <div className="footer-contact-item">
+                  <FaWhatsapp />
+                  <a
+                    href="https://wa.me/917505867318"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-contact-link"
+                  >
+                    +91 75 0586 7318
+                  </a>
+                </div>
 
-              {/* Email */}
-              <div className="footer-contact-item">
-                <FaEnvelope />
-                <a
-                  href="mailto:studiovisflix@gmail.com"
-                  className="footer-contact-link"
-                >
-                  studiovisflix@gmail.com
-                </a>
+                {/* Email */}
+                <div className="footer-contact-item">
+                  <FaEnvelope />
+                  <a
+                    href="mailto:studiovisflix@gmail.com"
+                    className="footer-contact-link"
+                  >
+                    studiovisflix@gmail.com
+                  </a>
+                </div>
               </div>
             </div>
           </div>

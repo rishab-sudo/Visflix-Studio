@@ -11,11 +11,10 @@
 .footer-section {
   --logo-h: 64px;
   --logo-gap: 28px;
-  --title-offset: 0px;
 
   width: 100%;
   color: #fff;
-  padding: 40px 0 75px;
+  padding: 40px 0 65px;
   margin-top: 2.5%;
   position: relative;
   overflow: hidden;
@@ -25,12 +24,13 @@
 }
 
 .footer-container {
-  width: min(1400px, 90%);
   margin: 0 auto;
+  padding: 0 32px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 50px;
   align-items: start;
+  box-sizing: border-box;
 }
 
 /* =========================================================
@@ -39,12 +39,36 @@
 
 .footer-column {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Gallery + Contact columns: titles sit on the same line as the logo */
-.footer-gallery-column,
-.footer-contact-column {
-  padding-top: var(--title-offset);
+/* Top slot: Logo, "Our Gallery", and "Contact Us" are in the exact same line */
+.footer-header-slot {
+  height: var(--logo-h);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: var(--logo-gap);
+  box-sizing: border-box;
+}
+
+.footer-header-slot .footer-logo {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer-header-slot .footer-title {
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Body slot: On the exact same line as Follow Me, gallery images and contact start */
+.footer-body-slot {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-title {
@@ -426,6 +450,15 @@
 
   .footer-column {
     width: 100%;
+  }
+
+  .footer-header-slot {
+    height: auto;
+    margin-bottom: 12px;
+  }
+
+  .footer-header-slot .footer-logo {
+    height: var(--logo-h);
   }
 
   .footer-gallery-column,
