@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -16,6 +15,7 @@ const teamMembers = [
     colorImage: require("../assets/team/Ajeet Chauhan.jpg"),
     designation: "Founder | Creative Director",
     name: "Ajeet Chauhan",
+    focusUp: true,
   },
   {
     id: 2,
@@ -148,9 +148,10 @@ const Team = () => {
                         src={member.image}
                         alt={member.name}
                         className={
-                          member.mobileImage
+                          (member.mobileImage
                             ? "team-image-bw-custom"
-                            : "team-image-bw"
+                            : "team-image-bw") +
+                          (member.focusUp ? " team-image-focus-up" : "")
                         }
                         draggable={false}
                         loading="lazy"
@@ -173,9 +174,10 @@ const Team = () => {
                         alt=""
                         aria-hidden="true"
                         className={
-                          member.mobileImage
+                          (member.mobileImage
                             ? "team-image-color-custom"
-                            : "team-image-color"
+                            : "team-image-color") +
+                          (member.focusUp ? " team-image-focus-up" : "")
                         }
                         draggable={false}
                         loading="lazy"

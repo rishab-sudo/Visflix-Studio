@@ -1,4 +1,3 @@
-
 /* =========================================
    TEAM SECTION
 ========================================= */
@@ -305,6 +304,20 @@
     /* Keep face and upper body visible.
        Extra crop will happen at the bottom. */
     object-position: center top;
+  }
+
+  /* =====================================
+     AJEET (ID 1) - MOVE IMAGE UP
+     Zoom anchored at bottom, so the extra
+     space above the head gets cropped and
+     there is no gap at the bottom.
+     Increase --ajeet-zoom to push higher.
+  ===================================== */
+
+  .team-image-focus-up {
+    --ajeet-zoom: 1.12;
+    scale: var(--ajeet-zoom);
+    transform-origin: center bottom;
   }
 
   /* =====================================
