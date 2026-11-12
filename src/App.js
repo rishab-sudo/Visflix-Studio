@@ -38,7 +38,7 @@ function App() {
       <Helmet>
         {/* ── Primary Meta ── */}
         <html lang="en" />
-        <title>VisFlix Studio | Pre-Production, Production & Post-Production House</title>
+        <title>VisFlix Studio</title>
         <meta
           name="description"
           content="VisFlix Studio is a premier creative production house specializing in Pre-Production, Production, and Post-Production for feature films, TVCs, music videos, VFX, DI Color Grading, and AI Video Production. Based in Mumbai, Delhi & Bareilly with 10+ years of industry experience."
