@@ -142,6 +142,7 @@ const Team = () => {
                   <div className="team-info">
                     <p className="team-designation">
                       {member.designation}
+
                     </p>
 
                     <h3 className="team-name">{member.name}</h3>
@@ -157,8 +158,8 @@ const Team = () => {
             className="team-nav-arrow team-next"
             aria-label="Next team members"
           >
-            <FaChevronRight />
-          </button>
+            < FaChevronRight />
+          </ button>
         </div>
       </div>
     </section>

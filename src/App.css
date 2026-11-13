@@ -1,42 +1,57 @@
+
 html {
   scroll-behavior: auto;
 }
 
 html,
 body {
- margin-top: 35px;
+  margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100%;
-}
-.App {
-  width: 100%;
-  min-height: 100vh !important;
-background-image: url("./assets/Visflix-Background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-family: poppins !important;
-}
-body {
   overflow-x: hidden;
 }
-.container{
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("./assets/Visflix-Background.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
   min-width: 90% !important;
   max-width: 95% !important;
-  /* background-color: aquamarine; */
 }
-.section-heading{
-  font-weight: 600 !important;
-    font-family: poppins !important;
 
+.section-heading {
+  font-weight: 600 !important;
+  font-family: "Poppins", sans-serif !important;
 }
-.section-subHeading{
+
+.section-subHeading {
   text-transform: uppercase;
 }
+
+.page-text {
+  font-family: "Poppins", sans-serif;
+}
+
 @media (max-width: 767px) {
   .page-text {
     font-size: 15px !important;
+  }
+
+  .App {
+    background-attachment: scroll;
+    background-position: center top;
   }
 }
