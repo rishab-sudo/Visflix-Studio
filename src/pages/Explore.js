@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import Heading from "../components/Heading";
 import "./Explore.css";
 
 import work1 from "../assets/Movies/1000KM - VFX.jpg";
@@ -238,9 +239,8 @@ const Explore = () => {
 
           <div className="explore-header-top">
 
-            <h1 className="explore-heading">
-              Our <span>Work</span>
-            </h1>
+           <Heading heading="Our Work" />
+
 
             <Link to="/" className="explore-back-link">
               <FaArrowLeft className="explore-back-icon" />
@@ -255,10 +255,6 @@ const Explore = () => {
             </Link>
 
           </div>
-
-          <p className="explore-subtitle">
-            A journey through stories, visuals and creativity.
-          </p>
 
         </div>
 
