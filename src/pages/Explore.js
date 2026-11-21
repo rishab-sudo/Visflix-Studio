@@ -55,7 +55,7 @@ const categoryLabels = {
   MOVIES: "Movies",
   TVCS: "TVCs",
   SERIES: "Series",
-  "MUSIC VIDEOS": "Music Videos",
+  "MUSIC VIDEOS": "Music Videos" ,
 };
 
 const Explore = () => {
