@@ -5,17 +5,18 @@
 .team-section {
   width: 100%;
   color: #ffffff;
-  padding: 0;
+  padding-left: 35px;
   margin-top: 2.5%;
   overflow: hidden;
   box-sizing: border-box;
 }
 
+
 .team-container {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 32px;
+  padding: 0 32px !important;
   box-sizing: border-box;
 }
 

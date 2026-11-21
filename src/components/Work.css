@@ -5,6 +5,7 @@
    --card-w / --card-h       : side cards
    --center-w / --center-h   : active (center) card
    --slider-h                : slider height
+   --heading-shift           : extra left space before WORK heading
    Tip: smaller --card-h / --center-h = more room for the
    EXPLORE MORE button.
 ========================================================= */
@@ -15,6 +16,7 @@
   --center-w: 280px;
   --center-h: 400px;
   --slider-h: 440px;
+  --heading-shift: 35px;
 
   width: 100%;
   position: relative;
@@ -44,6 +46,8 @@
 .work-header {
   width: 100%;
   margin: 0 auto;
+  padding-left: var(--heading-shift);
+  box-sizing: border-box;
 
   display: flex;
   align-items: center;
@@ -469,6 +473,7 @@
     --center-w: 200px;
     --center-h: 285px;
     --slider-h: 335px;
+    --heading-shift: 20px;
 
     padding: 30px 0;
   }
@@ -582,6 +587,7 @@
     --center-w: 165px;
     --center-h: 235px;
     --slider-h: 290px;
+    --heading-shift: 0px;
 
     padding: 25px 0 30px;
   }

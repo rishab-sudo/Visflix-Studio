@@ -82,7 +82,7 @@ const Hero = () => {
 
         {/* LOGO */}
         <div className="hero-logo">
-          <img src={logo} alt="VisFlix" />
+          <img src={logo} alt="VisFlix Studio" width="200" height="60" />
         </div>
 
         {/* DIVIDER */}

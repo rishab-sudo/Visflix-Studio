@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Work.css";
 
 import work1 from "../assets/Movies/1000KM - VFX.jpg";
@@ -72,6 +73,8 @@ const categories = ["ALL", "MOVIES", "TVCS", "SERIES", "MUSIC VIDEOS"];
 // =========================================================
 
 const Work = () => {
+  const navigate = useNavigate();
+
   const [activeCategory, setActiveCategory] = useState("ALL");
   const [activeIndex, setActiveIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(7);
@@ -81,6 +84,7 @@ const Work = () => {
 
   // Responsive card count:
   // Desktop: 7 cards, Tablet: 5 cards, Mobile: 3 cards
+
   useEffect(() => {
     const updateCardCount = () => {
       if (window.innerWidth <= 768) {
@@ -102,6 +106,7 @@ const Work = () => {
 
   // Sort projects for the ALL category.
   // Other categories retain their original order.
+
   const categoryProjects =
     activeCategory === "ALL"
       ? [
@@ -117,6 +122,7 @@ const Work = () => {
 
   // Generate the required number of cards.
   // Repeat projects if a category contains fewer cards.
+
   const getOddProjects = () => {
     if (categoryProjects.length === 0) {
       return [];
@@ -151,11 +157,13 @@ const Work = () => {
   const filteredProjects = getOddProjects();
 
   // Reset slider position when category or screen size changes.
+
   useEffect(() => {
     setActiveIndex(0);
   }, [activeCategory, visibleCards]);
 
   // Navigate between slides.
+
   const goToSlide = (index) => {
     const total = filteredProjects.length;
 
@@ -173,6 +181,7 @@ const Work = () => {
   };
 
   // Pointer and swipe handling.
+
   const handlePointerDown = (e) => {
     isDragging.current = true;
     startX.current = e.clientX;
@@ -204,6 +213,7 @@ const Work = () => {
   };
 
   // Calculate each card's position relative to the active card.
+
   const getDifference = (index) => {
     const total = filteredProjects.length;
 
@@ -225,6 +235,7 @@ const Work = () => {
   };
 
   // Assign CSS classes to the cards.
+
   const getCardClass = (index) => {
     const difference = getDifference(index);
 
@@ -240,15 +251,24 @@ const Work = () => {
   };
 
   // Handle category filter clicks.
+
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
     setActiveIndex(0);
   };
 
+  // Go to Explore page. Scroll-to-top is handled globally in App.jsx (Lenis-aware).
+
+  const handleExploreClick = () => {
+    navigate("/explore");
+  };
+
   return (
     <section className="work-section" id="work">
-      <div className="work-container container">
+      <div className="work-container">
+
         {/* Header and category filters */}
+
         <div className="work-header">
           <Heading heading="Work" />
 
@@ -274,6 +294,7 @@ const Work = () => {
         </div>
 
         {/* Work slider */}
+
         <div
           className={`work-slider visible-${visibleCards}`}
           onPointerDown={handlePointerDown}
@@ -304,9 +325,13 @@ const Work = () => {
         </div>
 
         {/* Explore more button */}
+
         <div className="work-explore">
-          <button type="button">EXPLORE MORE</button>
+          <button type="button" onClick={handleExploreClick}>
+            EXPLORE MORE
+          </button>
         </div>
+
       </div>
     </section>
   );

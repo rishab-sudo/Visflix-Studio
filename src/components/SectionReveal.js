@@ -7,7 +7,7 @@ const SectionReveal = ({ children, className = "" }) => {
       className={className}
       initial={{
         opacity: 0,
-        y: 100,
+        y: 40, // was 100: smaller translate = less repaint flash on mobile
       }}
       whileInView={{
         opacity: 1,
